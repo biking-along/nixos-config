@@ -1,0 +1,5 @@
+{
+  stylix = {
+    enableReleaseChecks = false;
+  };
+}
