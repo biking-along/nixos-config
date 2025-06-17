@@ -1,6 +1,6 @@
 {
   imports = [
-    ./env.nix
+    ./envVars.nix
     ./firmware.nix
     ./kernel.nix
     ./locale.nix
