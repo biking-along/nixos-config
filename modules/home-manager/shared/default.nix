@@ -6,6 +6,7 @@
     ./eza.nix
     ./fastfetch.nix
     ./fish.nix
+    ./foliate.nix
     ./git.nix
     ./gtk.nix
     ./imv.nix
