@@ -8,15 +8,9 @@
     ./fish.nix
     ./git.nix
     ./gtk.nix
-    ./homepkgs.nix
-    ./hyprland.nix
     ./imv.nix
-    ./kitty.nix
     ./mpv.nix
-    ./rofi.nix
     ./stylix.nix
-    ./waybar.nix
-    ./xdg.nix
     ./yazi.nix
   ];
 }

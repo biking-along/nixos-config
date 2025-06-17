@@ -1,5 +1,5 @@
 {
-  description = "Gamma NixOS flake";
+  description = "rw's multihost nixos configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
@@ -32,7 +32,6 @@
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "${system}";
-          # specialArgs = { inherit inputs; };
           modules = [
             ./hosts/${host}
             stylix.nixosModules.stylix
@@ -47,12 +46,13 @@
                 };
                 programs.home-manager.enable = true;
                 imports = [
-                  ./modules/home-manager
+                  ./modules/home-manager/shared
+		  ./modules/home-manager/${host}
                 ];
               };
             }
           ];
         };
-      };
     };
+  };
 }
