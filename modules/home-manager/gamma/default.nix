@@ -1,6 +1,6 @@
 {
   imports = [
-    ./homepkgs.nix
+    ./homePkgs.nix
     ./hyprland.nix
     ./kitty.nix
     ./rofi.nix
