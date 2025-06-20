@@ -57,6 +57,55 @@
             }
           ];
         };
+      kappa =
+        let
+          username = "rw";
+          state = "25.05";
+          host = "gamma";
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs username state host system;};
+        in
+	nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/${host}
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel
+            stylix.nixosModules.stylix
+            nvf.nixosModules.default
+	    home-manager.nixosModules.home-manager {
+              home-manager.users.${username} = {
+                home = {
+                  username = "${username}";
+                  homeDirectory = "/home/${username}";
+                  stateVersion = "${state}";
+                };
+                programs.home-manager.enable = true;
+                imports = [
+                  ./modules/home-manager/shared
+		  ./modules/home-manager/${host}
+                ];
+              };
+            }
+
+
+            {
+              system.extraSystemBuilderCmds = ''
+                ln -s ${self} $out/flake
+                ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
+              '';
+            }
+            { nix.registry.nixpkgs.flake = nixpkgs; }
+            {
+              nix.registry.current.to = {
+                type = "path";
+                path = "/run/booted-system/flake/";
+              };
+            }
+          ];
+        };
+
+
     };
   };
 }
