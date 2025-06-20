@@ -51,7 +51,7 @@
                 programs.home-manager.enable = true;
                 imports = [
                   ./modules/home-manager/shared
-		  ./modules/home-manager/${host}
+                  ./modules/home-manager/${host}
                 ];
               };
             }
@@ -60,12 +60,12 @@
       kappa =
         let
           username = "rw";
-          state = "25.05";
+          state = "25.11";
           host = "gamma";
           system = "x86_64-linux";
           specialArgs = {inherit inputs username state host system;};
         in
-	nixpkgs.lib.nixosSystem {
+        nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "${system}";
           modules = [
@@ -73,7 +73,7 @@
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
-	    home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager {
               home-manager.users.${username} = {
                 home = {
                   username = "${username}";
@@ -83,12 +83,10 @@
                 programs.home-manager.enable = true;
                 imports = [
                   ./modules/home-manager/shared
-		  ./modules/home-manager/${host}
+                  ./modules/home-manager/${host}
                 ];
               };
             }
-
-
             {
               system.extraSystemBuilderCmds = ''
                 ln -s ${self} $out/flake
@@ -105,7 +103,47 @@
           ];
         };
 
+      # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
+      surfaceRecovery = 
+        let
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs system;};
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/kappa/configuration-base.nix
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            ({ pkgs, ... }: { environment.systemPackages = [ pkgs.vim ]; })
+            {
+              isoImage.squashfsCompression = "gzip -Xcompression-level 1";
+              boot.supportedFilesystems = nixpkgs.lib.mkForce [
+                "btrfs"
+                "ext4"
+                "f2fs"
+                "ntfs"
+                "vfat"
+                "xfs"
+              ];
+            }
+            {
+              nix.registry.nixpkgs.flake = nixpkgs;
+              nix.settings.experimental-features = [ "nix-command" "flakes" ];
+            }
+            ({ pkgs, ... }: {
+              services.getty.helpLine = ''
+                Exit the prompt to see this help again.
+                The nixos-config repo can be found at /home/nixos/nixos-config/.
+              '';
 
+              boot.postBootCommands = ''
+                ln -s ${self} /home/nixos/nixos-config
+              '';
+            })
+          ];
+        };
     };
   };
 }
