@@ -3,6 +3,10 @@
     enable = true;
     systemd.enable = true;
     settings = {
+      env = [
+        "HYPRCURSOR_THEME,Nordzy-catppuccin-mocha-dark"
+        "HYPRCURSOR_SIZE,24"
+      ];
       monitor = [
         "DP-1 ,2560x1440@164.96,0x0,1"
         "HDMI-A-1 ,1680x1050@59.95,-1050x-120,1,transform,1"
