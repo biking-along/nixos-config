@@ -9,7 +9,7 @@
     polarity = "dark";
     opacity.terminal = 1.0;
     cursor = {
-      package = "${pkgs.nordzy-cursor-theme}";
+      package = pkgs.nordzy-cursor-theme;
       name = "Nordzy-catppuccin-mocha-dark";
       size = 24;
     };
