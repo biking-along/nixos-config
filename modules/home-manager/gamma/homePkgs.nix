@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     fortune
+    nordzy-cursor-theme
     cowsay
     thunderbird
     chromium
