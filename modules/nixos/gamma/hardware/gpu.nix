@@ -20,12 +20,12 @@
     amdgpu = {
       initrd.enable = true;
       overdrive.enable = true;
-      opencl.enable = true;
+      # opencl.enable = true;
     };
   };
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  # systemd.tmpfiles.rules = [
+    # "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  # ];
   environment.systemPackages = with pkgs; [ lact ];
   services.frigate.vaapiDriver = "radeonsi";
   services.xserver.videoDrivers = ["amdgpu"];
