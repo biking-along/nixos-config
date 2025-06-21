@@ -88,9 +88,9 @@
         natural_scroll = true;
         scroll_factor = 0.2;
       };
-      cursor = {
-        default_monitor = "DP-1";
-      };
+      # cursor = {
+        # default_monitor = "DP-1";
+      # };
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, uwsm-app -- kitty"
