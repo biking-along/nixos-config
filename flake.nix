@@ -21,7 +21,7 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
-    inputs.hyprland = {
+    hyprland = {
       url = "github:hyprwm/Hyprland";
     };
   };
