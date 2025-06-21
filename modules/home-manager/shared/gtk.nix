@@ -1,13 +1,5 @@
 { pkgs, ... }:
-
 {
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    package = pkgs.nordzy-cursor-theme;
-    name = "Nordzy-catppuccin-mocha-dark";
-    size = 24;
-  };
   gtk = {
     iconTheme = {
       name = "Papirus-Dark";
