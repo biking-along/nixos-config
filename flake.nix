@@ -21,6 +21,9 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
+    inputs.hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
   outputs = { self, nixpkgs, home-manager, stylix, nvf, lanzaboote, nixos-hardware, ... }@inputs: {
     nixosConfigurations = {
