@@ -20,7 +20,7 @@
     amdgpu = {
       initrd.enable = true;
       overdrive.enable = true;
-      opencl.enable = true;
+      # opencl.enable = true;
     };
   };
   # systemd.tmpfiles.rules = [
