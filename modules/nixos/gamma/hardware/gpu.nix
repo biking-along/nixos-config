@@ -11,7 +11,7 @@
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        rocmPackages.clr.icd
+        # rocmPackages.clr.icd
         # rocmPackages.clr
         libva
         libva-utils
@@ -23,9 +23,9 @@
       opencl.enable = true;
     };
   };
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  # systemd.tmpfiles.rules = [
+    # "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  # ];
   environment.systemPackages = with pkgs; [ lact ];
   services.frigate.vaapiDriver = "radeonsi";
   services.xserver.videoDrivers = ["amdgpu"];
