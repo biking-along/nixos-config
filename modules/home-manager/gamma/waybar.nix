@@ -103,11 +103,11 @@
         };
       };
     };
-    style = ''
-      * {
-        font-size: 24pt;
-        font-weight: bold;
-      }
-    '';
+    # style = ''
+      # * {
+        # font-size: 24pt;
+        # font-weight: bold;
+      # }
+    # '';
   };
 }
