@@ -36,7 +36,7 @@ nix fmt
 ```
 
 ### Build the recovery image
-The `flake.nix` file has some custom settings for generating a recovery image that includes this repository in the `/home/nixos/nixos-surface/` path.
+The `flake.nix` file has some custom settings for generating a recovery image that includes this repository in the `/home/nixos/nixos-config/` path.
 
 The USB image can be built with:
 ```

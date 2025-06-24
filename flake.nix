@@ -130,8 +130,7 @@
                 "xfs"
               ];
             }
-            {
-              nix.registry.nixpkgs.flake = nixpkgs;
+            { nix.registry.nixpkgs.flake = nixpkgs;
               nix.settings.experimental-features = [ "nix-command" "flakes" ];
             }
             ({ pkgs, ... }: {
