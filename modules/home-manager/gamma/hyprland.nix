@@ -248,7 +248,7 @@
       }
       {
         label = "logout";
-        action = "uwsm stop";
+        action = "loginctl terminate-user 1000";
         text = "";
         keybind = "o";
       }
