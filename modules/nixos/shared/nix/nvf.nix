@@ -7,7 +7,15 @@
         vimAlias = true;
         globals.mapleader = " ";
         globals.maplocalleader = ",";
-        luaConfigPost = "vim.opt.tabstop = 2\nvim.optsofttabstop = 2\nvim.opt.shiftwidth = 2\nvim.opt.expandtab = true\nvim.smartindent = true\nvim.opt.smoothscroll = true\nvim.opt.signcolumn = 'number'";
+        luaConfigPost = ''
+          vim.opt.tabstop = 2
+          vim.optsofttabstop = 2
+          vim.opt.shiftwidth = 2
+          vim.opt.expandtab = true
+          vim.smartindent = true
+          vim.opt.smoothscroll = true
+          vim.opt.signcolumn = "number"
+        '';
         lineNumberMode = "relNumber";
         lsp = {
           enable = true;

@@ -1,15 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ host, state, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ../../modules/nixos/kappa
-    ../../modules/nixos/shared
-  ];
-
-
-  networking.hostName = "kappa";
-
-  system.stateVersion = "25.11";
+  networking.hostName = "${host}";
+  system.stateVersion = "${state}";
 }
-

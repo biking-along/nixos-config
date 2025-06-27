@@ -63,7 +63,7 @@
         let
           username = "rw";
           state = "25.11";
-          host = "gamma";
+          host = "kappa";
           system = "x86_64-linux";
           specialArgs = {inherit inputs username state host system;};
         in
