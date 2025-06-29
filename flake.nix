@@ -52,8 +52,7 @@
                 };
                 programs.home-manager.enable = true;
                 imports = [
-                  ./modules/home-manager/shared
-                  ./modules/home-manager/${host}
+                  ./modules/home-manager
                 ];
               };
             }
@@ -84,8 +83,7 @@
                 };
                 programs.home-manager.enable = true;
                 imports = [
-                  ./modules/home-manager/shared
-                  ./modules/home-manager/${host}
+                  ./modules/home-manager
                 ];
               };
             }

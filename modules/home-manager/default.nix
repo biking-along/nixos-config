@@ -1,0 +1,8 @@
+{ host, ... }:
+
+{
+  imports = [
+    ./${host}
+    ./shared
+  ];
+}
