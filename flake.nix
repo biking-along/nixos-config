@@ -52,7 +52,7 @@
                 };
                 programs.home-manager.enable = true;
                 extraSpecialArgs = {
-                  inherit specialArgs;
+                  inherit host;
                 };
                 imports = [
                   ./modules/home-manager
