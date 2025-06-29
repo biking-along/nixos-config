@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./${host}
     ./shared
+    ./${host}
   ];
 }

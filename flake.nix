@@ -51,6 +51,9 @@
                   stateVersion = "${state}";
                 };
                 programs.home-manager.enable = true;
+                extraSpecialArgs = {
+                  inherit specialArgs;
+                };
                 imports = [
                   ./modules/home-manager
                 ];
