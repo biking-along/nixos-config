@@ -1,8 +1,0 @@
-{ host, ... }:
-
-{
-  imports = [
-    ./shared
-    ./${host}
-  ];
-}

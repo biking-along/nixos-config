@@ -45,17 +45,14 @@
             lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager {
               home-manager.users.${username} = {
+                programs.home-manager.enable = true;
                 home = {
                   username = "${username}";
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
                 };
-                programs.home-manager.enable = true;
-                extraSpecialArgs = {
-                  inherit host;
-                };
                 imports = [
-                  ./modules/home-manager
+                  ./modules/home-manager/${host}
                 ];
               };
             }
@@ -79,14 +76,14 @@
             nvf.nixosModules.default
             home-manager.nixosModules.home-manager {
               home-manager.users.${username} = {
+                programs.home-manager.enable = true;
                 home = {
                   username = "${username}";
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
                 };
-                programs.home-manager.enable = true;
                 imports = [
-                  ./modules/home-manager
+                  ./modules/home-manager/${host}
                 ];
               };
             }
