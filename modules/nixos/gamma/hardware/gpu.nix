@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  boot = {
-    kernelParams = [
-      "amdgpu.ppfeaturemask=0xfff7ffff"
-    ];
-  };
-
   hardware = {
     graphics = {
       enable = true;
@@ -21,18 +15,22 @@
 
     amdgpu = {
       initrd.enable = true;
-      overdrive.enable = true;
       opencl.enable = true;
+      overdrive = {
+        enable = true;
+        ppfeaturemask = "0xffffffff";
+      };
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  systemd = {
+    packages = with pkgs; [ lact ];
+    services.lactd.wantedBy = ["multi-user.target"];
+    tmpfiles.rules = [
+      "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+    ];
+  };
   
-  services.frigate.vaapiDriver = "radeonsi";
   services.xserver.videoDrivers = ["amdgpu"];
   environment.systemPackages = with pkgs; [ lact ];
-  systemd.packages = with pkgs; [ lact ];
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
 }
