@@ -1,13 +1,11 @@
 { pkgs, ... }: 
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   programs = {
     steam = {
       enable = true;
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
-      gamescopeSession.enable = true;
+      # gamescopeSession.enable = true;
       protontricks.enable = true;
     };
 
@@ -15,7 +13,11 @@
       enable = true;
       capSysNice = true;
     };
+
+    gamemode = {
+      enable = true;
+    };
   };
-  programs.gamemode.enable = true;
+
   hardware.xpadneo.enable = true;
 }
