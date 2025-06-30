@@ -6,6 +6,7 @@
       "amdgpu.ppfeaturemask=0xfff7ffff"
     ];
   };
+
   hardware = {
     graphics = {
       enable = true;
@@ -17,18 +18,21 @@
         libva-utils
       ];  
     };
+
     amdgpu = {
       initrd.enable = true;
       overdrive.enable = true;
       opencl.enable = true;
     };
   };
+
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
-  environment.systemPackages = with pkgs; [ lact ];
+  
   services.frigate.vaapiDriver = "radeonsi";
   services.xserver.videoDrivers = ["amdgpu"];
+  environment.systemPackages = with pkgs; [ lact ];
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 }
