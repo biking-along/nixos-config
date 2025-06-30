@@ -5,7 +5,6 @@
     fortune
     cowsay
     dconf-editor
-    foliate
     ffmpeg
     file
     unzip
@@ -26,7 +25,6 @@
     vesktop
     vlc
     thunderbird
-    firefox
     gimp
   ];
 }
