@@ -11,12 +11,9 @@
     orca-slicer
     freecad-wayland
     openscad
-    foliate
     bluetui
     hyprpicker
     hyprnotify
-    discordo
-    irssi
     vial
     qmk
     zathura
