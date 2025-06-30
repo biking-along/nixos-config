@@ -16,7 +16,6 @@
     hyprnotify
     vial
     qmk
-    zathura
     ffmpeg
     file
     unzip
