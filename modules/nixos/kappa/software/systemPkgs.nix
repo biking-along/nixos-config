@@ -5,11 +5,8 @@
     neovim
     gawk
     wget
-    iftop
     lm_sensors
-    screen
     iptsd
-    file
     binutils
     coreutils
   ];
