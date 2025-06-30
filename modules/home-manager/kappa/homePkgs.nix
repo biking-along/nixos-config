@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     fortune
     cowsay
-    thunderbird
     dconf-editor
     foliate
     ffmpeg
@@ -20,5 +19,14 @@
     fzf
     ripgrep
     fd
+    microfetch
+    bitwarden-desktop
+    jellyfin-media-player
+    youtube-music
+    vesktop
+    vlc
+    thunderbird
+    firefox
+    gimp
   ];
 }
