@@ -1,4 +1,5 @@
 { pkgs, username, ... }:
+
 {
   programs.fish = {
     enable = true;
@@ -10,7 +11,7 @@
     users.${username} = {
       isNormalUser = true;
       description = "Ryan Williams";
-      extraGroups = [ "tty" "dialout" "networkmanager" "wheel" "input" ];
+      extraGroups = [ "tss" "tty" "dialout" "networkmanager" "wheel" "input" ];
     };
   };
 }

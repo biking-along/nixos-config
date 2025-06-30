@@ -30,5 +30,6 @@
     fzf
     ripgrep
     fd
+    microfetch
   ];
 }

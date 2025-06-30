@@ -13,5 +13,6 @@
     ./mpv.nix
     ./stylix.nix
     ./yazi.nix
+    ./zathura.nix
   ];
 }

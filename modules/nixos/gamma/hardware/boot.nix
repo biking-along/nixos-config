@@ -15,7 +15,7 @@
 
     plymouth.enable = true;
 
-    consoleLogLevel = 3;
+    consoleLogLevel = 0;
 
     initrd = {
       systemd.tpm2.enable = true;
@@ -27,19 +27,20 @@
       "quiet"
       "splash"
       "boot.shell_on_fail"
-      "udev.log_priority=3"
+      "udev.log_level=3"
       "rd.systemd.show_status=auto"
     ];
 
     hardwareScan = true;
   };
   # systemd.tpm2.enable = true;
-  # security = {
-    # tpm2 = {
-      # enable = true;
-      # abrmd.enable = true;
-      # pkcs11.enable = true;
-      # tctiEnvironment.enable = true;
-      # };
-  # };
+  services.tcsd.enable = true;
+  security = {
+    tpm2 = {
+      enable = true;
+      pkcs11.enable = true;
+      tctiEnvironment.enable = true;
+      applyUdevRules = true;
+    };
+  };
 }
