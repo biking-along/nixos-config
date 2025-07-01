@@ -38,6 +38,17 @@
         autocomplete.nvim-cmp.enable = true;
         utility.smart-splits.enable = true;
         utility.oil-nvim.enable = true;
+        mini = {
+          basics = {
+            enable = true;
+            setupOpts = {
+              mappings.move_with_alt = true;
+            };
+          };
+          icons.enable = true;
+          animate.enable = true;
+          pairs.enable = true;
+        };
       };
     };
   };
