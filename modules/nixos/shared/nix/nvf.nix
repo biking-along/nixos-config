@@ -22,7 +22,10 @@
         };
         languages = {
           enableTreesitter = true;
-          nix.enable = true;
+          nix = {
+            enable = true;
+            format.enable = true;
+          };
           bash.enable = true;
           css.enable = true;
           lua.enable = true;
@@ -33,6 +36,8 @@
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
+        utility.smart-splits.enable = true;
+        utility.oil-nvim.enable = true;
       };
     };
   };
