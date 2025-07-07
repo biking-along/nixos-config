@@ -1,7 +1,7 @@
 { lib, ... }:
 
 {
-  imports = [ ../../modules/kappa/hardware/thermald/thermald.nix ];
+  imports = [ ../../modules/nixos/kappa/hardware/thermald/thermald.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
