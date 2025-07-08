@@ -2,7 +2,7 @@
 
 {
   documentation.nixos.enable = false;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
 
     # Hide Neovim desktop entry
     (lib.hiPrio (pkgs.runCommand "nvim.desktop-hide" { } ''
