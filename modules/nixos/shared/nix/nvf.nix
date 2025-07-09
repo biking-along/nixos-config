@@ -5,6 +5,7 @@
     enable = true;
     settings = {
       vim = {
+        enableLuaLoader = true;
         viAlias = true;
         vimAlias = true;
         globals.mapleader = " ";
