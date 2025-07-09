@@ -11,6 +11,7 @@
     ./gtk.nix
     ./hideHmDe.nix
     ./imv.nix
+    ./lazygit.nix
     ./mpv.nix
     ./stylix.nix
     ./yazi.nix
