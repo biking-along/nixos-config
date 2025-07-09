@@ -13,18 +13,6 @@
     wayland = true;
   };
     
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/shell" = {
-        disable-user-extensions = false; # enables user extensions
-        enabled-extensions = [
-          pkgs.gnomeExtensions.blur-my-shell.extensionUuid
-        ];
-      };
-    };
-  };
-
   services.desktopManager.gnome.enable = true;
 
   services.gnome.core-apps.enable = false;
