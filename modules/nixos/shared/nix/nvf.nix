@@ -37,7 +37,7 @@
         statusline.lualine.enable = true;
         telescope = {
           enable = true;
-          extenstions = [
+          extensions = [
             {
               name = "fzf";
               packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
