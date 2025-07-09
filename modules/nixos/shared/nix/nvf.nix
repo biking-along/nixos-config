@@ -32,7 +32,7 @@
           markdown.enable = true;
           yaml.enable = true;
         };
-        visuals.cinnamon-nvim.enable = true;
+        # visuals.cinnamon-nvim.enable = true;
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
