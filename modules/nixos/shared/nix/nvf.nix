@@ -37,7 +37,6 @@
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
         utility.smart-splits.enable = true;
-        utility.oil-nvim.enable = true;
         mini = {
           basics = {
             enable = true;
@@ -46,7 +45,7 @@
             };
           };
           icons.enable = true;
-          animate.enable = true;
+          # animate.enable = true;
           pairs.enable = true;
         };
       };
