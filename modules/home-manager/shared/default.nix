@@ -9,6 +9,7 @@
     ./foliate.nix
     ./git.nix
     ./gtk.nix
+    ./hideHmDe.nix
     ./imv.nix
     ./mpv.nix
     ./stylix.nix
