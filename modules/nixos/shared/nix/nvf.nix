@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   programs.nvf = {
     enable = true;
@@ -32,9 +34,17 @@
           markdown.enable = true;
           yaml.enable = true;
         };
-        # visuals.cinnamon-nvim.enable = true;
         statusline.lualine.enable = true;
-        telescope.enable = true;
+        telescope = {
+          enable = true;
+          extenstions = [
+            {
+              name = "fzf";
+              packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
+              setup = {fzf = {fuzzy = true;};};
+            }
+          ];
+        };
         autocomplete.nvim-cmp.enable = true;
         utility.smart-splits.enable = true;
         mini = {
@@ -45,7 +55,6 @@
             };
           };
           icons.enable = true;
-          # animate.enable = true;
           pairs.enable = true;
         };
       };
