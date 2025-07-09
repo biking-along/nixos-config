@@ -2,7 +2,7 @@
   xdg.desktopEntries = {
     
     fish = {
-      name = "Fish";
+      name = "fish";
       noDisplay = true;
     };
 
