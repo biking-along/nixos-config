@@ -35,6 +35,12 @@
           yaml.enable = true;
         };
         statusline.lualine.enable = true;
+        terminal.toggleterm = {
+          enable = true;
+          lazygit = {
+            enable = true;
+          };
+        };
         telescope = {
           enable = true;
           extensions = [
