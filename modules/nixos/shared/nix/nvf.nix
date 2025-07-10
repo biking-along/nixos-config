@@ -12,7 +12,7 @@
           {
             key = "<leader>ff";
             mode = "n";
-            action = "MiniFiles.open()";
+            action = ":lua MiniFiles.open()";
             lua = true;
           }
         ];
