@@ -8,6 +8,14 @@
         vimAlias = true;
         globals.mapleader = " ";
         globals.maplocalleader = ",";
+        keymaps = [
+          {
+            key = "<leader>ff";
+            mode = "n";
+            action = "MiniFiles.open()";
+            lua = true;
+          }
+        ];
         luaConfigPost = ''
           vim.opt.tabstop = 2
           vim.optsofttabstop = 2
