@@ -2,7 +2,8 @@
   programs.gpg = {
     enable = true;
   };
-  programs.gnupg.agent = {
+  services.gnupg.agent = {
+    enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
 }
