@@ -16,7 +16,6 @@
           vim.smartindent = true
           vim.opt.smoothscroll = true
           vim.opt.signcolumn = "number"
-          vim.keymap.set("<leader>", "ff", lua MiniFiles.open())
         '';
         lineNumberMode = "relNumber";
         lsp = {
