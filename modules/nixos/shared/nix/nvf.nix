@@ -72,7 +72,7 @@
           tabline = {
             enable = true;
           };
-          indentScope = {
+          indentscope = {
             enable = true;
           };
           basics = {
