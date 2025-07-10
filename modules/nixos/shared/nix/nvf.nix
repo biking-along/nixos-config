@@ -22,6 +22,7 @@
         lineNumberMode = "relNumber";
         lsp = {
           enable = true;
+          formatOnSave = true;
         };
         languages = {
           enableTreesitter = true;
