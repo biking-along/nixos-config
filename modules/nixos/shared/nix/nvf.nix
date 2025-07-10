@@ -34,7 +34,7 @@
           markdown.enable = true;
           yaml.enable = true;
         };
-        statusline.lualine.enable = true;
+        statusline.lualine.enable = false;
         terminal.toggleterm = {
           enable = true;
           lazygit = {
@@ -42,7 +42,7 @@
           };
         };
         telescope = {
-          enable = true;
+          enable = false;
           extensions = [
             {
               name = "fzf";
@@ -58,6 +58,21 @@
             enable = true;
           };
           completions = {
+            enable = true;
+          };
+          snippets = {
+            enable = true;
+          };
+          files = {
+            enable = true;
+          };
+          statusline = {
+            enable = true;
+          };
+          tabline = {
+            enable = true;
+          };
+          indentScope = {
             enable = true;
           };
           basics = {
