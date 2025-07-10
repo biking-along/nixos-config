@@ -25,16 +25,24 @@
       url = "github:hyprwm/Hyprland";
     };
   };
-  outputs = { self, nixpkgs, home-manager, stylix, nvf, lanzaboote, nixos-hardware, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    stylix,
+    nvf,
+    lanzaboote,
+    nixos-hardware,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
-      gamma =  
-        let
-          username = "rw";
-          state = "25.05";
-          host = "gamma";
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs username state host system;};
-        in
+      gamma = let
+        username = "rw";
+        state = "25.05";
+        host = "gamma";
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username state host system;};
+      in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "${system}";
@@ -43,7 +51,8 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             lanzaboote.nixosModules.lanzaboote
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.users.${username} = {
                 programs.home-manager.enable = true;
                 home = {
@@ -58,14 +67,13 @@
             }
           ];
         };
-      kappa =
-        let
-          username = "rw";
-          state = "25.11";
-          host = "kappa";
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs username state host system;};
-        in
+      kappa = let
+        username = "rw";
+        state = "25.11";
+        host = "kappa";
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username state host system;};
+      in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "${system}";
@@ -74,7 +82,8 @@
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.users.${username} = {
                 programs.home-manager.enable = true;
                 home = {
@@ -93,7 +102,7 @@
                 ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
               '';
             }
-            { nix.registry.nixpkgs.flake = nixpkgs; }
+            {nix.registry.nixpkgs.flake = nixpkgs;}
             {
               nix.registry.current.to = {
                 type = "path";
@@ -104,11 +113,10 @@
         };
 
       # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
-      surfaceRecovery = 
-        let
-          system = "x86_64-linux";
-          specialArgs = {inherit inputs system;};
-        in
+      surfaceRecovery = let
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs system;};
+      in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "${system}";
@@ -116,7 +124,7 @@
             ./hosts/kappa/configuration-base.nix
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-            ({ pkgs, ... }: { environment.systemPackages = [ pkgs.vim ]; })
+            ({pkgs, ...}: {environment.systemPackages = [pkgs.vim];})
             {
               isoImage.squashfsCompression = "gzip -Xcompression-level 1";
               boot.supportedFilesystems = nixpkgs.lib.mkForce [
@@ -128,10 +136,11 @@
                 "xfs"
               ];
             }
-            { nix.registry.nixpkgs.flake = nixpkgs;
-              nix.settings.experimental-features = [ "nix-command" "flakes" ];
+            {
+              nix.registry.nixpkgs.flake = nixpkgs;
+              nix.settings.experimental-features = ["nix-command" "flakes"];
             }
-            ({ pkgs, ... }: {
+            ({pkgs, ...}: {
               services.getty.helpLine = ''
                 Exit the prompt to see this help again.
                 The nixos-config repo can be found at /home/nixos/nixos-config/.

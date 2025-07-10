@@ -89,7 +89,7 @@
         scroll_factor = 0.2;
       };
       # cursor = {
-        # default_monitor = "DP-1";
+      # default_monitor = "DP-1";
       # };
       "$mod" = "SUPER";
       bind = [
@@ -179,8 +179,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/home/rw/.local/share/backgrounds/nix-mocha.png" ];
-      wallpaper = [", /home/rw/.local/share/backgrounds/nix-mocha.png" ];
+      preload = ["/home/rw/.local/share/backgrounds/nix-mocha.png"];
+      wallpaper = [", /home/rw/.local/share/backgrounds/nix-mocha.png"];
     };
   };
   services.hypridle = {
@@ -190,7 +190,7 @@
         lock_cmd = "loginctl lock-session";
         unlock_cmd = "loginctl unlock-session";
         before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd =  "hyprctl dispatch dpms on";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
         ignore_dbus_inhibit = false;
         ignore_systemd_inhibit = false;
       };

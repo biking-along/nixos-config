@@ -1,7 +1,9 @@
-{ pkgs, config, ... }:
-
-let
-  hyprConfig =  pkgs.writeText "greetd-hyprland-conf" ''
+{
+  pkgs,
+  config,
+  ...
+}: let
+  hyprConfig = pkgs.writeText "greetd-hyprland-conf" ''
     # monitor=DP-1 ,2560x1440@164.96,0x0,1
     exec-once = ${config.programs.regreet.package}/bin/regreet; ${pkgs.hyprland}/bin/hyprctl dispatch exit
     input {
@@ -18,14 +20,12 @@ let
       disable_hyprland_qtutils_check = true
     }
   '';
-in
-
-{
+in {
   users.users.greeter = {
     isNormalUser = false;
-    description  = "greetd greeter user";
-    extraGroups  = [ "video" "audio" ];
-    linger        = true;
+    description = "greetd greeter user";
+    extraGroups = ["video" "audio"];
+    linger = true;
   };
   programs.regreet.enable = true;
   services.greetd = {
@@ -39,4 +39,3 @@ in
     };
   };
 }
-
