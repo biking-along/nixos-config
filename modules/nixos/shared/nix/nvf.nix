@@ -57,7 +57,7 @@
           animate = {
             enable = true;
           };
-          autocomplete = {
+          completions = {
             enable = true;
           };
           basics = {
