@@ -8,6 +8,7 @@
     ./fish.nix
     ./foliate.nix
     ./git.nix
+    ./gpg.nix
     ./gtk.nix
     ./hideHmDe.nix
     ./imv.nix
