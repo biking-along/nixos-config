@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    lm_sensors
-    iptsd
-    binutils
+    git
+    git-crypt
+    curl
+    wget
+    gawk
   ];
 }
