@@ -57,7 +57,7 @@
           animate = {
             enable = true;
           };
-          completions = {
+          completion = {
             enable = true;
           };
           snippets = {
