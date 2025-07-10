@@ -51,10 +51,13 @@
             }
           ];
         };
-        autocomplete.nvim-cmp.enable = true;
+        # autocomplete.nvim-cmp.enable = true;
         utility.smart-splits.enable = true;
         mini = {
           animate = {
+            enable = true;
+          };
+          autocomplete = {
             enable = true;
           };
           basics = {
