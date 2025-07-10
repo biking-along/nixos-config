@@ -12,7 +12,7 @@
           {
             key = "<leader>ff";
             mode = "n";
-            action = "<cmd>MiniFiles.open()<CR>";
+            action = "function() MiniFiles.open() end";
             lua = true;
           }
         ];
