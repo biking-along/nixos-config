@@ -55,6 +55,9 @@
         autocomplete.nvim-cmp.enable = true;
         utility.smart-splits.enable = true;
         mini = {
+          animate = {
+            enable = true;
+          };
           basics = {
             enable = true;
             setupOpts = {
