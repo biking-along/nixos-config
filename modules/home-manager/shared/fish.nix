@@ -7,6 +7,7 @@
       ls = "eza";
       cat = "bat";
       man = "batman";
+      gg = "lazygit";
     };
   };
 }
