@@ -7,7 +7,7 @@
     LIBVA_DRIVER_NAME = "radeonsi";
     VDPAU_DRIVER = "radeonsi";
     AMD_VULKAN_ICD = "RADV";
-    RADV_TEX_ANISO = 16;
+    # RADV_TEX_ANISO = 16;
     XCURSOR_THEME = "Nordzy-catppuccin-mocha-dark";
     HYPRCURSOR_THEME = "Nordzy-hyprcursors-catppuccin-mocha-dark";
     XCURSOR_SIZE = 24;

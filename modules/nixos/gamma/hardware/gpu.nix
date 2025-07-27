@@ -6,8 +6,6 @@
       extraPackages = with pkgs; [
         rocmPackages.clr.icd
         rocmPackages.clr
-        libva
-        libva-utils
       ];
     };
 
@@ -30,5 +28,8 @@
   };
 
   services.xserver.videoDrivers = ["amdgpu"];
-  environment.systemPackages = with pkgs; [lact];
+  environment.systemPackages = with pkgs; [
+    lact
+    amdgpu_top
+  ];
 }
