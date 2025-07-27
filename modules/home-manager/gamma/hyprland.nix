@@ -94,7 +94,7 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, uwsm-app -- kitty"
-        "$mod, F, exec, uwsm-app -- yazi"
+        "$mod, F, exec, uwsm-terminal -- yazi"
         "$mod, TAB, exec, rofi -show drun -show-icons -theme-str 'window {width: 16em; location: center;}' -run-command 'uwsm app -- {cmd}'"
         "$mod, W, exec, uwsm-app -- firefox.desktop"
         "$mod, T, exec, uwsm-app -- btop.desktop"
