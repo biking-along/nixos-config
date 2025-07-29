@@ -27,11 +27,12 @@
       "boot.shell_on_fail"
       "udev.log_level=3"
       "rd.systemd.show_status=auto"
+      "iommu=force"
     ];
 
     hardwareScan = true;
   };
-  # systemd.tpm2.enable = true;
+  systemd.tpm2.enable = true;
   services.tcsd.enable = true;
   security = {
     tpm2 = {
