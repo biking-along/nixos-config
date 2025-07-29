@@ -7,6 +7,7 @@
       enable = true;
       settings.allow-writes = "off";
     };
+    cpu.intel.sgx.provision.enable = true;
   };
 
   services = {
@@ -14,4 +15,6 @@
     dbus.packages = [pkgs.fwupd];
     udev.packages = [pkgs.fwupd];
   };
+
+  appstream.enable = true;
 }
