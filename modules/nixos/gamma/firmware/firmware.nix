@@ -5,7 +5,7 @@
     i2c.enable = true;
     cpu.x86.msr = {
       enable = true;
-      settings.allow-writes = "off";
+      settings.allow-writes = "on";
     };
     cpu.intel.sgx.provision.enable = true;
   };
