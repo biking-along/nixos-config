@@ -1,6 +1,7 @@
 {
   imports = [
     ../shared
+    ./homeFiles.nix
     ./homePkgs.nix
     ./hyprland.nix
     ./kitty.nix
