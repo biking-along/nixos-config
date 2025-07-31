@@ -33,6 +33,9 @@
           size = 3;
           passes = 2;
           vibrancy = 0.1696;
+          new_optimizations = "on";
+          ignore_opacity = "on";
+          popups = true;
         };
       };
       animations = {
