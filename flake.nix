@@ -24,6 +24,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -33,6 +37,8 @@
     nvf,
     lanzaboote,
     nixos-hardware,
+    hyprland,
+    pyprland,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -59,6 +65,7 @@
                   username = "${username}";
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
+                  packages = [pyprland.packages."${system}".pyprland];
                 };
                 imports = [
                   ./modules/home-manager/${host}
