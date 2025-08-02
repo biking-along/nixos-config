@@ -105,7 +105,7 @@
         "$mod, T, exec, uwsm-app -- btop.desktop"
         "$mod SHIFT, Q, exec, wlogout"
         "ALT SHIFT, Q, exec, uwsm-app -- hyprlock"
-        "$mod, BACKSPACE, hyprctl dismissnotify"
+        "$mod, BACKSPACE, exec hyprctl dismissnotify"
         "$mod, Q, killactive,"
         "$mod, V, togglefloating,"
         "$mod, P, pseudo,"
