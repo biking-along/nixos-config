@@ -135,6 +135,8 @@
         "$mod, Y, focusmonitor, +1"
         "$mod, P, exec, pypr shift_monitors +1"
         "$mod, U, exec, pypr shift_monitors -1"
+        "$mod SHIFT, P, exec, pypr change_workspace +1"
+        "$mod SHIFT, U, exec, pypr change_workspace -1"
         "CONTROL ALT, 1, movetoworkspace, 1"
         "CONTROL ALT, 2, movetoworkspace, 2"
         "CONTROL ALT, 3, movetoworkspace, 3"
