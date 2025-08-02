@@ -9,6 +9,8 @@
       ];
       exec-once = [
         "uwsm finalize UWSM_FINALIZE_VARNAMES='TERM GSK_RENDERER LIBVA_DRIVER_NAME VDPAU_DRIVER XCURSOR_THEME XCURSOR_SIZE HYPRCURSOR_THEME HYPRCURSOR_SIZE EDITOR VISUAL BROWSER TERMINAL NIXOS_OZONE_WL MOZ_ENABLE_WAYLAND WLR_NO_HARDWARE_CURSORS'"
+
+        "/etc/profiles/per-user/rw/bin/pypr"
       ];
       general = {
         gaps_in = 3;
@@ -125,8 +127,8 @@
         "ALT SHIFT, 8, workspace, 8"
         "ALT SHIFT, 9, workspace, 9"
         "ALT SHIFT, 0, workspace, 10"
-        "$mod SHIFT, TAB, workspace, +2"
-        "$mod CONTROL, TAB, workspace, -2"
+        "$mod, o, workspace, +2"
+        "$mod, i, workspace, -2"
         "SHIFT ALT CONTROL, page_up, movewindow, mon:HDMI-A-3 silent"
         "SHIFT ALT CONTROL, page_down, movewindow, mon:DP-1 silent"
         "CONTROL ALT, 1, movetoworkspace, 1"
@@ -160,7 +162,7 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
       windowrule = [
-        "float,class:^(imv)$"
+        "float,class:^$"
         "float,class:^(mpv)$"
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
