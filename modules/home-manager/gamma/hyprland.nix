@@ -1,5 +1,5 @@
 {
-  split-monitor-workspaces,
+  inputs,
   pkgs,
   ...
 }: {
@@ -7,7 +7,7 @@
     enable = true;
     systemd.enable = true;
     plugins = [
-      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
       monitor = [
