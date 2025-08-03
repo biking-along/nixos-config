@@ -112,6 +112,8 @@
         "$mod, Z, fullscreen"
         "$mod, P, pseudo,"
         "$mod, S, togglesplit,"
+        "$mod, N, splitratio. .2"
+        "$mod, M, splitratio. -.2"
         "$mod, C, exec, pypr layout_center toggle"
         "$mod, H, exec, pypr layout_center prev"
         "$mod, L, exec, pypr layout_center next"
@@ -148,8 +150,6 @@
         "CONTROL ALT, 8, movetoworkspace, 8"
         "CONTROL ALT, 9, movetoworkspace, 9"
         "CONTROL ALT, 0, movetoworkspace, 10"
-        "$mod, S, togglespecialworkspace, magic"
-        "$mod SHIFT, S, movetoworkspace, special:magic"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
