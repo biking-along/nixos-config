@@ -107,11 +107,11 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, uwsm-app -- kitty"
-        "SHIFT ALT, T, exec, pypr toggle term"
+        "SHIFT ALT, B, exec, pypr toggle term"
         "$mod, F, exec, uwsm-app -- kitty -e yazi"
         "$mod, TAB, exec, rofi -show drun -show-icons -theme-str 'window {width: 16em; location: center;}' -run-command 'uwsm app -- {cmd}'"
         "$mod, W, exec, uwsm-app -- firefox.desktop"
-        "$mod, T, exec, uwsm-app -- btop.desktop"
+        "$mod, G, exec, uwsm-app -- btop.desktop"
         "$mod SHIFT, Q, exec, wlogout"
         "ALT SHIFT, Q, exec, uwsm-app -- hyprlock"
         "$mod, BACKSPACE, exec, makoctl dismiss"

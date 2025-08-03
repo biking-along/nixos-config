@@ -22,6 +22,7 @@
             default = "";
             empty = "";
           };
+          all-outputs = false;
         };
         "hyprland/window" = {
           icon = true;
@@ -92,11 +93,17 @@
         modules-right = ["hyprland/workspaces"];
 
         "hyprland/workspaces" = {
-          persistent-workspaces = {
-            DP-1 = [1 3 5 7 9];
-            HDMI-A-1 = [2 4 6 8 10];
+          format = "{icon}";
+          format-icons = {
+            urgent = "";
+            active = "";
+            visible = "";
+            default = "";
+            empty = "";
           };
+          all-outputs = false;
         };
+
         "hyprland/window" = {
           icon = true;
           max-length = 40;
