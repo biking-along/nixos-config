@@ -112,7 +112,7 @@
         "$mod, Z, fullscreen"
         "$mod, P, pseudo,"
         "$mod, S, togglesplit,"
-        "$mod, C, pypr layout_center toggle"
+        "$mod, C, exec, pypr layout_center toggle"
         "$mod, H, exec, pypr layout_center prev"
         "$mod, L, exec, pypr layout_center next"
         "$mod, K, exec, pypr layout_center prev2"
