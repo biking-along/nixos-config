@@ -99,6 +99,7 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, uwsm-app -- kitty"
+        "SHIFT ALT, T, exec, pypr toggle term"
         "$mod, F, exec, uwsm-app -- kitty -e yazi"
         "$mod, TAB, exec, rofi -show drun -show-icons -theme-str 'window {width: 16em; location: center;}' -run-command 'uwsm app -- {cmd}'"
         "$mod, W, exec, uwsm-app -- firefox.desktop"
