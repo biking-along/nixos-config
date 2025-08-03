@@ -18,11 +18,11 @@
           format-icons = {
             urgent = "";
             active = "";
-            # visible = "";
-            # default = "";
-            # empty = "";
+            visible = "";
+            default = "";
+            empty = "";
           };
-          all-outputs = false;
+          all-outputs = true;
         };
         "hyprland/window" = {
           icon = true;
@@ -97,11 +97,11 @@
           format-icons = {
             urgent = "";
             active = "";
-            # visible = "";
-            # default = "";
-            # empty = "";
+            visible = "";
+            default = "";
+            empty = "";
           };
-          all-outputs = false;
+          all-outputs = true;
         };
 
         "hyprland/window" = {
