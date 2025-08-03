@@ -75,6 +75,11 @@
                 imports = [
                   ./modules/home-manager/${host}
                 ];
+                wayland.windowManager.hyprland = {
+                  plugins = [
+                    split-monitor-workspaces.packages.${system}.split-monitor-workspaces
+                  ];
+                };
               };
             }
           ];

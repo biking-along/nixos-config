@@ -1,14 +1,7 @@
 {
-  split-monitor-workspaces,
-  pkgs,
-  ...
-}: {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    plugins = [
-      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-    ];
     settings = {
       monitor = [
         "DP-1 ,2560x1440@164.96,0x0,1"
