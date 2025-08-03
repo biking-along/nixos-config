@@ -20,7 +20,7 @@
             active = "";
             visible = "";
             default = "";
-            empty = "";
+            # empty = "";
           };
           all-outputs = false;
         };
