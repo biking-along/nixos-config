@@ -18,8 +18,8 @@
           format-icons = {
             urgent = "";
             active = "";
-            visible = "";
-            default = "";
+            # visible = "";
+            # default = "";
             # empty = "";
           };
           all-outputs = false;
@@ -97,8 +97,8 @@
           format-icons = {
             urgent = "";
             active = "";
-            visible = "";
-            default = "";
+            # visible = "";
+            # default = "";
             # empty = "";
           };
           all-outputs = false;
