@@ -113,7 +113,7 @@
         "$mod, W, exec, uwsm-app -- firefox.desktop"
         "$mod, G, exec, uwsm-app -- btop.desktop"
         "$mod SHIFT, Q, exec, wlogout"
-        "ALT SHIFT, Q, exec, uwsm-app -- hyprlock"
+        "ALT SHIFT, L, exec, uwsm-app -- hyprlock"
         "$mod, BACKSPACE, exec, makoctl dismiss"
         "$mod, Q, killactive,"
         "$mod, V, togglefloating,"
