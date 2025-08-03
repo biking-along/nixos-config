@@ -28,6 +28,10 @@
       url = "github:hyprland-community/pyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
   outputs = {
     self,
@@ -39,6 +43,7 @@
     nixos-hardware,
     hyprland,
     pyprland,
+    split-monitor-workspaces,
     ...
   } @ inputs: {
     nixosConfigurations = {

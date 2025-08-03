@@ -1,7 +1,14 @@
 {
+  split-monitor-workspaces,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
+    plugins = [
+      split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+    ];
     settings = {
       monitor = [
         "DP-1 ,2560x1440@164.96,0x0,1"
@@ -92,6 +99,14 @@
         accel_profile = "flat";
         natural_scroll = true;
         scroll_factor = 0.2;
+      };
+      plugin = {
+        split-monitor-workspaces = {
+          count = 5;
+          keep_focused = 0;
+          enable_notifications = 0;
+          enable_persistent_workspaces = 1;
+        };
       };
       # cursor = {
       # default_monitor = "DP-1";

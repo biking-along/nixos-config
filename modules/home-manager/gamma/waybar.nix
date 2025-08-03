@@ -9,20 +9,24 @@
         spacing = 4;
         # margin = [9 13 -10 18];
 
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" "hyprland/window" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "memory" "cpu" "temperature" "bluetooth" "tray" ];
+        modules-left = ["hyprland/workspaces" "hyprland/submap" "hyprland/window"];
+        modules-center = ["clock"];
+        modules-right = ["pulseaudio" "memory" "cpu" "temperature" "bluetooth" "tray"];
 
         "hyprland/workspaces" = {
-	        persistent-workspaces = {
-	          DP-1 = [ 1 3 5 7 9];
-	          HDMI-A-1 = [2 4 6 8 10];
-	        };
+          format = "{icon}";
+          format-icons = {
+            urgent = "";
+            active = "";
+            visible = "";
+            default = "";
+            empty = "";
+          };
         };
         "hyprland/window" = {
-	        icon = true;
-	        max-length = 40;
-	        rewrite = {
+          icon = true;
+          max-length = 40;
+          rewrite = {
             "(.*) — Mozilla Firefox" = "$1";
           };
           separate-outputs = true;
@@ -33,7 +37,7 @@
           spacing = 10;
         };
         "clock" = {
-	        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format = "{:%I:%M %p | %b %d}";
         };
         "cpu" = {
@@ -41,14 +45,14 @@
           tooltip = false;
         };
         "memory" = {
-	        interval = 30;
-	        format = " {used}G";
+          interval = 30;
+          format = " {used}G";
         };
         "temperature" = {
           hwmon-path = "/sys/class/hwmon/hwmon6/temp1_input";
           critical-threshold = 80;
           format = "{icon} {temperatureC}°C";
-          format-icons = [ "" ];
+          format-icons = [""];
         };
         "pulseaudio" = {
           scroll-step = 1;
@@ -83,20 +87,20 @@
         output = "HDMI-A-1";
         spacing = 4;
 
-        modules-left = [ "hyprland/window" ];
+        modules-left = ["hyprland/window"];
         modules-center = [];
-        modules-right = [ "hyprland/workspaces" ];
+        modules-right = ["hyprland/workspaces"];
 
         "hyprland/workspaces" = {
-	        persistent-workspaces = {
-	          DP-1 = [ 1 3 5 7 9];
-	          HDMI-A-1 = [2 4 6 8 10];
-	        };
+          persistent-workspaces = {
+            DP-1 = [1 3 5 7 9];
+            HDMI-A-1 = [2 4 6 8 10];
+          };
         };
         "hyprland/window" = {
-	        icon = true;
-	        max-length = 40;
-	        rewrite = {
+          icon = true;
+          max-length = 40;
+          rewrite = {
             "(.*) — Mozilla Firefox" = "$1";
           };
           separate-outputs = true;
@@ -104,10 +108,10 @@
       };
     };
     # style = ''
-      # * {
-        # font-size: 24pt;
-        # font-weight: bold;
-      # }
+    # * {
+    # font-size: 24pt;
+    # font-weight: bold;
+    # }
     # '';
   };
 }
