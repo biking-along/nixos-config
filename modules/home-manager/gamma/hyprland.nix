@@ -111,9 +111,9 @@
           size_y = 70;
         };
       };
-      # cursor = {
-      # default_monitor = "DP-1";
-      # };
+      cursor = {
+        default_monitor = "DP-1";
+      };
       "$mod" = "SUPER";
       bind = [
         "$mod, RETURN, exec, uwsm-app -- kitty"
