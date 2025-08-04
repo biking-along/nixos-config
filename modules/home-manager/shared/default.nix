@@ -11,6 +11,7 @@
     ./gpg.nix
     ./gtk.nix
     ./hideHmDe.nix
+    ./homePkgs.nix
     ./imv.nix
     ./lazygit.nix
     ./mpv.nix
