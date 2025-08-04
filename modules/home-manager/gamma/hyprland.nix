@@ -14,7 +14,7 @@
 
         "uwsm-terminal-service -- kitten desktop-ui run-server"
 
-        "kitty -l --class='kitty-bg' --execute='cbonsai --life 40 --multiplier 5 --time 0.08 --infinte --live'"
+        "kitty --class='kitty-bg' --execute='cbonsai --life 40 --multiplier 5 --time 0.08 --infinte --live'"
       ];
       general = {
         gaps_in = 3;
