@@ -14,7 +14,7 @@
 
         "uwsm-terminal-service -- kitten desktop-ui run-server"
 
-        "uwsm-terminal-service -- kitty --class='kitty-bg' 'cbonsai --life 40 --multiplier 5 --time 0.08 --screensaver --live'"
+        "uwsm-app -- kitty --class='kitty-bg' 'cbonsai --life 40 --multiplier 5 --time 0.08 --screensaver --live'"
       ];
       general = {
         gaps_in = 3;
