@@ -14,7 +14,7 @@
 
         "uwsm-terminal-service -- kitten desktop-ui run-server"
 
-        "kitty --class='kitty-bg' 'cbonsai --life 40 --multiplier 5 --time 0.08 --infinte --live'"
+        "uwsm-app -- kitty --class='kitty-bg' 'cbonsai --life 40 --multiplier 5 --time 0.08 --infinte --live'"
       ];
       general = {
         gaps_in = 3;
@@ -62,7 +62,7 @@
           "fadeIn, 1, 1.73, almostLinear"
           "fadeOut, 1, 1.46, almostLinear"
           "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutQuint"
+          "layers,8 1, 3.81, easeOutQuint"
           "layersIn, 1, 4, easeOutQuint, fade"
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
