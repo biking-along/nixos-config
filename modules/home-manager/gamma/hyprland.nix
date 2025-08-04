@@ -179,7 +179,7 @@
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
-      workspaces = [
+      workspace = [
         "1, monitor:DP-1, default:true"
         "2, monitor:DP-1"
         "3, monitor:DP-1"
