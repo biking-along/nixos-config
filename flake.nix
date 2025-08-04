@@ -24,6 +24,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     pyprland = {
       url = "github:hyprland-community/pyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,6 +48,7 @@
     hyprland,
     pyprland,
     split-monitor-workspaces,
+    hyprland-plugins,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -78,6 +83,7 @@
                 wayland.windowManager.hyprland = {
                   plugins = [
                     split-monitor-workspaces.packages.${system}.split-monitor-workspaces
+                    hyprland-plugins.packages.${system}.hyprwinwrap
                   ];
                 };
               };

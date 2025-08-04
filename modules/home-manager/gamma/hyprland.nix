@@ -11,6 +11,10 @@
         "uwsm finalize UWSM_FINALIZE_VARNAMES='TERM GSK_RENDERER LIBVA_DRIVER_NAME VDPAU_DRIVER XCURSOR_THEME XCURSOR_SIZE HYPRCURSOR_THEME HYPRCURSOR_SIZE EDITOR VISUAL BROWSER TERMINAL NIXOS_OZONE_WL MOZ_ENABLE_WAYLAND WLR_NO_HARDWARE_CURSORS'"
 
         "/etc/profiles/per-user/rw/bin/pypr"
+
+        "uwsm-terminal-service -- kitten desktop-ui run-server"
+
+        "uwsm-terminal-service -- kitty --class='kitty-bg' 'cbonsai --life 40 --multiplier 5 --time 0.08 --screensaver --live'"
       ];
       general = {
         gaps_in = 3;
@@ -99,6 +103,14 @@
           keep_focused = 0;
           enable_notifications = 0;
           enable_persistent_workspaces = 1;
+        };
+        hyprwinwrap = {
+          class = "kitty-bg";
+          title = "kitty-bg";
+          pos_x = 25;
+          pos_y = 30;
+          size_x = 40;
+          size_y = 70;
         };
       };
       # cursor = {
