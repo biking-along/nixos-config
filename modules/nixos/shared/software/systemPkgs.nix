@@ -5,5 +5,6 @@
     curl
     wget
     gawk
+    cbonsai
   ];
 }
