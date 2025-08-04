@@ -14,7 +14,7 @@
 
         "uwsm-terminal-service -- kitten desktop-ui run-server"
 
-        "uwsm-app -- kitty +kitten panel --edge=background --output-name=HDMI-A-1 -o background_opacity=0.0 -o tab_bar_style=hidden cbonsai --life 40 --multiplier 5 --time 0.08 --infinite --live"
+        "kitty +kitten panel --edge=background --output-name=HDMI-A-1 -o background_opacity=0.0 -o tab_bar_style=hidden cbonsai --life 40 --multiplier 5 --time 0.08 --infinite --live"
       ];
       general = {
         gaps_in = 3;
