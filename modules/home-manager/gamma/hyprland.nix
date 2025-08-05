@@ -102,9 +102,6 @@
           enable_notifications = 0;
           enable_persistent_workspaces = 1;
         };
-        hyprtrails = {
-          color = "rgba(89b4faff)";
-        };
       };
       cursor = {
         default_monitor = "DP-1";
