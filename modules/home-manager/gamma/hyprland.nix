@@ -103,7 +103,7 @@
           enable_persistent_workspaces = 1;
         };
         hyprtrails = {
-          color = "89b4fa";
+          color = "rgb(89b4fa)";
         };
       };
       cursor = {
