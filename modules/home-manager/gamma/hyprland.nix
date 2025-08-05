@@ -1,16 +1,21 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    # systemd = {
+    # enable = true;
+    # variables = ["--all"];
+    # };
+    package = null;
+    portalPackage = null;
     settings = {
       monitor = [
         "DP-1 ,2560x1440@164.96,0x0,1"
         "HDMI-A-1 ,1680x1050@59.95,-1050x-120,1,transform,1"
       ];
       exec-once = [
-        "uwsm finalize UWSM_FINALIZE_VARNAMES='TERM GSK_RENDERER LIBVA_DRIVER_NAME VDPAU_DRIVER XCURSOR_THEME XCURSOR_SIZE HYPRCURSOR_THEME HYPRCURSOR_SIZE EDITOR VISUAL BROWSER TERMINAL NIXOS_OZONE_WL MOZ_ENABLE_WAYLAND WLR_NO_HARDWARE_CURSORS'"
+        # "uwsm finalize UWSM_FINALIZE_VARNAMES='TERM GSK_RENDERER LIBVA_DRIVER_NAME VDPAU_DRIVER XCURSOR_THEME XCURSOR_SIZE HYPRCURSOR_THEME HYPRCURSOR_SIZE EDITOR VISUAL BROWSER TERMINAL NIXOS_OZONE_WL MOZ_ENABLE_WAYLAND WLR_NO_HARDWARE_CURSORS'"
 
-        "/etc/profiles/per-user/rw/bin/pypr"
+        "uwsm app -- /etc/profiles/per-user/rw/bin/pypr"
 
         "uwsm-terminal-service -- kitty +kitten panel --edge=background --output-name=HDMI-A-1 -o background_opacity=0.0 -o tab_bar_style=hidden cbonsai --life 40 --multiplier 5 --time 0.08 --infinite --live"
       ];
