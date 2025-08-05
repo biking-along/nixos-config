@@ -83,7 +83,7 @@
                 wayland.windowManager.hyprland = {
                   plugins = [
                     split-monitor-workspaces.packages.${system}.split-monitor-workspaces
-                    hyprland-plugins.packages.${system}.hyprwinwrap
+                    hyprland-plugins.packages.${system}.hyprtrails
                   ];
                 };
               };

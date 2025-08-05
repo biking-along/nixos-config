@@ -102,13 +102,8 @@
           enable_notifications = 0;
           enable_persistent_workspaces = 1;
         };
-        hyprwinwrap = {
-          class = "kitty-bg";
-          title = "kitty-bg";
-          pos_x = 25;
-          pos_y = 30;
-          size_x = 40;
-          size_y = 70;
+        hyprtrails = {
+          color = "89b4fa";
         };
       };
       cursor = {
