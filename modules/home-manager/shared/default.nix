@@ -16,6 +16,7 @@
     ./lazygit.nix
     ./mpv.nix
     ./stylix.nix
+    ./vesktop.nix
     ./yazi.nix
     ./zathura.nix
   ];
