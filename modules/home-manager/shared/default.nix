@@ -15,6 +15,7 @@
     ./imv.nix
     ./lazygit.nix
     ./mpv.nix
+    ./plexMPV.nix
     ./stylix.nix
     ./vesktop.nix
     ./yazi.nix
