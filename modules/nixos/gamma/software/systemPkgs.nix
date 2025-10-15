@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     vulkan-loader
+    go
     vulkan-validation-layers
     vulkan-extension-layer
     vulkan-tools
