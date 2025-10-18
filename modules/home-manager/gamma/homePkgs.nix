@@ -29,5 +29,7 @@
     ripgrep
     fd
     microfetch
+    sdrangel
+    sdrpp
   ];
 }
