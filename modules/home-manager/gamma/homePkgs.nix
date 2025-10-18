@@ -31,5 +31,6 @@
     microfetch
     sdrangel
     sdrpp
+    uhd
   ];
 }
