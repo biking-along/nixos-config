@@ -29,8 +29,14 @@
     ripgrep
     fd
     microfetch
-    sdrangel
     sdrpp
+    cmake
+    fftw
+    glfw
+    volk
+    zstd
+    soapysdr
+    soapyuhd
     uhd
   ];
 }
