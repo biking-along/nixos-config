@@ -29,7 +29,6 @@
     ripgrep
     fd
     microfetch
-    sdrpp
     soapysdr
     soapyuhd
     uhd

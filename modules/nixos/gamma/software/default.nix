@@ -4,6 +4,7 @@
     # ./greeter.nix
     ./hyprland.nix
     ./nixLd.nix
+    ./sdrpp.nix
     ./systemPkgs.nix
   ];
 }
