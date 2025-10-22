@@ -32,5 +32,6 @@
     soapysdr
     soapyuhd
     uhd
+    gqrx
   ];
 }
