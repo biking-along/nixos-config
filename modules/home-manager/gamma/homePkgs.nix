@@ -33,5 +33,6 @@
     soapyuhd
     uhd
     gqrx
+    sdrpp
   ];
 }
