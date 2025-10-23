@@ -10,5 +10,6 @@
     gcc
     sbctl
     tpm2-tools
+    volk_2
   ];
 }
