@@ -33,6 +33,6 @@
     soapyuhd
     uhd
     gqrx
-    sdrpp
+    glfw
   ];
 }

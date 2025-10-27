@@ -11,6 +11,9 @@
     gcc
     sbctl
     tpm2-tools
-    volk_2
+    volk
+    glfw
+    uhd
+    fftw
   ];
 }
