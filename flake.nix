@@ -66,7 +66,7 @@
             ./hosts/${host}
             stylix.nixosModules.stylix
             nvf.nixosModules.default
-            lanzaboote.nixosModules.lanzaboote
+            # lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {

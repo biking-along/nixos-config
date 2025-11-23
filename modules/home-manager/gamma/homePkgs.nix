@@ -34,5 +34,6 @@
     uhd
     gqrx
     glfw
+    sdrpp
   ];
 }
