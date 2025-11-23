@@ -171,9 +171,9 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
       windowrule = [
-        "float,class:^$"
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "match:float 1,match:class ^$"
+        "suppress_event maximize, match:class .*"
+        "no_focus on,match:class = ^$,match:title ^$,match:xwayland 1,match:float:1,match:fullscreen 0,match:pin 0"
       ];
       workspace = [
         "1, monitor:DP-1, default:true"
