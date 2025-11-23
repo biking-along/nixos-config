@@ -42,5 +42,6 @@
     ax25-apps
     multimon-ng
     qradiolink
+    direwolf
   ];
 }
