@@ -450,11 +450,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1763819976,
-        "narHash": "sha256-W/893N/ifviI1PP1BVIwhYhstN8s5UOsi5lvaYupXhA=",
+        "lastModified": 1763901439,
+        "narHash": "sha256-14Eu0a6MBF2EhP12W4XBB5wQXgq8bERuS5VAP/t8gBY=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "e584a8bade2617899d69ae6f83011d0c1d2a9df7",
+        "rev": "56904edbd24fd5e36968d02132539b7b7eb25ea7",
         "type": "github"
       },
       "original": {
@@ -994,6 +994,7 @@
         "nixpkgs": "nixpkgs_2",
         "nvf": "nvf",
         "pyprland": "pyprland",
+        "sdrpp-uhd": "sdrpp-uhd",
         "split-monitor-workspaces": "split-monitor-workspaces",
         "stylix": "stylix"
       }
@@ -1016,6 +1017,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "sdrpp-uhd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763900138,
+        "narHash": "sha256-r+MZR3yVf2Tdwty9Kf9Pz6x88mIS0ioWNjUmkjegskc=",
+        "owner": "biking-along",
+        "repo": "SDRPP-UHD-NIX",
+        "rev": "58e381376f4ae8690b59f3f421bf10dec169e938",
+        "type": "github"
+      },
+      "original": {
+        "owner": "biking-along",
+        "repo": "SDRPP-UHD-NIX",
         "type": "github"
       }
     },

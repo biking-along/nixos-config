@@ -36,6 +36,10 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
+    sdrpp-uhd = {
+      url = "github:biking-along/SDRPP-UHD-NIX";
+      flake = false;
+    };
   };
   outputs = {
     self,
@@ -49,6 +53,7 @@
     pyprland,
     split-monitor-workspaces,
     hyprland-plugins,
+    sdrpp-uhd,
     ...
   } @ inputs: {
     nixosConfigurations = {

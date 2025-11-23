@@ -35,5 +35,13 @@
     gqrx
     glfw
     sdrpp
+    dsdcc
+    wsjtx
+    wsjtz
+    gnuradio
+    trunk-recorder
+    ax25-apps
+    multimon-ng
+    qradiolink
   ];
 }
