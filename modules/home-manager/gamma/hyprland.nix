@@ -173,7 +173,7 @@
       windowrule = [
         "match:float 1,match:class ^$"
         "suppress_event maximize, match:class .*"
-        "no_focus on,match:class = ^$,match:title ^$,match:xwayland 1,match:float:1,match:fullscreen 0,match:pin 0"
+        "no_focus on,match:class ^$,match:title ^$,match:xwayland 1,match:float 1,match:fullscreen 0,match:pin 0"
       ];
       workspace = [
         "1, monitor:DP-1, default:true"
