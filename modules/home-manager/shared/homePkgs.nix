@@ -4,5 +4,6 @@
     cmatrix
     plex-desktop
     socat
+    play
   ];
 }
