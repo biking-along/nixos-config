@@ -3,5 +3,6 @@
     cbonsai
     cmatrix
     plex-desktop
+    socat
   ];
 }
