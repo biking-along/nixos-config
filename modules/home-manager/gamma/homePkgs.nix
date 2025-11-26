@@ -42,6 +42,7 @@
     ax25-apps
     multimon-ng
     qradiolink
+    hexchat
     direwolf
   ];
 }
