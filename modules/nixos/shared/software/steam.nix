@@ -17,5 +17,5 @@
     };
   };
 
-  hardware.xpadneo.enable = true;
+  # hardware.xpadneo.enable = true;
 }

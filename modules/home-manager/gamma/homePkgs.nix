@@ -44,5 +44,6 @@
     qradiolink
     hexchat
     direwolf
+    xdelta
   ];
 }
