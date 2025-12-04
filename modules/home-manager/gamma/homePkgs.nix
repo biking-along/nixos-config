@@ -45,5 +45,7 @@
     hexchat
     direwolf
     xdelta
+    pcsx2
+    rpi-imager
   ];
 }
