@@ -15,5 +15,6 @@
     glfw
     uhd
     fftw
+    rpi-imager
   ];
 }

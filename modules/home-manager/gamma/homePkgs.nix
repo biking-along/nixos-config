@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fortune
+    python3
     nordzy-cursor-theme
     cowsay
     thunderbird
@@ -12,6 +13,8 @@
     bluetui
     hyprpicker
     hyprnotify
+    hyprpwcenter
+    hyprlax
     vial
     qmk
     ffmpeg
@@ -47,5 +50,6 @@
     xdelta
     pcsx2
     rpi-imager
+    nautilus
   ];
 }
