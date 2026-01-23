@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fortune
+    python313Packages.pip
     python3
     nordzy-cursor-theme
     cowsay
