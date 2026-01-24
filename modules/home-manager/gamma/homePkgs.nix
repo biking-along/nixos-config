@@ -52,5 +52,6 @@
     pcsx2
     rpi-imager
     nautilus
+    pixelflasher
   ];
 }
