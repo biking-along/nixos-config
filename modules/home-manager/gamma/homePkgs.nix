@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fortune
+    adb
+    fastboot
     python313Packages.pip
     python3
     nordzy-cursor-theme
