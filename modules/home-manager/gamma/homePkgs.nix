@@ -53,6 +53,6 @@
     rpi-imager
     nautilus
     pixelflasher
-    signal
+    signal-desktop
   ];
 }
