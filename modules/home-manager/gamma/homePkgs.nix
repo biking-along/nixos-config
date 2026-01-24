@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     fortune
     android-tools
+    androidenv.androidPkgs.platform-tools
     python313Packages.pip
     python3
     nordzy-cursor-theme
