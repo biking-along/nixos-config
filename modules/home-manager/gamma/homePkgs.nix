@@ -53,5 +53,6 @@
     rpi-imager
     nautilus
     pixelflasher
+    signal
   ];
 }
