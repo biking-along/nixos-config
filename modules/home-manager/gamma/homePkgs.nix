@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fortune
-    adb
+    android-tools
     fastboot
     python313Packages.pip
     python3
