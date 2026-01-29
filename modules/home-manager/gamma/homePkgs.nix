@@ -42,19 +42,10 @@
     glfw
     sdrpp
     dsdcc
-    wsjtx
     gnuradio
-    trunk-recorder
-    ax25-apps
-    multimon-ng
-    qradiolink
     hexchat
-    direwolf
-    xdelta
-    pcsx2
     rpi-imager
     nautilus
-    pixelflasher
     signal-desktop
   ];
 }
