@@ -40,6 +40,14 @@
       url = "github:StoppingBuck/retroarch-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -53,6 +61,8 @@
     pyprland,
     split-monitor-workspaces,
     hyprland-plugins,
+    niri,
+    dms,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -70,6 +80,7 @@
             ./hosts/${host}
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            niri.nixosModules.niri
             # lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager
             {
@@ -83,6 +94,8 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  inputs.dms.homeModules.dank-material-shell
+                  inputs.dms.homeModules.niri
                 ];
                 programs.retroarch = {
                   enable = true;
