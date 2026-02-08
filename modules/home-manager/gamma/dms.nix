@@ -9,15 +9,23 @@
 
   programs.niri = {
     settings = {
+      hotkey-overlay.skip-at-startup = true;
       prefer-no-csd = true;
       input = {
         trackball.natural-scroll = true;
-        focus-follows-mouse.enable = true;
+        focus-follows-mouse = {
+          enable = true;
+          max-scroll-amount = "95%";
+        };
       };
 
       binds = {
         "Mod+Shift+Q".action.quit.skip-confirmation = true;
         "Mod+Q".action.close-window = [];
+        "Mod+Shift+F".action.fullscreen-window = [];
+        "Mod+Control+F".action.toggle-window-floating = [];
+        "Mod+G".action.maximize-column = [];
+        "Mod+B".action.center-column = [];
 
         "Mod+O".action.toggle-overview = [];
 
@@ -30,7 +38,7 @@
         "Mod+Shift+K".action.move-window-up = [];
         "Mod+Shift+L".action.move-column-right = [];
 
-        "Mod+-".action.consume-or-expel-window-left = [];
+        "Mod+Minus".action.consume-or-expel-window-left = [];
         "Mod+BracketRight".action.consume-or-expel-window-right = [];
 
         "Mod+Return".action.spawn = "kitty";
@@ -38,11 +46,11 @@
         "Mod+F".action.spawn = "nautilus";
         "Mod+W".action.spawn = "firefox";
 
-        "Shift+1".action.focus-workspace = 1;
-        "Shift+2".action.focus-workspace = 2;
-        "Shift+3".action.focus-workspace = 3;
-        "Shift+4".action.focus-workspace = 4;
-        "Shift+5".action.focus-workspace = 5;
+        "Alt+1".action.focus-workspace = 1;
+        "Alt+2".action.focus-workspace = 2;
+        "Alt+3".action.focus-workspace = 3;
+        "Alt+4".action.focus-workspace = 4;
+        "Alt+5".action.focus-workspace = 5;
       };
     };
   };
