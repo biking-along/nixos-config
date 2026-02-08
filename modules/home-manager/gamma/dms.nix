@@ -20,32 +20,52 @@
       };
 
       binds = {
-        "Mod+Shift+Q".action.quit.skip-confirmation = true;
+        # Compositor Actions
+        "Mod+Shift+Q".action.quit = [];
         "Mod+Q".action.close-window = [];
+        "Mod+O".action.toggle-overview = [];
+
+        # Window States
         "Mod+Shift+F".action.fullscreen-window = [];
         "Mod+Control+F".action.toggle-window-floating = [];
         "Mod+G".action.maximize-column = [];
         "Mod+B".action.center-column = [];
 
-        "Mod+O".action.toggle-overview = [];
-
-        "Mod+H".action.focus-window-down-or-column-left = [];
+        # Focus
+        "Mod+H".action.focus-column-left = [];
         "Mod+J".action.focus-window-or-workspace-down = [];
         "Mod+K".action.focus-window-or-workspace-up = [];
-        "Mod+L".action.focus-window-up-or-column-right = [];
+        "Mod+L".action.focus-column-right = [];
+
+        # Monitors
+        "Mod+Shift+N".action.focus-monitor-left = [];
+        "Mod+Shift+M".action.focus-monitor-right = [];
+
+        "Mod+Control+N".action.move-column-to-monitor-left = [];
+        "Mod+Control+M".action.move-column-to-monitor-right = [];
+
+        # Move Windows Around
         "Mod+Shift+H".action.move-column-left = [];
-        "Mod+Shift+J".action.move-window-down = [];
-        "Mod+Shift+K".action.move-window-up = [];
+        "Mod+Shift+J".action.move-window-down-or-to-workspace-down = [];
+        "Mod+Shift+K".action.move-window-up-or-to-workspace-up = [];
         "Mod+Shift+L".action.move-column-right = [];
 
+        # Create Stacks of Windows
         "Mod+Minus".action.consume-or-expel-window-left = [];
         "Mod+BracketRight".action.consume-or-expel-window-right = [];
 
+        # Open Apps
         "Mod+Return".action.spawn = "kitty";
         "Mod+D".action.spawn = "fuzzel";
         "Mod+F".action.spawn = "nautilus";
         "Mod+W".action.spawn = "firefox";
 
+        # Disable Sleep
+        "Mod+Control+T".action.spawn = "dms ipc call inhibit enable";
+        # Allow Sleep
+        "Mod+Control+Y".action.spawn = "dms ipc call inhibit disable";
+
+        # Focus Specific Workspace
         "Alt+1".action.focus-workspace = 1;
         "Alt+2".action.focus-workspace = 2;
         "Alt+3".action.focus-workspace = 3;
