@@ -1,6 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
+  niri-flake.cache.enable = true;
   programs.niri = {
     enable = true;
-    package = pkgs.unstable;
+    package = pkgs.niri-unstable;
   };
 }

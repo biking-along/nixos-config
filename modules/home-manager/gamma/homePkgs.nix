@@ -47,5 +47,7 @@
     rpi-imager
     nautilus
     signal-desktop
+    alacritty
+    fuzzel
   ];
 }

@@ -16,5 +16,6 @@
     uhd
     fftw
     rpi-imager
+    xwayland-satellite
   ];
 }
