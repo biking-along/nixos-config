@@ -48,6 +48,10 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    danksearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -63,6 +67,7 @@
     hyprland-plugins,
     niri,
     dms,
+    danksearch,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -96,6 +101,7 @@
                   ./modules/home-manager/${host}
                   inputs.dms.homeModules.dank-material-shell
                   inputs.dms.homeModules.niri
+                  inputs.danksearch.homeModules.dsearch
                 ];
                 programs.retroarch = {
                   enable = true;

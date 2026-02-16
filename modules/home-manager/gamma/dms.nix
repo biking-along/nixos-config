@@ -183,4 +183,7 @@
       };
     };
   };
+  programs.dsearch.enable = {
+    enable = true;
+  };
 }
