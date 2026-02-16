@@ -183,7 +183,7 @@
       };
     };
   };
-  programs.dsearch.enable = {
+  programs.dsearch = {
     enable = true;
   };
 }
