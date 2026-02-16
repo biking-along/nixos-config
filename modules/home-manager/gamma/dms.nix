@@ -1,9 +1,118 @@
-{
+{lib, ...}: {
   programs.dank-material-shell = {
     enable = true;
     niri = {
       enableKeybinds = true; # Sets static preset keybinds
       enableSpawn = true; # Auto-start DMS with niri, if enabled
+    };
+    settings = {
+      currentThemeName = lib.mkForce "dynamic";
+      currentThemeCategory = lib.mkForce "dynamic";
+      launcherLogoMode = "os";
+      use24HourClock = false;
+      useAutoLocation = true;
+      weatherEnabled = true;
+      useFahrenheit = true;
+      windSpeedUnit = "mph";
+      showBattery = false;
+      hideBrightnessSlider = true;
+      acMonitorTimeout = 900;
+      acLockTimeout = 0;
+      acSuspendTimeout = 1200;
+      acSuspendBehavior = 0;
+
+      barConfigs = [
+        {
+          id = "default";
+          name = "Main Bar";
+          enabled = true;
+          position = 0;
+          screenPreferences = [
+            {
+              name = "DP-1";
+              model = "M27Q P";
+            }
+          ];
+          showOnLastDisplay = false;
+          leftWidgets = [
+            "launcherButton"
+            "workspaceSwitcher"
+            "focusedWindow"
+          ];
+          centerWidgets = [
+            "music"
+            "clock"
+            "weather"
+          ];
+          rightWidgets = [
+            "systemTray"
+            "clipboard"
+            "cpuUsage"
+            "memUsage"
+            "notificationButton"
+            "controlCenterButton"
+          ];
+          spacing = 4;
+          innerPadding = 4;
+          bottomGap = 0;
+          transparency = 1;
+          widgetTransparency = 1;
+          squareCorners = false;
+          noBackground = false;
+          gothCornersEnabled = false;
+          gothCornerRadiusOverride = false;
+          gothCornerRadiusValue = 12;
+          borderEnabled = false;
+          borderColor = "surfaceText";
+          borderOpacity = 1;
+          borderThickness = 1;
+          fontScale = 1;
+          autoHide = false;
+          autoHideDelay = 250;
+          openOnOverview = false;
+          visible = true;
+          popupGapsAuto = true;
+          popupGapsManual = 4;
+        }
+      ];
+
+      controlCenterWidgets = [
+        {
+          id = "volumeSlider";
+          enabled = true;
+          width = 100;
+        }
+        {
+          id = "wifi";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "bluetooth";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "audioOutput";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "audioInput";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "nightMode";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "darkMode";
+          enabled = true;
+          width = 50;
+        }
+      ];
     };
   };
 
