@@ -14,8 +14,6 @@
     freecad-wayland
     openscad
     bluetui
-    hyprpicker
-    hyprnotify
     hyprpwcenter
     hyprlax
     vial
@@ -41,13 +39,10 @@
     gqrx
     glfw
     sdrpp
-    dsdcc
     gnuradio
     hexchat
     rpi-imager
     nautilus
     signal-desktop
-    alacritty
-    fuzzel
   ];
 }
