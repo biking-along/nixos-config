@@ -65,6 +65,7 @@
     # pyprland,
     # split-monitor-workspaces,
     # hyprland-plugins,
+    retroarch-nix,
     niri,
     dms,
     danksearch,
@@ -86,6 +87,7 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             niri.nixosModules.niri
+            dms.nixosModules.greeter
             # lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager
             {
