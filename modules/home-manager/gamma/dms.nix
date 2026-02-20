@@ -156,11 +156,11 @@
         "Mod+L".action.focus-column-right = [];
 
         # Monitors
-        "Mod+Shift+N".action.focus-monitor-left = [];
-        "Mod+Shift+M".action.focus-monitor-right = [];
+        "Mod+N".action.focus-monitor-left = [];
+        "Mod+M".action.focus-monitor-right = [];
 
-        "Mod+Control+N".action.move-column-to-monitor-left = [];
-        "Mod+Control+M".action.move-column-to-monitor-right = [];
+        "Mod+Shift+N".action.move-column-to-monitor-left = [];
+        "Mod+Shift+M".action.move-column-to-monitor-right = [];
 
         # Move Windows Around
         "Mod+Shift+H".action.move-column-left = [];
@@ -184,9 +184,7 @@
         "XF86AudioMute".action.spawn = "dms ipc call audio mute";
 
         # Disable Sleep
-        "Mod+Control+T".action.spawn = "dms ipc call inhibit enable";
-        # Allow Sleep
-        "Mod+Control+Y".action.spawn = "dms ipc call inhibit disable";
+        "Mod+Control+T".action.spawn = "dms ipc call inhibit toggle";
 
         # Focus Specific Workspace
         "Alt+1".action.focus-workspace = 1;
