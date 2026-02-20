@@ -12,7 +12,7 @@
     users.${username} = {
       isNormalUser = true;
       description = "Ryan Williams";
-      extraGroups = ["audio" "video" "i2c" "tss" "tty" "dialout" "networkmanager" "wheel" "input"];
+      extraGroups = ["audio" "video" "i2c" "tss" "tty" "dialout" "networkmanager" "wheel" "input" "greeter"];
     };
   };
 }
