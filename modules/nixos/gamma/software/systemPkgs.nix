@@ -17,5 +17,10 @@
     fftw
     rpi-imager
     xwayland-satellite
+    cups-pk-helper
+    i2c-tools
+    cava
+    khal
+    accountsservice
   ];
 }
