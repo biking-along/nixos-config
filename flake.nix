@@ -21,21 +21,6 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland";
-    # };
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-    # pyprland = {
-    #   url = "github:hyprland-community/pyprland";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # split-monitor-workspaces = {
-    #   url = "github:Duckonaut/split-monitor-workspaces";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
     retroarch-nix = {
       url = "github:StoppingBuck/retroarch-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +37,10 @@
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-monitor = {
+      url = "github:antonjah/nix-monitor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -59,16 +48,12 @@
     home-manager,
     stylix,
     nvf,
-    # lanzaboote,
     nixos-hardware,
-    # hyprland,
-    # pyprland,
-    # split-monitor-workspaces,
-    # hyprland-plugins,
     retroarch-nix,
     niri,
     dms,
     danksearch,
+    nix-monitor,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -88,7 +73,6 @@
             nvf.nixosModules.default
             niri.nixosModules.niri
             dms.nixosModules.greeter
-            # lanzaboote.nixosModules.lanzaboote
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -97,13 +81,13 @@
                   username = "${username}";
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
-                  # packages = [pyprland.packages."${system}".pyprland];
                 };
                 imports = [
                   ./modules/home-manager/${host}
                   inputs.dms.homeModules.dank-material-shell
                   inputs.dms.homeModules.niri
                   inputs.danksearch.homeModules.dsearch
+                  nix-monitor.homeManagerModules.default
                 ];
                 programs.retroarch = {
                   enable = true;
@@ -123,12 +107,6 @@
                     cheevos_enable = "false";
                   };
                 };
-                # wayland.windowManager.hyprland = {
-                #   plugins = [
-                #    split-monitor-workspaces.packages.${system}.split-monitor-workspaces
-                #    hyprland-plugins.packages.${system}.xtra-dispatchers
-                #   ];
-                # };
               };
             }
           ];
@@ -177,7 +155,6 @@
             }
           ];
         };
-
       # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
       surfaceRecovery = let
         system = "x86_64-linux";
