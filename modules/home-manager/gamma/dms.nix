@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.dank-material-shell = {
     enable = true;
     systemd = {
@@ -28,6 +32,39 @@
       acLockTimeout = 0;
       acSuspendTimeout = 1200;
       acSuspendBehavior = 0;
+
+      displayNameMode = "system";
+      screenPreferences = {};
+      showOnLastDisplay = {};
+      niriOutputSettings = {
+        DP-1 = {
+          vrrOnDemand = true;
+          focusAtStartup = true;
+        };
+        HDMI-A-1 = {
+          focusAtStartup = false;
+        };
+      };
+      displayProfiles = {
+        niri = {
+          profile_1771595064250_gk7xzu = {
+            id = "profile_1771595064250_gk7xzu";
+            name = "Default";
+            outputSet = [
+              "DP-1"
+              "HDMI-A-1"
+            ];
+            createdAt = 1771595064250;
+            updatedAt = 1771595064250;
+          };
+        };
+      };
+      activeDisplayProfile = {
+        niri = "profile_1771595064250_gk7xzu";
+      };
+      displayProfileAutoSelect = false;
+      displayShowDisconnected = false;
+      displaySnapToEdge = true;
 
       barConfigs = [
         {
@@ -206,7 +243,10 @@
   programs.nix-monitor = {
     enable = true;
     rebuildCommand = [
-      "nh os switch"
+      "bash -c 'nh os switch'"
     ];
+  };
+  services.kdeconnect = {
+    enable = true;
   };
 }
