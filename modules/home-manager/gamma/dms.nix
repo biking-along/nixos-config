@@ -1,10 +1,18 @@
 {lib, ...}: {
   programs.dank-material-shell = {
     enable = true;
-    niri = {
-      enableKeybinds = true; # Sets static preset keybinds
-      enableSpawn = true; # Auto-start DMS with niri, if enabled
+    systemd = {
+      enable = true; # Systemd service for auto-start
+      restartIfChanged = true; # Auto-restart dms.service when dank-material-shell changes
     };
+
+    # Core features
+    enableSystemMonitoring = true; # System monitoring widgets (dgop)
+    enableVPN = true; # VPN management widget
+    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true; # Audio visualizer (cava)
+    enableCalendarEvents = true; # Calendar integration (khal)
+    enableClipboardPaste = true;
     settings = {
       currentThemeName = lib.mkForce "dynamic";
       currentThemeCategory = lib.mkForce "dynamic";
@@ -132,7 +140,8 @@
         # Compositor Actions
         "Mod+Shift+Q".action.quit = [];
         "Mod+Q".action.close-window = [];
-        "Mod+O".action.toggle-overview = [];
+        "Shift+Space".action.toggle-overview = [];
+        "Control+Space".action.spawn = "dms ipc call spotlight toggle";
 
         # Window States
         "Mod+Shift+F".action.fullscreen-window = [];
@@ -168,6 +177,11 @@
         "Mod+D".action.spawn = "fuzzel";
         "Mod+F".action.spawn = "nautilus";
         "Mod+W".action.spawn = "firefox";
+
+        # Volume
+        "XF86AudioRaiseVolume".action.spawn = "dms ipc call audio increment 3";
+        "XF86AudioLowerVolume".action.spawn = "dms ipc call audio decrement 3";
+        "XF86AudioMute".action.spawn = "dms ipc call audio mute";
 
         # Disable Sleep
         "Mod+Control+T".action.spawn = "dms ipc call inhibit enable";

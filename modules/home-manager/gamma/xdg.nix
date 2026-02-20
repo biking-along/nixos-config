@@ -4,7 +4,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "inode/directory" = ["yazi.desktop"];
+        "inode/directory" = ["org.gnome.Nautilus.desktop"];
         "text/html" = ["firefox.desktop"];
         "text/plain" = ["nvim.desktop"];
         "image/png" = ["imv.desktop"];
@@ -17,7 +17,7 @@
         "video/mp4" = ["umpv.desktop"];
         "video/mkv" = ["umpv.desktop"];
         "video/webm" = ["umpv.desktop"];
-        "application/zip" = ["yazi.desktop"];
+        "application/zip" = ["org.gnome.Nautilus.desktop"];
         "application/pdf" = ["org.pwmt.zathura.desktop"];
         "application/x-extension-htm" = ["firefox.desktop"];
         "application/x-extension-html" = ["firefox.desktop"];

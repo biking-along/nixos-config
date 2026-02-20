@@ -21,21 +21,21 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    pyprland = {
-      url = "github:hyprland-community/pyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    # };
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
+    # pyprland = {
+    #   url = "github:hyprland-community/pyprland";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # split-monitor-workspaces = {
+    #   url = "github:Duckonaut/split-monitor-workspaces";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     retroarch-nix = {
       url = "github:StoppingBuck/retroarch-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,12 +59,12 @@
     home-manager,
     stylix,
     nvf,
-    lanzaboote,
+    # lanzaboote,
     nixos-hardware,
-    hyprland,
-    pyprland,
-    split-monitor-workspaces,
-    hyprland-plugins,
+    # hyprland,
+    # pyprland,
+    # split-monitor-workspaces,
+    # hyprland-plugins,
     niri,
     dms,
     danksearch,
@@ -95,7 +95,7 @@
                   username = "${username}";
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
-                  packages = [pyprland.packages."${system}".pyprland];
+                  # packages = [pyprland.packages."${system}".pyprland];
                 };
                 imports = [
                   ./modules/home-manager/${host}
@@ -121,12 +121,12 @@
                     cheevos_enable = "false";
                   };
                 };
-                wayland.windowManager.hyprland = {
-                  plugins = [
-                    split-monitor-workspaces.packages.${system}.split-monitor-workspaces
-                    hyprland-plugins.packages.${system}.xtra-dispatchers
-                  ];
-                };
+                # wayland.windowManager.hyprland = {
+                #   plugins = [
+                #    split-monitor-workspaces.packages.${system}.split-monitor-workspaces
+                #    hyprland-plugins.packages.${system}.xtra-dispatchers
+                #   ];
+                # };
               };
             }
           ];

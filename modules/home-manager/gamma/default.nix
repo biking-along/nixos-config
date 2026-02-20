@@ -8,7 +8,7 @@
     ./kitty.nix
     ./rclone.nix
     ./rofi.nix
-    ./waybar.nix
+    # ./waybar.nix
     ./xdg.nix
   ];
 }
