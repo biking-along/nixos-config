@@ -1,24 +1,17 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{...}: {
   programs.dank-material-shell.greeter = {
     enable = true;
     compositor = {
       name = "niri"; # Required. Can be also "hyprland" or "sway"
-      customConfig = ''
-        # Optional custom compositor configuration
-      '';
     };
 
     # Sync your user's DankMaterialShell theme with the greeter. You'll probably want this
-    configHome = "/home/${username}";
+    configHome = "/home/rw";
 
     # Custom config files for non-standard config locations
-    configFiles = [
-      "/home/${username}/.config/DankMaterialShell/settings.json"
-    ];
+    # configFiles = [
+    #   "/home/rw/.config/DankMaterialShell/settings.json"
+    # ];
 
     # Save the logs to a file
     logs = {
@@ -27,6 +20,6 @@
     };
 
     # Custom Quickshell Package
-    quickshell.package = pkgs.quickshell;
+    # quickshell.package = pkgs.quickshell;
   };
 }

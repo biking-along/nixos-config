@@ -1,8 +1,7 @@
 {
   imports = [
-    ./autologin.nix
-    # ./greeter.nix
-    # ./hyprland.nix
+    # ./autologin.nix
+    ./greeter.nix
     ./niri-config.nix
     ./systemPkgs.nix
   ];

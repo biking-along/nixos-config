@@ -88,7 +88,12 @@
         {
           id = "volumeSlider";
           enabled = true;
-          width = 100;
+          width = 50;
+        }
+        {
+          id = "brightnessSlider";
+          enabled = true;
+          width = 50;
         }
         {
           id = "wifi";
@@ -197,5 +202,11 @@
   };
   programs.dsearch = {
     enable = true;
+  };
+  programs.nix-monitor = {
+    enable = true;
+    rebuildCommand = [
+      "nh os switch"
+    ];
   };
 }

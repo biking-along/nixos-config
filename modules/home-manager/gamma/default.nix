@@ -2,7 +2,7 @@
   imports = [
     ../shared
     ./dms.nix
-    ./homeFiles.nix
+    # ./homeFiles.nix
     ./homePkgs.nix
     # ./hyprland.nix
     ./kitty.nix

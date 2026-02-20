@@ -39,7 +39,6 @@
     };
     nix-monitor = {
       url = "github:antonjah/nix-monitor";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = {
