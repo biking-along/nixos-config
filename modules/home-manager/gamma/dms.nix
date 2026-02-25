@@ -131,6 +131,7 @@
           id = "brightnessSlider";
           enabled = true;
           width = 50;
+          devicename = "ddc:i2c-7";
         }
         {
           id = "wifi";
