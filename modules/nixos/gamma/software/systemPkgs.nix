@@ -20,7 +20,7 @@
     cups-pk-helper
     i2c-tools
     cava
-    khal
+    # khal
     accountsservice
   ];
 }
