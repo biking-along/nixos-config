@@ -23,5 +23,8 @@
     # khal
     accountsservice
     wl-mirror
+    pipectl
+    slurp
+    grim
   ];
 }
