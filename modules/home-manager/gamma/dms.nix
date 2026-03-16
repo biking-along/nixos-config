@@ -58,6 +58,7 @@
           };
           focusAtStartup = false;
         };
+      };
       displayProfiles = {
         niri = {
           profile_1771595064250_gk7xzu = {
