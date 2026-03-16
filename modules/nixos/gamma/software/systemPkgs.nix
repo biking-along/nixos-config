@@ -22,5 +22,6 @@
     cava
     # khal
     accountsservice
+    wl-mirror
   ];
 }
