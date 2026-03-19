@@ -44,5 +44,7 @@
     rpi-imager
     nautilus
     signal-desktop
+    rbw
+    rofi-rbw-wayland
   ];
 }
