@@ -19,16 +19,4 @@
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
-  systemd.user.services = {
-    kvm-mirror = {
-      script = "wl-present mirror DP-1 --fullscreen-output HDMI-A-2 --backend screencopy-dmabuf -S";
-      upheldBy = ["niri.service"];
-      bindsTo = ["niri.service"];
-      serviceConfig = {
-        RestartSec = 5;
-      };
-      after = ["niri.service"];
-      aliases = ["present" "wl-present"];
-    };
-  };
 }
