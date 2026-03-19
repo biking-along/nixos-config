@@ -117,6 +117,7 @@
             "systemTray"
             "clipboard"
             "cpuUsage"
+            "amdGpuMonitor"
             "memUsage"
             "notificationButton"
             "controlCenterButton"
