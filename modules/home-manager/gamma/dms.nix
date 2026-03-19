@@ -38,27 +38,27 @@
       showOnLastDisplay = {};
       niriOutputSettings = {
         DP-1 = {
-          vrrOnDemand = true;
+          focusAtStartup = true;
           layout = {
             alwaysCenterSingleColumn = true;
           };
-          focusAtStartup = true;
+          vrrOnDemand = true;
         };
         HDMI-A-1 = {
-          vrrOnDemand = false;
+          focusAtStartup = false;
           layout = {
             alwaysCenterSingleColumn = true;
           };
-          focusAtStartup = false;
+          vrrOnDemand = false;
         };
-        HDMI-A-2 = {
+        HDMI-A-3 = {
           vrrOnDemand = true;
           layout = {
             alwaysCenterSingleColumn = true;
           };
-          focusAtStartup = false;
         };
       };
+      hyprlandOutputSettings = {};
       displayProfiles = {
         niri = {
           profile_1771595064250_gk7xzu = {
@@ -68,17 +68,17 @@
             outputSet = [
               "DP-1"
               "HDMI-A-1"
-              "HDMI-A-2"
+              "HDMI-A-3"
             ];
             updatedAt = 1771595064250;
           };
           profile_1773672447575_jwlfb3 = {
+            createdAt = 1773672447575;
             id = "profile_1773672447575_jwlfb3";
             name = "KVM";
             outputSet = [
-              "HDMI-A-2"
+              "HDMI-A-3"
             ];
-            createdAt = 1773672447575;
             updatedAt = 1773672447575;
           };
         };
@@ -112,6 +112,10 @@
             "music"
             "clock"
             "weather"
+            {
+              id = "homeAssistantMonitor";
+              enabled = true;
+            }
           ];
           rightWidgets = [
             "systemTray"

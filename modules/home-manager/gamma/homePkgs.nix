@@ -46,5 +46,7 @@
     signal-desktop
     rbw
     rofi-rbw-wayland
+    pinentry-all
+    kdePackages.qtwebsockets
   ];
 }

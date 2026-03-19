@@ -8,7 +8,7 @@
     ./fish.nix
     ./foliate.nix
     ./git.nix
-    ./gpg.nix
+    # ./gpg.nix
     ./gtk.nix
     ./hideHmDe.nix
     ./homePkgs.nix
