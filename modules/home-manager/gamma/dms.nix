@@ -68,16 +68,6 @@
             outputSet = [
               "DP-1"
               "HDMI-A-1"
-            ];
-            updatedAt = 1771595064250;
-          };
-          profile_1771595064251_gk7xzr = {
-            createdAt = 1771595064250;
-            id = "profile_1771595064251_gk7xzr";
-            name = "All";
-            outputSet = [
-              "DP-1"
-              "HDMI-A-1"
               "HDMI-A-2"
             ];
             updatedAt = 1771595064250;
@@ -94,7 +84,7 @@
         };
       };
       activeDisplayProfile = {
-        niri = "profile_1771595064251_gk7xzr";
+        niri = "profile_1771595064250_gk7xzu";
       };
       displayProfileAutoSelect = false;
       displayShowDisconnected = false;
