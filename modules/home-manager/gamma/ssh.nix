@@ -1,7 +1,7 @@
 {
   services.ssh-agent = {
-    enable = true;
-    enableFishIntegration = true;
+    enable = false;
+    enableFishIntegration = false;
   };
   services.ssh-tpm-agent = {
     enable = true;
