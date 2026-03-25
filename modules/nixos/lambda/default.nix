@@ -3,5 +3,6 @@
     ./network
     ./services
     ./software
+    ./system
   ];
 }
