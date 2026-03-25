@@ -43,6 +43,8 @@
           yaml.enable = true;
         };
         statusline.lualine.enable = false;
+        syntaxHighlighting = true;
+        tabline.nvimBufferline.enable = true;
         terminal.toggleterm = {
           enable = true;
           lazygit = {
@@ -60,7 +62,16 @@
           ];
         };
         # autocomplete.nvim-cmp.enable = true;
-        utility.smart-splits.enable = true;
+        utility = {
+          smart-splits.enable = true;
+          yazi-nvim.enable = true;
+        };
+        clipboard.providers.wl-copy.enable = true;
+        visuals = {
+          cinnamon-nvim.enable = true;
+          fidget-nvim.enable = true;
+          syntax-gaslighting.enable = true;
+        };
         mini = {
           animate = {
             enable = true;

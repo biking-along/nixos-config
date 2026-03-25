@@ -1,5 +1,7 @@
 {
   imports = [
-    ./software/traefik.nix
+    ./network
+    ./services
+    ./software
   ];
 }
