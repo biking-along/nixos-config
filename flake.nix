@@ -129,6 +129,7 @@
           modules = [
             ./hosts/${host}
             nvf.nixosModules.default
+            stylix.nixosModules.stylix
 
             agenix.nixosModules.default
             ({
