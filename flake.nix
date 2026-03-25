@@ -40,6 +40,8 @@
     nix-monitor = {
       url = "github:antonjah/nix-monitor";
     };
+    copyparty.url = "github:9001/copyparty";
+    agenix.url = "github:ryantm/agenix";
   };
   outputs = {
     self,
@@ -53,6 +55,8 @@
     dms,
     danksearch,
     nix-monitor,
+    copyparty,
+    agenix,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -72,6 +76,7 @@
             nvf.nixosModules.default
             niri.nixosModules.niri
             dms.nixosModules.greeter
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -110,6 +115,111 @@
             }
           ];
         };
+
+      lambda = let
+        username = "rw";
+        state = "25.11";
+        host = "lambda";
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username state host system;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/${host}
+            nvf.nixosModules.default
+
+            agenix.nixosModules.default
+            ({
+              pkgs,
+              config,
+              ...
+            }: {
+              environment.systemPackages = [
+                agenix.packages."${system}".default
+              ];
+            })
+
+            copyparty.nixosModules.default
+            ({
+              pkgs,
+              config,
+              ...
+            }: {
+              nixpkgs.overlays = [copyparty.overlays.default];
+              environment.systemPackages = [pkgs.copyparty-unstable-full];
+              services.copyparty = {
+                enable = true;
+                user = "rw";
+                group = "users";
+                settings = {
+                  p = [3923];
+                  ftp = 3921;
+                  ftp-pr = "12000-12099";
+                  z = true;
+                  name = "Lambda NAS";
+                  site = "https://nas.rwillia.ms/";
+                  https-only = false;
+                  ipu = "192.168.1.0/24=rw";
+                  rproxy = 1;
+                  stats = true;
+                  usernames = true;
+                  chpw = true;
+                  ah-alg = "argon2";
+                  shr = "/share";
+                  shr-adm = ["rw"];
+                  shr-site = "nas.rwillia.ms";
+                  no-crt = true;
+                };
+                accounts = {
+                  rw = {
+                    passwordFile = "/home/rw/copyparty/config/keys/rw_pass";
+                  };
+                };
+                volumes = {
+                  "/" = {
+                    path = "/mnt/raid0/copyparty";
+                    access = {
+                      r = ["*"];
+                      rwmdgGhaA = ["rw"];
+                    };
+                    flags = {
+                      fk = 4;
+                      scan = 60;
+                      e2dsa = true;
+                      e2ts = true;
+                      wram = true;
+                      rm_partial = true;
+                      magic = true;
+                      gz = true;
+                      xz = true;
+                      nohash = "\.iso$";
+                      norobots = true;
+                    };
+                  };
+                };
+                openFilesLimit = 8192;
+              };
+            })
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username} = {
+                programs.home-manager.enable = true;
+                home = {
+                  username = "${username}";
+                  homeDirectory = "/home/${username}";
+                  stateVersion = "${state}";
+                };
+                imports = [
+                  ./modules/home-manager/${host}
+                ];
+              };
+            }
+            ###
+          ];
+        };
+
       kappa = let
         username = "rw";
         state = "25.11";
