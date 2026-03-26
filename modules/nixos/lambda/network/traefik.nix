@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   age.secrets."traefik.env" = {
-    file = ../secrets/traefik.env.age;
+    file = ../../../../secrets/traefik.env.age;
     mode = "770";
     owner = "traefik";
     group = "traefik";
