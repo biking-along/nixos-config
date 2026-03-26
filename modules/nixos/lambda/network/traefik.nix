@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   age.secrets."traefik.env" = {
     file = ../../../../secrets/traefik.env.age;
     mode = "770";
@@ -25,16 +28,16 @@
         };
         websecure = {
           address = ":443";
-	  asDefault = true;
+          asDefault = true;
           http.tls.certResolver = "letsencrypt";
         };
       };
       certificatesResolvers."letsencrypt".acme = {
         email = "bikingalong@pm.me";
         storage = "/var/lib/traefik/acme.json";
-	dnsChallenge = {
+        dnsChallenge = {
           provider = "cloudflare";
-          resolvers = [ "1.1.1.1:53" "9.9.9.9:53" ];
+          resolvers = ["1.1.1.1:53" "9.9.9.9:53"];
           propagation = {
             delayBeforeChecks = "10s";
           };
@@ -49,45 +52,45 @@
           loadBalancer.servers = [
             {
               url = "http://192.168.1.192:2283";
-	    }
-	  ];
-	};
+            }
+          ];
+        };
         copyparty = {
-          loadBalancer.servers = [ 
+          loadBalancer.servers = [
             {
-              url = "http://192.168.1.192:3923"; 
-	    }
-	  ];
-	};
+              url = "http://192.168.1.192:3923";
+            }
+          ];
+        };
         grafana = {
-          loadBalancer.servers = [ 
+          loadBalancer.servers = [
             {
-              url = "http://192.168.1.192:8081"; 
-	    }
-	  ];
-	};
+              url = "http://192.168.1.192:8081";
+            }
+          ];
+        };
       };
       routers = {
         dashboard = {
-          entryPoints = [ "websecure" ];
+          entryPoints = ["websecure"];
           rule = "Host(`traefik.rwillia.ms`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
         };
-	immich = {
-          entryPoints = [ "websecure" ];
+        immich = {
+          entryPoints = ["websecure"];
           rule = "Host(`photos.rwillia.ms`)";
-          service = "copyparty";
+          service = "immich";
           tls.certResolver = "letsencrypt";
-	};
-	copyparty = {
-          entryPoints = [ "websecure" ];
+        };
+        copyparty = {
+          entryPoints = ["websecure"];
           rule = "Host(`nas.rwillia.ms`)";
           service = "copyparty";
           tls.certResolver = "letsencrypt";
-	};
+        };
         grafana = {
-          entryPoints = [ "websecure" ];
+          entryPoints = ["websecure"];
           rule = "Host(`graf.rwillia.ms`)";
           service = "grafana";
           tls.certResolver = "letsencrypt";
