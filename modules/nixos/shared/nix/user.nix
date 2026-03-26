@@ -16,6 +16,7 @@
       openssh = {
         authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMER1vKzrCrhX9L/4EfIfi3Kpe/HUPw0RMc/MbrQSIcs u0_a365@localhost"
+          "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBBNtCaUz9U8IgJBFc47/BFLOnomnEzeb/ftTzSpEWjex4hTPDQXnviigQ5AZAfjLwfqODYlQyU9NDnjuYTx4MA= rw@gamma"
         ];
       };
     };
