@@ -48,6 +48,13 @@
     };
     dynamicConfigOptions.http = {
       services = {
+        hass = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.1.205:8123";
+            }
+          ];
+        };
         immich = {
           loadBalancer.servers = [
             {
@@ -75,6 +82,12 @@
           entryPoints = ["websecure"];
           rule = "Host(`traefik.rwillia.ms`)";
           service = "api@internal";
+          tls.certResolver = "letsencrypt";
+        };
+        hass = {
+          entryPoints = ["websecure"];
+          rule = "Host(`home.rwillia.ms`)";
+          service = "hass";
           tls.certResolver = "letsencrypt";
         };
         immich = {
