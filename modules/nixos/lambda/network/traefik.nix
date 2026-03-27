@@ -95,14 +95,14 @@
         copyparty = {
           loadBalancer.servers = [
             {
-              url = "http://localhost:3923";
+              url = "http://lambda:3923";
             }
           ];
         };
         grafana = {
           loadBalancer.servers = [
             {
-              url = "http://localhost:8081";
+              url = "http://lambda:8081";
             }
           ];
         };
