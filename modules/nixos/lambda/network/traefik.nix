@@ -47,7 +47,7 @@
         authentik = {
           forwardAuth = {
             tls.insecureSkipVerify = true;
-            address = "https://rwillia.ms/outpost.goauthentik.io/auth/traefik";
+            address = "http://localhost:9000/outpost.goauthentik.io/auth/traefik";
             trustForwardHeader = true;
             authResponseHeaders = [
               "X-authentik-username"
