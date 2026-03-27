@@ -4,4 +4,5 @@ let
 in {
   "traefik.env.age".publicKeys = [rw lambda];
   "authentik.env.age".publicKeys = [rw lambda];
+  "grafanaSecret.age".publicKeys = [rw lambda];
 }
