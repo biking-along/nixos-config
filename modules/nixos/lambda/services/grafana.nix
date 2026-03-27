@@ -16,7 +16,7 @@
         enable_gzip = false;
       };
       security = {
-        secret_key = "X4dD1AKvXtWTpI";
+        secret_key = "$__{/run/agenix/grafanaSecret}";
         cookie_secure = true;
         allow_embedding = true;
         csrf_trusted_origins = [
