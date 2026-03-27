@@ -79,7 +79,6 @@
             niri.nixosModules.niri
             dms.nixosModules.greeter
             agenix.nixosModules.default
-            authentik-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -132,6 +131,7 @@
           modules = [
             ./hosts/${host}
             nvf.nixosModules.default
+            authentik-nix.nixosModules.default
             stylix.nixosModules.stylix
 
             agenix.nixosModules.default
