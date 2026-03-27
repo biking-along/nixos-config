@@ -16,9 +16,9 @@
         cookie_secure = true;
         allow_embedding = true;
         csrf_trusted_origins = [
-          "http://localhost:9000"
+          "http://localhost:9001"
           "https://192.168.1.192"
-          "http://192.168.1.192:9000"
+          "http://192.168.1.192:9001"
           "https://192.168.1.205"
           "http://192.168.1.205"
         ];
