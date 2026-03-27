@@ -1,4 +1,4 @@
-{
+{...}: {
   services = {
     authentik = {
       enable = true;
