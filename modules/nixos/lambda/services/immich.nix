@@ -1,7 +1,7 @@
 {
   services.immich = {
     enable = true;
-    host = "192.168.1.192";
+    host = "localhost";
     port = 2283;
     user = "immich";
     group = "immich";
