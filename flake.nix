@@ -42,6 +42,7 @@
     };
     copyparty.url = "github:9001/copyparty";
     agenix.url = "github:ryantm/agenix";
+    authentik-nix.url = "github:nix-community/authentik-nix";
   };
   outputs = {
     self,
@@ -57,6 +58,7 @@
     nix-monitor,
     copyparty,
     agenix,
+    authentik-nix,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -77,6 +79,7 @@
             niri.nixosModules.niri
             dms.nixosModules.greeter
             agenix.nixosModules.default
+            authentik-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
