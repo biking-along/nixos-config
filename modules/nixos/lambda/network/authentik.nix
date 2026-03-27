@@ -1,4 +1,10 @@
-{
+{...}: {
+  age.secrets."authentik.env" = {
+    file = ../../../../secrets/authentik.env.age;
+    mode = "770";
+    owner = "authentik";
+    group = "authentik";
+  };
   services = {
     authentik = {
       enable = true;
