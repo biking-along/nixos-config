@@ -73,11 +73,13 @@
             }
           ];
         };
-        uptime-kuma = [
-          {
-            url = "http://192.168.1.205:3001";
-          }
-        ];
+        uptime-kuma = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.1.205:3001";
+            }
+          ];
+        };
         home-assistant = {
           loadBalancer.servers = [
             {
@@ -88,21 +90,21 @@
         immich = {
           loadBalancer.servers = [
             {
-              url = "http://localhost:2283";
+              url = "http://192.168.1.192:2283";
             }
           ];
         };
         copyparty = {
           loadBalancer.servers = [
             {
-              url = "http://lambda:3923";
+              url = "http://192.168.1.192:3923";
             }
           ];
         };
         grafana = {
           loadBalancer.servers = [
             {
-              url = "http://lambda:8081";
+              url = "http://192.168.1.192:8081";
             }
           ];
         };
