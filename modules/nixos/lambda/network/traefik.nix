@@ -114,6 +114,7 @@
           rule = "Host(`traefik.rwillia.ms`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
         };
         hass = {
           entryPoints = ["websecure"];
