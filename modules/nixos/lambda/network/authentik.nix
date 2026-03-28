@@ -17,7 +17,7 @@
           from = "authentik@rwillia.ms";
         };
         disable_startup_analytics = true;
-        avatars = "initials";
+        avatars = "gravatar";
       };
     };
   };
