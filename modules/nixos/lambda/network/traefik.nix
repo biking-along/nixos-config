@@ -147,6 +147,7 @@
           rule = "Host(`nas.rwillia.ms`)";
           service = "copyparty";
           tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
         };
         grafana = {
           entryPoints = ["websecure"];
