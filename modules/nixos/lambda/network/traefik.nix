@@ -73,6 +73,13 @@
             }
           ];
         };
+        paperless = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.1.192:28981";
+            }
+          ];
+        };
         uptime-kuma = {
           loadBalancer.servers = [
             {
@@ -122,6 +129,12 @@
           service = "api@internal";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
+        };
+        paperless = {
+          entryPoints = ["websecure"];
+          rule = "Host(`paperless.rwillia.ms`)";
+          service = "paperless";
+          tls.certResolver = "letsencrypt";
         };
         home-assistant = {
           entryPoints = ["websecure"];
