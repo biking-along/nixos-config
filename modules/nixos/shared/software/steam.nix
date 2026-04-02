@@ -3,7 +3,13 @@
     steam = {
       enable = true;
       extraCompatPackages = with pkgs; [proton-ge-bin];
-      gamescopeSession.enable = true;
+      gamescopeSession = {
+        enable = true;
+        args = [
+          "-O DP-1"
+        ];
+      };
+
       protontricks.enable = true;
     };
 
