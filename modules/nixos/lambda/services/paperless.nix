@@ -7,6 +7,7 @@
     enable = true;
     user = "rw";
     domain = "paperless.rwillia.ms";
+    address = "192.168.1.192";
     # database.createLocally = true;
     mediaDir = "/mnt/raid0/copyparty/Documents/paperless/Media";
     consumptionDir = "/mnt/raid0/copyparty/Documents/paperless/Import";
