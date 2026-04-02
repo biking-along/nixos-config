@@ -135,6 +135,7 @@
           rule = "Host(`paperless.rwillia.ms`)";
           service = "paperless";
           tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
         };
         home-assistant = {
           entryPoints = ["websecure"];
