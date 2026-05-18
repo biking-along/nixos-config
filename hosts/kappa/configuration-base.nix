@@ -1,7 +1,5 @@
-{ lib, ... }:
-
-{
-  imports = [ ../../modules/nixos/kappa/hardware/thermald/thermald.nix ];
+{lib, ...}: {
+  imports = [../../modules/nixos/kappa/hardware/thermald/thermald.nix];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -28,9 +26,9 @@
     "surface_aggregator_cdev"
   ];
 
-  networking.wireless.enable = lib.mkDefault true;
-  networking.networkmanager.enable = lib.mkDefault false;
+  # networking.wireless.enable = lib.mkDefault true;
+  # networking.networkmanager.enable = lib.mkDefault false;
 
   hardware.microsoft-surface.kernelVersion = "stable";
-  boot.blacklistedKernelModules = [ "surface_gpe" ];
+  boot.blacklistedKernelModules = ["surface_gpe"];
 }
