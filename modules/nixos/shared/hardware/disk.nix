@@ -4,6 +4,6 @@
     cleanOnBoot = true;
     tmpfsSize = "50%";
     tmpfsHugeMemoryPages = "within_size";
-    useTmpfs = true;
+    useTmpfs = false;
   };
 }
