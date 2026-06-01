@@ -1,18 +1,17 @@
-{ pkgs, ... }: {
-
-    # Configure keymap in X11
+{pkgs, ...}: {
+  # Configure keymap in X11
   services.xserver = {
     enable = true;
     xkb.layout = "us";
   };
 
   # Display manager settings
-  services.displayManager.gdm = {
-    enable = true;
-    autoSuspend = true;
-    wayland = true;
-  };
-    
+  #services.displayManager.gdm = {
+  #  enable = true;
+  #  autoSuspend = true;
+  #  wayland = true;
+  #};
+
   services.desktopManager.gnome.enable = true;
 
   services.gnome.core-apps.enable = false;
@@ -42,7 +41,7 @@
     gnome-tour
     orca
   ];
-   # We also lose nautilus now though, so we add back stuff we actually care about...
+  # We also lose nautilus now though, so we add back stuff we actually care about...
   environment.systemPackages = with pkgs; [
     file-roller # archive manager
     gnome-system-monitor
@@ -53,7 +52,7 @@
     gnomeExtensions.blur-my-shell
   ];
 
-  services.udev.packages = [ pkgs.gnome-settings-daemon ];
+  services.udev.packages = [pkgs.gnome-settings-daemon];
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
 }
