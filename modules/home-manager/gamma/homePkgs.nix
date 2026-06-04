@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     fortune
+    sdrangel
     android-tools
     androidenv.androidPkgs.platform-tools
     python313Packages.pip
