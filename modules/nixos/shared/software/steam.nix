@@ -13,10 +13,10 @@
       protontricks.enable = true;
     };
 
-    #gamescope = {
-    #enable = true;
-    #capSysNice = true;
-    # };
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
 
     gamemode = {
       enable = true;
