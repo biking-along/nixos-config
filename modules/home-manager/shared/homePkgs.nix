@@ -4,5 +4,6 @@
     cmatrix
     socat
     play
+    spotify
   ];
 }

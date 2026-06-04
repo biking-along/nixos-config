@@ -15,7 +15,7 @@
     ./imv.nix
     ./lazygit.nix
     ./mpv.nix
-    ./spotify.nix
+    # ./spotify.nix
     ./stylix.nix
     ./vesktop.nix
     ./yazi.nix
