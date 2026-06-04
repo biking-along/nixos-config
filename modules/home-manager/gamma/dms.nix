@@ -51,7 +51,7 @@
           };
           vrrOnDemand = false;
         };
-        HDMI-A-3 = {
+        HDMI-A-2 = {
           vrrOnDemand = true;
           layout = {
             alwaysCenterSingleColumn = true;
@@ -68,7 +68,7 @@
             outputSet = [
               "DP-1"
               "HDMI-A-1"
-              "HDMI-A-3"
+              "HDMI-A-2"
             ];
             updatedAt = 1771595064250;
           };
@@ -77,7 +77,7 @@
             id = "profile_1773672447575_jwlfb3";
             name = "KVM";
             outputSet = [
-              "HDMI-A-3"
+              "HDMI-A-2"
             ];
             updatedAt = 1773672447575;
           };
