@@ -13,7 +13,6 @@
     dconf-editor
     orca-slicer
     freecad-wayland
-    openscad
     bluetui
     hyprpwcenter
     hyprlax
