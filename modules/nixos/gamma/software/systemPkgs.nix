@@ -26,5 +26,6 @@
     pipectl
     slurp
     grim
+    clonehero
   ];
 }
