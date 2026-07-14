@@ -12,7 +12,7 @@
     chromium
     dconf-editor
     orca-slicer
-    freecad-wayland
+    # freecad-wayland
     bluetui
     hyprpwcenter
     hyprlax
