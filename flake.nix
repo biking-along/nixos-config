@@ -58,6 +58,7 @@
     retroarch-nix,
     niri,
     dms,
+    dank-greeter,
     danksearch,
     nix-monitor,
     copyparty,
