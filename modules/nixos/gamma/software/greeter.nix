@@ -1,12 +1,12 @@
 {...}: {
-  programs.dank-material-shell.greeter = {
+  programs.dms-greeter = {
     enable = true;
     compositor = {
       name = "niri"; # Required. Can be also "hyprland" or "sway"
     };
     configHome = "/home/rw";
     configFiles = [
-      "/home/rw/.config/DankMaterialShell/monitors.json"
+      "/home/rw/.config/DankMaterialShell/settings.json"
     ];
     logs = {
       save = true;
