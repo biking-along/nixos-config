@@ -82,7 +82,8 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             niri.nixosModules.niri
-            dms.nixosModules.greeter
+            dms.nixosModules.default
+            dank-greeter.nixosModules.default
             agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
