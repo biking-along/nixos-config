@@ -1,6 +1,7 @@
 {
   imports = [
     ../shared
+    ./calibre.nix
     ./dms.nix
     # ./homeFiles.nix
     ./homePkgs.nix
