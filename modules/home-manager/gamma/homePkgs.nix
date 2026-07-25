@@ -48,5 +48,6 @@
     rofi-rbw-wayland
     pinentry-all
     kdePackages.qtwebsockets
+    calibre
   ];
 }
