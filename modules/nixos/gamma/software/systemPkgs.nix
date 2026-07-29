@@ -1,17 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     vulkan-loader
-    ncurses
-    gnat12
-    flex
-    patch
     curl
-    pkgconf
-    bison
-    zlib
     xz
-    libdisplay-info
-    flashrom
     cmake
     go
     vulkan-validation-layers
@@ -38,5 +29,8 @@
     slurp
     grim
     clonehero
+    coreboot-toolchain.x64
+    coreboot-utils
+    coreboot-configurator
   ];
 }
