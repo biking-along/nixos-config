@@ -32,6 +32,10 @@
       acLockTimeout = 0;
       acSuspendTimeout = 1200;
       acSuspendBehavior = 0;
+      blurEnabled = false;
+      greeterRememberLastSession = true;
+      greeterRememberLastUser = true;
+      greeterAutoLogin = true;
 
       displayNameMode = "system";
       screenPreferences = {};

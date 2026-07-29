@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     vulkan-loader
+    libdisplay-info
+    flashrom
     cmake
     go
     vulkan-validation-layers

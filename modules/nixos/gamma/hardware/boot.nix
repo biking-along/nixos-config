@@ -27,7 +27,8 @@
       "boot.shell_on_fail"
       "udev.log_level=3"
       "rd.systemd.show_status=auto"
-      "iommu=force"
+      #"iommu=force"
+      "iomem=relaxed"
     ];
 
     hardwareScan = true;
