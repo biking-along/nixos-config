@@ -1,6 +1,15 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     vulkan-loader
+    ncurses
+    gnat12
+    flex
+    patch
+    curl
+    pkgconf
+    bison
+    zlib
+    xz
     libdisplay-info
     flashrom
     cmake
