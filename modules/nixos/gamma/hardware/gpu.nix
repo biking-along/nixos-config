@@ -19,17 +19,17 @@
     };
   };
 
-  #systemd = {
-  #  packages = with pkgs; [lact];
-  #  services.lactd.wantedBy = ["multi-user.target"];
-  #  tmpfiles.rules = [
-  #    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  #  ];
-  #};
+  systemd = {
+    packages = with pkgs; [lact];
+    services.lactd.wantedBy = ["multi-user.target"];
+    tmpfiles.rules = [
+      "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+    ];
+  };
 
   services.xserver.videoDrivers = ["amdgpu"];
   environment.systemPackages = with pkgs; [
-    #lact
+    lact
     amdgpu_top
   ];
 }
