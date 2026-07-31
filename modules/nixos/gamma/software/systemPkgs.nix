@@ -31,6 +31,5 @@
     clonehero
     coreboot-toolchain.x64
     coreboot-utils
-    coreboot-configurator
   ];
 }

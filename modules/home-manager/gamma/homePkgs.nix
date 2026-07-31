@@ -40,7 +40,6 @@
     glfw
     sdrpp
     gnuradio
-    hexchat
     rpi-imager
     nautilus
     signal-desktop

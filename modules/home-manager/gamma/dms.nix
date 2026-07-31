@@ -33,9 +33,7 @@
       acSuspendTimeout = 1200;
       acSuspendBehavior = 0;
       blurEnabled = false;
-      greeterRememberLastSession = true;
-      greeterRememberLastUser = true;
-      greeterAutoLogin = true;
+      blurredWallpaperLayer = true;
 
       displayNameMode = "system";
       screenPreferences = {};
