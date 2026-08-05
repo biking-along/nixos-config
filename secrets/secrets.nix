@@ -6,4 +6,5 @@ in {
   "authentik.env.age".publicKeys = [rw lambda];
   "grafanaSecret.age".publicKeys = [rw lambda];
   "paperlessPass.age".publicKeys = [rw lambda];
+  "ryan01EmailPass.age".publicKeys = [rw lambda];
 }
