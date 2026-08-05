@@ -31,5 +31,6 @@
     clonehero
     coreboot-toolchain.x64
     coreboot-utils
+    protonmail-bridge
   ];
 }
