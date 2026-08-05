@@ -4,6 +4,7 @@
     ./age.nix
     ./calibre.nix
     ./dms.nix
+    ./email.nix
     # ./homeFiles.nix
     ./homePkgs.nix
     # ./hyprland.nix
