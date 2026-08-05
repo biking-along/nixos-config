@@ -5,6 +5,5 @@
     ./niri-config.nix
     ./nixAlien.nix
     ./systemPkgs.nix
-    ./thunderbird.nix
   ];
 }
