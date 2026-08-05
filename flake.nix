@@ -86,6 +86,10 @@
             niri.nixosModules.niri
             dms.nixosModules.default
             dank-greeter.nixosModules.default
+            agenix.nixosModules.default
+            {
+              environment.systemPackages = [agenix.packages.x86_64-linux.default];
+            }
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
