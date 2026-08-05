@@ -32,8 +32,6 @@
       acLockTimeout = 0;
       acSuspendTimeout = 1200;
       acSuspendBehavior = 0;
-      blurEnabled = false;
-      blurredWallpaperLayer = true;
 
       displayNameMode = "system";
       screenPreferences = {};

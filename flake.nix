@@ -47,6 +47,7 @@
     copyparty.url = "github:9001/copyparty";
     agenix.url = "github:ryantm/agenix";
     authentik-nix.url = "github:nix-community/authentik-nix";
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
   outputs = {
     self,
@@ -64,6 +65,7 @@
     copyparty,
     agenix,
     authentik-nix,
+    nix-alien,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -72,7 +74,7 @@
         state = "25.05";
         host = "gamma";
         system = "x86_64-linux";
-        specialArgs = {inherit inputs username state host system;};
+        specialArgs = {inherit inputs username state host system self;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
