@@ -86,10 +86,6 @@
             niri.nixosModules.niri
             dms.nixosModules.default
             dank-greeter.nixosModules.default
-            agenix.nixosModules.default
-            {
-              environment.systemPackages = [agenix.packages.${system}.default];
-            }
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -101,10 +97,11 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
-                  inputs.dms.homeModules.dank-material-shell
-                  inputs.dms.homeModules.niri
-                  inputs.danksearch.homeModules.dsearch
+                  dms.homeModules.dank-material-shell
+                  dms.homeModules.niri
+                  danksearch.homeModules.dsearch
                   nix-monitor.homeManagerModules.default
+                  agenix.homeManagerModules.default
                 ];
                 programs.retroarch = {
                   enable = true;
