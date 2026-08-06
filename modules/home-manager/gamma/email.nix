@@ -5,7 +5,6 @@
       flavor = "plain";
       primary = true;
       address = "ryan@ryan01.com";
-      name = "Personal";
       realName = "Ryan Williams";
       userName = "ryan@ryan01.com";
       passwordCommand = "cat $XDG_RUNTIME_DIR/agenix/ryan01EmailPass";
@@ -29,10 +28,14 @@
       };
       neomutt = {
         enable = true;
+        mailboxType = "imap";
       };
     };
   };
   programs.neomutt = {
+    enable = true;
+  };
+  programs.w3m = {
     enable = true;
   };
 }
