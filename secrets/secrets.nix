@@ -7,4 +7,5 @@ in {
   "grafanaSecret.age".publicKeys = [rw lambda];
   "paperlessPass.age".publicKeys = [rw lambda];
   "ryan01EmailPass.age".publicKeys = [rw];
+  "rwPublicKey.age".publicKeys = [rw];
 }
