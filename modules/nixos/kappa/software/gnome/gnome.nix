@@ -47,7 +47,7 @@
     gnome-system-monitor
     gnome-disk-utility
     nautilus
-    xorg.xwininfo
+    xwininfo
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
   ];

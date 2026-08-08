@@ -19,10 +19,9 @@
     microfetch
     bitwarden-desktop
     jellyfin-media-player
-    youtube-music
+    pear-desktop
     vesktop
     vlc
     thunderbird
-    gimp
   ];
 }
