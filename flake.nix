@@ -340,6 +340,9 @@
                   homeDirectory = "/home/${username}";
                   stateVersion = "${state}";
                 };
+                imports = [
+                  ./modules/home-manager/${host}
+                ];
               };
             }
             {
