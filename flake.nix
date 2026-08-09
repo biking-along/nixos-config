@@ -331,6 +331,17 @@
             nixos-wsl.nixosModules.default
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username} = {
+                programs.home-manager.enable = true;
+                home = {
+                  username = "${username}";
+                  homeDirectory = "/home/${username}";
+                  stateVersion = "${state}";
+                };
+              };
+            }
             {
               system.stateVersion = "${state}";
               wsl.enable = true;
