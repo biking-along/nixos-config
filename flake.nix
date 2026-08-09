@@ -261,7 +261,7 @@
               };
             }
             {
-              system.SystemBuilderCmds = ''
+              system.systemBuilderCommands = ''
                 ln -s ${self} $out/flake
                 ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
               '';
