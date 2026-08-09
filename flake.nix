@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:sodiboo/niri-flake?rev=6bb99ff875919f03ea6054026619d999061e1170";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
@@ -43,6 +43,7 @@
     agenix.url = "github:ryantm/agenix";
     authentik-nix.url = "github:nix-community/authentik-nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
   outputs = {
     self,
@@ -61,6 +62,7 @@
     agenix,
     authentik-nix,
     nix-alien,
+    nixos-wsl,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -312,6 +314,26 @@
                 ln -s ${self} /home/nixos/nixos-config
               '';
             })
+          ];
+        };
+      omicron = let
+        username = "rw";
+        state = "26.05";
+        host = "omicron";
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username state host system;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/${host}
+            nixos-wsl.nixosModules.default
+            {
+              system.stateVersion = "${state}";
+              wsl.enable = true;
+              wsl.defaultUser = "${username}";
+            }
           ];
         };
     };

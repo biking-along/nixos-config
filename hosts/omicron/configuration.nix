@@ -3,6 +3,6 @@
   state,
   ...
 }: {
-  networking.hostName = "${host}";
   system.stateVersion = "${state}";
+  networking.hostName = "${host}";
 }

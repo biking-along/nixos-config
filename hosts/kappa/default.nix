@@ -1,6 +1,4 @@
-{ host, ... }:
-
-{
+{host, ...}: {
   imports = [
     ./configuration-base.nix
     ./configuration.nix

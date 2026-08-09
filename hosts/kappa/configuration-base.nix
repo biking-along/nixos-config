@@ -1,4 +1,4 @@
-{lib, ...}: {
+{...}: {
   imports = [../../modules/nixos/kappa/hardware/thermald/thermald.nix];
 
   boot.loader.systemd-boot.enable = true;
