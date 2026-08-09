@@ -14,10 +14,6 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
@@ -145,7 +141,6 @@
             nvf.nixosModules.default
             authentik-nix.nixosModules.default
             stylix.nixosModules.stylix
-
             agenix.nixosModules.default
             ({
               pkgs,
