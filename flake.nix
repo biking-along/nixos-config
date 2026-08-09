@@ -329,6 +329,8 @@
           modules = [
             ./hosts/${host}
             nixos-wsl.nixosModules.default
+            stylix.nixosModules.stylix
+            nvf.nixosModules.default
             {
               system.stateVersion = "${state}";
               wsl.enable = true;
