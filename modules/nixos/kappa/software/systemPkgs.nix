@@ -3,5 +3,6 @@
     lm_sensors
     iptsd
     binutils
+    libwacom-surface
   ];
 }
