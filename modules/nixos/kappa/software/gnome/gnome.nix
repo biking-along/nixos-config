@@ -5,12 +5,18 @@
     xkb.layout = "us";
   };
 
-  # Display manager settings
-  #services.displayManager.gdm = {
-  #  enable = true;
-  #  autoSuspend = true;
-  #  wayland = true;
-  #};
+  #Display manager settings
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "rw";
+    };
+    gdm = {
+      enable = true;
+      autoSuspend = true;
+      wayland = true;
+    };
+  };
 
   services.desktopManager.gnome.enable = true;
 
