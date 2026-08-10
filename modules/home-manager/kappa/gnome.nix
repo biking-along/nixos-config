@@ -7,6 +7,7 @@
         enabled-extensions = [
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
           pkgs.gnomeExtensions.appindicator.extensionUuid
+          pkgs.gnomeExtensions.gjs-osk.extensionUuid
         ];
       };
     };

@@ -14,9 +14,10 @@
     gdm = {
       enable = true;
       autoSuspend = true;
-      wayland = true;
     };
   };
+
+  environment.shells = with pkgs; [fish];
 
   services.desktopManager.gnome.enable = true;
 
