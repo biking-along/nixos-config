@@ -7,10 +7,6 @@
 
   #Display manager settings
   services.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "rw";
-    };
     gdm = {
       enable = true;
       autoSuspend = true;
