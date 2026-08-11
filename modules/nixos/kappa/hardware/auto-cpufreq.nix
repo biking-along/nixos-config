@@ -10,12 +10,15 @@
         turbo = "auto";
       };
       battery = {
-        governor = "balanced";
+        governor = "powersave";
         energy_performance_preference = "power";
         energy_perf_bias = "balance_power";
         platform_profile = "balanced";
         turbo = "never";
       };
+      enable_thresholds = true;
+      start_threshhold = 0;
+      stop_threshold = 85;
     };
   };
   services.power-profiles-daemon.enable = false;
