@@ -44,6 +44,7 @@
     authentik-nix.url = "github:nix-community/authentik-nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    niri-autoselect-portal.url = "git+https://codeberg.org/debugloop/niri-autoselect-portal.git";
   };
   outputs = {
     self,
@@ -63,6 +64,7 @@
     authentik-nix,
     nix-alien,
     nixos-wsl,
+    niri-autoselect-portal,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -86,6 +88,10 @@
             agenix.nixosModules.default
             {
               environment.systemPackages = [agenix.packages.x86_64-linux.default];
+            }
+            niri-autoselect-portal.homeManagerModules.default
+            {
+              services.niri-autoselect-portal.enable = true;
             }
             home-manager.nixosModules.home-manager
             {
