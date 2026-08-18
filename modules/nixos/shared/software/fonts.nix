@@ -1,5 +1,9 @@
 {pkgs, ...}: {
   fonts = {
+    fontconfig = {
+      enable = true;
+      enableDefaultPackages = true;
+    };
     packages = with pkgs; [
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
@@ -10,6 +14,7 @@
       fira-code-symbols
       nerd-fonts.jetbrains-mono
       nerd-fonts.dejavu-sans-mono
+      dejavu_fonts
     ];
   };
 }

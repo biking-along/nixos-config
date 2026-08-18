@@ -4,5 +4,6 @@
     wget
     git
     curl
+    dejavu_fonts
   ];
 }
