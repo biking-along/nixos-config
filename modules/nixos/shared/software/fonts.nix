@@ -2,8 +2,8 @@
   fonts = {
     fontconfig = {
       enable = true;
-      enableDefaultPackages = true;
     };
+    enableDefaultPackages = true;
     packages = with pkgs; [
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
