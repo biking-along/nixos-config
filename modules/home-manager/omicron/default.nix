@@ -7,6 +7,7 @@
     ../shared/fish.nix
     ../shared/git.nix
     ../shared/lazygit.nix
+    ../shared/stylix.nix
     ../shared/yazi.nix
   ];
 }
