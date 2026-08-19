@@ -67,13 +67,14 @@
     niri-autoselect-portal,
     ...
   } @ inputs: {
-    nixosConfigurations = {
+    nixosConfigurations = let
+      username = "rw";
+      system = "x86_64-linux";
+    in {
       gamma = let
-        username = "rw";
         state = "25.05";
         host = "gamma";
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs username state host system self;};
+        specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -86,13 +87,9 @@
             dms.nixosModules.default
             dank-greeter.nixosModules.default
             agenix.nixosModules.default
-            {
-              environment.systemPackages = [agenix.packages.x86_64-linux.default];
-            }
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             niri-autoselect-portal.homeManagerModules.default
-            {
-              services.niri-autoselect-portal.enable = true;
-            }
+            {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -134,10 +131,8 @@
         };
 
       lambda = let
-        username = "rw";
         state = "25.11";
         host = "lambda";
-        system = "x86_64-linux";
         specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
@@ -239,10 +234,8 @@
         };
 
       kappa = let
-        username = "rw";
         state = "25.11";
         host = "kappa";
-        system = "x86_64-linux";
         specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
@@ -323,10 +316,8 @@
           ];
         };
       omicron = let
-        username = "rw";
         state = "26.05";
         host = "omicron";
-        system = "x86_64-linux";
         specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
