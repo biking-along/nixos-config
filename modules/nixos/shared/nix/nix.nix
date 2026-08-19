@@ -31,7 +31,7 @@
       cores = 10;
       sandbox = true;
       extra-sandbox-paths = [
-        "/home/rw/Nixos/nixos-config"
+        "/home/rw/NixOS/nixos-config"
       ];
       system-features = [
         "nixos-test"
@@ -44,7 +44,7 @@
       allow-new-privileges = true
       use-registries = true
       use-xdg-base-directories = true
-      flake-registry = /home/rw/Nixos/nixos-config
+      flake-registry = /home/rw/NixOS/nixos-config
     '';
   };
   programs.direnv.nix-direnv.enable = true;
