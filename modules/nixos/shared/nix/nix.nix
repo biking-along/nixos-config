@@ -40,7 +40,6 @@
     extraOptions = ''
       allow-new-privileges = true
       use-registries = true
-      use-xdg-base-directories = true
     '';
   };
   programs.direnv.nix-direnv.enable = true;
