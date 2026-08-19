@@ -30,9 +30,6 @@
       auto-optimise-store = true;
       cores = 10;
       sandbox = true;
-      extra-sandbox-paths = [
-        "/home/rw/NixOS/nixos-config"
-      ];
       system-features = [
         "nixos-test"
         "benchmark"
@@ -44,7 +41,6 @@
       allow-new-privileges = true
       use-registries = true
       use-xdg-base-directories = true
-      flake-registry = /home/rw/NixOS/nixos-config
     '';
   };
   programs.direnv.nix-direnv.enable = true;
