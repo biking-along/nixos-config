@@ -11,7 +11,7 @@
     ./kitty.nix
     ./rclone.nix
     ./rofi.nix
-    ./ssh.nix
+    # ./ssh.nix
     # ./waybar.nix
     ./xdg.nix
   ];
