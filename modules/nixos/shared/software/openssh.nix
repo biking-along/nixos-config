@@ -5,5 +5,5 @@
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
   };
-  programs.ssh.startAgent = lib.mkDefault true;
+  programs.ssh.startAgent = true;
 }

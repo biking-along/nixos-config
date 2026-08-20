@@ -21,6 +21,8 @@
 
   services.gnome.core-apps.enable = false;
 
+  services.gnome.gcr-ssh-agent.enable = false;
+
   environment.gnome.excludePackages = with pkgs; [
     baobab # disk usage analyzer
     epiphany # web browser
