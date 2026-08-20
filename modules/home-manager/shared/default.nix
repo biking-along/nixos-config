@@ -15,6 +15,8 @@
     ./imv.nix
     ./lazygit.nix
     ./mpv.nix
+    ./nix-index.nix
+    ./nix-search.nix
     ./obsidian.nix
     # ./spotify.nix
     ./stylix.nix
