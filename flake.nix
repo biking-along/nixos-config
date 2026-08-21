@@ -97,6 +97,8 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
+                  ./modules/home-manager/shared/workstation
                   dms.homeModules.dank-material-shell
                   dms.homeModules.niri
                   danksearch.homeModules.dsearch
@@ -213,6 +215,7 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
                 ];
               };
             }
@@ -245,6 +248,8 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
+                  ./modules/home-manager/shared/workstation
                 ];
               };
             }
@@ -329,6 +334,7 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
                 ];
               };
             }
