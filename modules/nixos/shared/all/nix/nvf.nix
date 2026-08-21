@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   programs.neovim.defaultEditor = true;
   programs.nvf = {
     enable = true;
@@ -14,6 +14,12 @@
             key = "<leader>ff";
             mode = "n";
             action = "function() MiniFiles.open() end";
+            lua = true;
+          }
+          {
+            key = "<leader>;";
+            mode = "n";
+            action = "'m`A;<Esc>``'";
             lua = true;
           }
         ];
@@ -43,7 +49,6 @@
           markdown.enable = true;
           yaml.enable = true;
         };
-        statusline.lualine.enable = false;
         syntaxHighlighting = true;
         tabline.nvimBufferline.enable = true;
         terminal.toggleterm = {
@@ -52,20 +57,12 @@
             enable = true;
           };
         };
-        telescope = {
-          enable = false;
-          extensions = [
-            {
-              name = "fzf";
-              packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
-              setup = {fzf = {fuzzy = true;};};
-            }
-          ];
-        };
-        # autocomplete.nvim-cmp.enable = true;
         utility = {
           smart-splits.enable = true;
-          yazi-nvim.enable = true;
+          yazi-nvim = {
+            enable = true;
+            setupOpts.open_for_directories = true;
+          };
         };
         clipboard.providers.wl-copy.enable = true;
         visuals = {
@@ -77,15 +74,21 @@
           animate = {
             enable = true;
           };
+          cmdline.enable = true;
           completion = {
             enable = true;
           };
+          diff.enable = true;
           snippets = {
+            enable = true;
+          };
+          surround = {
             enable = true;
           };
           files = {
             enable = true;
           };
+          git.enable = true;
           statusline = {
             enable = true;
           };
@@ -101,6 +104,7 @@
               mappings.move_with_alt = true;
             };
           };
+          comment.enable = true;
           icons.enable = true;
           pairs.enable = true;
         };
