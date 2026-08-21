@@ -116,7 +116,10 @@
           basics = {
             enable = true;
             setupOpts = {
-              mappings.move_with_alt = true;
+              mappings ={
+                move_with_alt = true;
+                windows = true;
+              };
             };
           };
           comment.enable = true;
