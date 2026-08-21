@@ -58,7 +58,6 @@
           yaml.enable = true;
         };
         syntaxHighlighting = true;
-        # tabline.nvimBufferline.enable = true;
         terminal.toggleterm = {
           enable = true;
           lazygit = {
