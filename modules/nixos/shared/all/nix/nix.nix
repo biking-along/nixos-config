@@ -23,7 +23,6 @@
         "verified-fetches"
         "daemon-trust-override"
         "auto-allocate-uids"
-        "external-builders"
       ];
       trusted-users = ["rw"];
       allowed-users = ["rw"];
