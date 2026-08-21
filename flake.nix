@@ -140,16 +140,7 @@
             authentik-nix.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default
-            ({
-              pkgs,
-              config,
-              ...
-            }: {
-              environment.systemPackages = [
-                agenix.packages."${system}".default
-              ];
-            })
-
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             copyparty.nixosModules.default
             ({
               pkgs,
@@ -225,7 +216,6 @@
                 ];
               };
             }
-            ###
           ];
         };
 
@@ -242,6 +232,8 @@
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            agenix.nixosModules.default
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -324,6 +316,8 @@
             nixos-wsl.nixosModules.default
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            agenix.nixosModules.default
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
