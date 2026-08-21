@@ -7,7 +7,7 @@
   networking.wireless = {
     enable = true;
     enableHardening = false;
-    secretsFile = "/run/agenix/wirelessSecrets";
+    # secretsFile = "/run/agenix/wirelessSecrets";
     # networks = {
     #   RyFi = {
     #     pskRaw = "ext:ryfiPass";
