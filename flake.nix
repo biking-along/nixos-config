@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware = {
-      url = "github:8bitbuddhist/nixos-hardware?rev=ed6d5e7d5dfb68369181b53736065596a844aed2";
+      url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:sodiboo/niri-flake?rev=6bb99ff875919f03ea6054026619d999061e1170";
+      url = "github:sodiboo/niri-flake";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
@@ -90,6 +90,9 @@
             niri-autoselect-portal.homeManagerModules.default
             {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username}.imports = [./modules/home-manager/gamma/default.nix];
+            }
           ];
         };
 

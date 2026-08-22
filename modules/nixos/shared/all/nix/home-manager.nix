@@ -5,17 +5,18 @@
   host,
   ...
 }: {
+  import = inputs.home-manager.nixosModules.home-manager;
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
   };
-  home-manager.extraSpecialArgs = {inherit inputs username state;};
-  home-manager.users.${username} = {
+  home-manager.extraSpecialArgs = {inherit inputs username state host;};
+  home-manager.users.${username} = {pkgs, ...}: {
     imports = [
-      ../../../../home-manager/${host}
-      ../../../../home-manager/shared
-      ../../../../home-manager/shared/workstation
+      ../../../../home-manager/${host}/default.nix
+      ../../../../home-manager/shared/default.nix
+      ../../../../home-manager/shared/workstation/default.nix
       inputs.dms.homeModules.dank-material-shell
       inputs.dms.homeModules.niri
       inputs.danksearch.homeModules.dsearch

@@ -1,4 +1,4 @@
-{
+{...}: {
   imports = [
     ./automount.nix
     ./foliate.nix
