@@ -1,5 +1,0 @@
-{
-  programs.foliate = {
-    enable = true;
-  };
-}
