@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
@@ -87,11 +87,44 @@
             dank-greeter.nixosModules.default
             agenix.nixosModules.default
             {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
-            niri-autoselect-portal.homeManagerModules.default
-            {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.${username}.imports = [./modules/home-manager/gamma/default.nix];
+              home-manager.users.${username} = {
+                home = {
+                  username = "${username}";
+                  homeDirectory = "/home/${username}";
+                  stateVersion = "${state}";
+                };
+                imports = [
+                  ./modules/home-manager/${host}
+                  dms.homeModules.dank-material-shell
+                  dms.homeModules.niri
+                  danksearch.homeModules.dsearch
+                  nix-monitor.homeManagerModules.default
+                  agenix.homeManagerModules.default
+                  niri-autoselect-portal.homeManagerModules.default
+                ];
+                programs.home-manager.enable = true;
+                services.niri-autoselect-portal.enable = true;
+                programs.retroarch = {
+                  enable = true;
+                  cores = {
+                    snes9x.enable = true;
+                    mupen64plus.enable = true;
+                    mgba.enable = true;
+                    mesen.enable = true;
+                    sameboy.enable = true;
+                    dolphin.enable = true;
+                    beetle-psx.enable = true;
+                    pcsx2.enable = true;
+                    ppsspp.enable = true;
+                  };
+                  settings = {
+                    config_save_on_exit = "true";
+                    cheevos_enable = "false";
+                  };
+                };
+              };
             }
           ];
         };

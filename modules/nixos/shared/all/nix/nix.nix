@@ -28,7 +28,7 @@
       allowed-users = ["rw"];
       auto-optimise-store = true;
       cores = 10;
-      sandbox = true;
+      sandbox = false;
       system-features = [
         "nixos-test"
         "benchmark"
