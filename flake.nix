@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
@@ -88,12 +88,10 @@
             dank-greeter.nixosModules.default
             agenix.nixosModules.default
             {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
-            niri-autoselect-portal.homeManagerModules.default
-            {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {inherit username state host inputs;};
-              home-manager.users.${username} = {config, ...}: {
+              home-manager.extraSpecialArgs = {inherit username state host;};
+              home-manager.users.${username} = {
                 home = {
                   username = "${username}";
                   homeDirectory = "/home/${username}";
@@ -106,8 +104,10 @@
                   danksearch.homeModules.dsearch
                   nix-monitor.homeManagerModules.default
                   agenix.homeManagerModules.default
+                  niri-autoselect-portal.homeManagerModules.default
                 ];
                 programs.home-manager.enable = true;
+                services.niri-autoselect-portal.enable = true;
                 programs.retroarch = {
                   enable = true;
                   cores = {

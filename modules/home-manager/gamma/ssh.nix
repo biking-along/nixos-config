@@ -1,5 +1,5 @@
 {
   services.ssh-tpm-agent = {
-    enable = true;
+    enable = false;
   };
 }

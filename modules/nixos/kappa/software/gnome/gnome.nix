@@ -12,17 +12,10 @@
       autoSuspend = true;
     };
   };
-
   security.pam.services."rw".enableGnomeKeyring = true;
-
   environment.shells = with pkgs; [fish];
-
   services.desktopManager.gnome.enable = true;
-
   services.gnome.core-apps.enable = false;
-
-  services.gnome.gcr-ssh-agent.enable = false;
-
   environment.gnome.excludePackages = with pkgs; [
     baobab # disk usage analyzer
     epiphany # web browser
