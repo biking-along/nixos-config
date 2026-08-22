@@ -9,12 +9,12 @@
   ];
 
   boot.initrd.kernelModules = [
+    "pinctrl-tigerlake"
     "surface_aggregator"
     "surface_aggregator_registry"
     "surface_aggregator_hub"
     "surface_hid_core"
     "surface_hid"
-    "pinctrl-tigerlake"
     "intel_lpss"
     "intel_lpss_pci"
     "8250_dw"
@@ -24,6 +24,11 @@
     "surface_battery"
     "surface_charger"
     "surface_aggregator_cdev"
+    "hid_ipts"
+    "hid_ithc"
+    "intel_thc_hid"
+    "intel_quickspi"
+    "surface_hotplug"
   ];
 
   # networking.wireless.enable = lib.mkDefault true;
