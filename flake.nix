@@ -4,6 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware = {
       url = "github:8bitbuddhist/nixos-hardware?rev=ed6d5e7d5dfb68369181b53736065596a844aed2";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -90,17 +91,12 @@
             {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
             {
+              home-manager.extraSpecialArgs = {inherit inputs;};
               home-manager.users.${username} = {
-                programs.home-manager.enable = true;
-                home = {
-                  username = "${username}";
-                  homeDirectory = "/home/${username}";
-                  stateVersion = "${state}";
-                };
                 imports = [
                   ./modules/home-manager/${host}
-                  # ./modules/home-manager/shared
-                  # ./modules/home-manager/shared/workstation
+                  ./modules/home-manager/shared
+                  ./modules/home-manager/shared/workstation
                   dms.homeModules.dank-material-shell
                   dms.homeModules.niri
                   danksearch.homeModules.dsearch

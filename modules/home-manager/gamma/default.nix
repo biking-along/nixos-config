@@ -1,4 +1,8 @@
-{...}: {
+{
+  username,
+  state,
+  ...
+}: {
   imports = [
     ./age.nix
     ./calibre.nix
@@ -14,4 +18,10 @@
     # ./waybar.nix
     ./xdg.nix
   ];
+  programs.home-manager.enable = true;
+  home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "${state}";
+  };
 }
