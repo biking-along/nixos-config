@@ -1,4 +1,4 @@
-{
+{...}: {
   imports = [
     ./age.nix
     ./calibre.nix

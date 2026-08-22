@@ -24,9 +24,6 @@
     "surface_battery"
     "surface_charger"
     "surface_aggregator_cdev"
-    "hid_ipts"
-    "hid_ithc"
-    "intel_thc_hid"
     "intel_quickspi"
     "surface_hotplug"
   ];
