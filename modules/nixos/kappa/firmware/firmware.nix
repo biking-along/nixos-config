@@ -13,7 +13,7 @@
       };
       x86.msr = {
         enable = true;
-        settings.allow-writes = true;
+        settings.allow-writes = "on";
       };
     };
   };
