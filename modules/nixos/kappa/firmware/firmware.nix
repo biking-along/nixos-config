@@ -1,6 +1,7 @@
 {
   hardware = {
     enableAllFirmware = true;
+    i2c.enable = true;
     cpu = {
       intel = {
         updateMicrocode = true;
@@ -15,5 +16,6 @@
       };
     };
   };
+  services.acpid.enable = true;
   services.udev.enable = true;
 }
