@@ -2,7 +2,7 @@
   description = "rw's multihost nixos configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:8bitbuddhist/nixos-hardware?rev=ed6d5e7d5dfb68369181b53736065596a844aed2";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
