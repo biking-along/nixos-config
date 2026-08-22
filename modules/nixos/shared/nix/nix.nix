@@ -23,13 +23,12 @@
         "verified-fetches"
         "daemon-trust-override"
         "auto-allocate-uids"
-        "external-builders"
       ];
       trusted-users = ["rw"];
       allowed-users = ["rw"];
       auto-optimise-store = true;
       cores = 10;
-      sandbox = true;
+      sandbox = false;
       system-features = [
         "nixos-test"
         "benchmark"

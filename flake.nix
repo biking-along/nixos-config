@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:sodiboo/niri-flake?rev=6bb99ff875919f03ea6054026619d999061e1170";
+      url = "github:sodiboo/niri-flake";
     };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
@@ -92,8 +92,8 @@
             {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.${username} = {
-                programs.home-manager.enable = true;
+              home-manager.extraSpecialArgs = {inherit username state host inputs;};
+              home-manager.users.${username} = {config, ...}: {
                 home = {
                   username = "${username}";
                   homeDirectory = "/home/${username}";
@@ -107,6 +107,7 @@
                   nix-monitor.homeManagerModules.default
                   agenix.homeManagerModules.default
                 ];
+                programs.home-manager.enable = true;
                 programs.retroarch = {
                   enable = true;
                   cores = {
