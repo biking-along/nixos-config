@@ -90,39 +90,6 @@
             niri-autoselect-portal.homeManagerModules.default
             {services.niri-autoselect-portal.enable = true;}
             home-manager.nixosModules.home-manager
-            {
-              home-manager.extraSpecialArgs = {inherit inputs;};
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home-manager/${host}
-                  ./modules/home-manager/shared
-                  ./modules/home-manager/shared/workstation
-                  dms.homeModules.dank-material-shell
-                  dms.homeModules.niri
-                  danksearch.homeModules.dsearch
-                  nix-monitor.homeManagerModules.default
-                  agenix.homeManagerModules.default
-                ];
-                programs.retroarch = {
-                  enable = true;
-                  cores = {
-                    snes9x.enable = true;
-                    mupen64plus.enable = true;
-                    mgba.enable = true;
-                    mesen.enable = true;
-                    sameboy.enable = true;
-                    dolphin.enable = true;
-                    beetle-psx.enable = true;
-                    pcsx2.enable = true;
-                    ppsspp.enable = true;
-                  };
-                  settings = {
-                    config_save_on_exit = "true";
-                    cheevos_enable = "false";
-                  };
-                };
-              };
-            }
           ];
         };
 
