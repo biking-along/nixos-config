@@ -1,10 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  import = inputs.home-manager.nixosModules.home-manager;
-  config.home.packages = with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     fortune
     sdrangel
     android-tools
