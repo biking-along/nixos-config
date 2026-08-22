@@ -2,6 +2,10 @@
   description = "rw's multihost nixos configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,9 +17,6 @@
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
     };
     retroarch-nix = {
       url = "github:StoppingBuck/retroarch-nix";
@@ -36,9 +37,7 @@
       url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-monitor = {
-      url = "github:antonjah/nix-monitor";
-    };
+    nix-monitor.url = "github:antonjah/nix-monitor";
     copyparty.url = "github:9001/copyparty";
     agenix.url = "github:ryantm/agenix";
     authentik-nix.url = "github:nix-community/authentik-nix";
@@ -90,7 +89,6 @@
             {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = {inherit username state host;};
               home-manager.users.${username} = {
                 home = {
                   username = "${username}";
@@ -145,16 +143,7 @@
             authentik-nix.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default
-            ({
-              pkgs,
-              config,
-              ...
-            }: {
-              environment.systemPackages = [
-                agenix.packages."${system}".default
-              ];
-            })
-
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             copyparty.nixosModules.default
             ({
               pkgs,
@@ -227,10 +216,10 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
                 ];
               };
             }
-            ###
           ];
         };
 
@@ -247,6 +236,8 @@
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            agenix.nixosModules.default
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -258,6 +249,8 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
+                  ./modules/home-manager/shared/workstation
                 ];
               };
             }
@@ -329,6 +322,8 @@
             nixos-wsl.nixosModules.default
             stylix.nixosModules.stylix
             nvf.nixosModules.default
+            agenix.nixosModules.default
+            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
@@ -340,6 +335,7 @@
                 };
                 imports = [
                   ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
                 ];
               };
             }

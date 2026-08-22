@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ../shared
     ./age.nix
     ./calibre.nix
     ./dms.nix
@@ -15,4 +14,10 @@
     # ./waybar.nix
     ./xdg.nix
   ];
+  programs.home-manager.enable = true;
+  home-manager.users.${username}.home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "${state}";
+  };
 }
