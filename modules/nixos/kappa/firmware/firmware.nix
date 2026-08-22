@@ -1,6 +1,7 @@
 {
   hardware = {
     enableAllFirmware = true;
+    deviceTree.enable = true;
     i2c.enable = true;
     cpu = {
       intel = {
