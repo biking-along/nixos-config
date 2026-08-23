@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   # Configure keymap in X11
   services.xserver = {
     enable = true;
@@ -12,7 +16,7 @@
       autoSuspend = true;
     };
   };
-  qt.platformTheme = "qt5ct";
+  qt.platformTheme = lib.mkForce "adwaita";
   security.pam.services."rw".enableGnomeKeyring = true;
   environment.shells = with pkgs; [fish];
   services.desktopManager.gnome.enable = true;
