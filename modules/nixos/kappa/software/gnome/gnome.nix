@@ -16,7 +16,6 @@
       autoSuspend = true;
     };
   };
-  qt.platformTheme.name = lib.mkForce "adwaita";
   security.pam.services."rw".enableGnomeKeyring = true;
   environment.shells = with pkgs; [fish];
   services.desktopManager.gnome.enable = true;

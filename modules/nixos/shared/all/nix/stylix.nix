@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   stylix = {
     enable = true;
     autoEnable = true;
@@ -16,6 +20,6 @@
       name = "Nordzy-catppuccin-mocha-dark";
       size = 24;
     };
-    targets.qt.platform = "qtct";
+    targets.qt.platform = lib.mkForce "qtct";
   };
 }
