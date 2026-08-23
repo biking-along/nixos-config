@@ -6,5 +6,6 @@
     wget
     gawk
     cbonsai
+    openssl
   ];
 }
