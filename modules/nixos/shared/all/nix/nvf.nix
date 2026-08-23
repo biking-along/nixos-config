@@ -2,8 +2,8 @@
   programs.neovim.defaultEditor = true;
   programs.nvf = {
     enable = true;
-    mnw.desktopEntry = false;
     settings = {
+      mnw.desktopEntry = false;
       vim = {
         enableLuaLoader = true;
         viAlias = true;
