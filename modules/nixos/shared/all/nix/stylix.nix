@@ -16,5 +16,6 @@
       name = "Nordzy-catppuccin-mocha-dark";
       size = 24;
     };
+    targets.qt.platform = "qtct";
   };
 }

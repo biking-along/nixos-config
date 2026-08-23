@@ -262,13 +262,6 @@
                 ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
               '';
             }
-            {nix.registry.nixpkgs.flake = nixpkgs;}
-            {
-              nix.registry.current.to = {
-                type = "path";
-                path = "/run/booted-system/flake/";
-              };
-            }
           ];
         };
       # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
@@ -294,10 +287,6 @@
                 "vfat"
                 "xfs"
               ];
-            }
-            {
-              nix.registry.nixpkgs.flake = nixpkgs;
-              nix.settings.experimental-features = ["nix-command" "flakes"];
             }
             ({pkgs, ...}: {
               services.getty.helpLine = ''
