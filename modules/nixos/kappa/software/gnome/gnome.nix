@@ -12,6 +12,7 @@
       autoSuspend = true;
     };
   };
+  qt.platformTheme = "qt5ct";
   security.pam.services."rw".enableGnomeKeyring = true;
   environment.shells = with pkgs; [fish];
   services.desktopManager.gnome.enable = true;
