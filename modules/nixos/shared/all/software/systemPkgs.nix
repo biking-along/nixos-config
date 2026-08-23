@@ -8,5 +8,6 @@
     cbonsai
     openssl
     patchelfUnstable
+    wakeonlan
   ];
 }
