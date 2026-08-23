@@ -2,6 +2,7 @@
   programs.neovim.defaultEditor = true;
   programs.nvf = {
     enable = true;
+    mnw.desktopEntry = false;
     settings = {
       vim = {
         enableLuaLoader = true;
@@ -116,7 +117,7 @@
           basics = {
             enable = true;
             setupOpts = {
-              mappings ={
+              mappings = {
                 move_with_alt = true;
                 windows = true;
               };
