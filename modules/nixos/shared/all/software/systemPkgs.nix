@@ -7,5 +7,6 @@
     gawk
     cbonsai
     openssl
+    patchelfUnstable
   ];
 }
