@@ -332,8 +332,16 @@
             }
             {
               system.stateVersion = "${state}";
-              wsl.enable = true;
-              wsl.defaultUser = "${username}";
+              wsl = {
+                enable = true;
+                defaultUser = "${username}";
+                ssh-agent = {
+                  enable = true;
+                  users = ["rw"];
+                };
+                interop.register = true;
+                useWindowsDriver = true;
+              };
             }
           ];
         };
