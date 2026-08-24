@@ -41,9 +41,8 @@
       use-registries = true
     '';
   };
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv.enable = true;
   programs.nix-ld.enable = true;
-  programs.nix-index.enable = true;
   programs.nix-required-mounts.enable = true;
   nixpkgs.config.allowUnfree = true;
 }
