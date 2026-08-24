@@ -1,4 +1,4 @@
-{...}: {
+{
   age.secrets."authentik.env" = {
     file = ../../../../secrets/authentik.env.age;
     mode = "770";

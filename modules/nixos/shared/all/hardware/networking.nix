@@ -5,7 +5,7 @@
   # };
   networking.networkmanager.enable = lib.mkDefault true;
   networking.wireless = {
-    enable = true;
+    enable = lib.mkDefault true;
     enableHardening = false;
     # secretsFile = "/run/agenix/wirelessSecrets";
     # networks = {

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./firmware
     ./network
     ./services
     ./software

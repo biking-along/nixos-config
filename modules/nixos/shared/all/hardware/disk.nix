@@ -2,7 +2,7 @@
   services.fstrim.enable = true;
   boot.tmp = {
     cleanOnBoot = true;
-    tmpfsSize = "50%";
+    tmpfsSize = "100%";
     tmpfsHugeMemoryPages = "within_size";
     useTmpfs = false;
   };

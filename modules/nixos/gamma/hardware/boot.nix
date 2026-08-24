@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   boot = {
     # lanzaboote = {
     # enable = true;
