@@ -4,25 +4,24 @@
   ...
 }:
 with lib; let
-  cfg = config.workstation.hardware;
+  cfg = config.modules.shared.workstation.hardware;
 in {
   imports = [
     ./bluetooth.nix
     ./printing.nix
   ];
   options = {
-    workstation.hardware = {
+    modules.shared.workstation.hardware = {
       enable = mkOption {
-        default = false;
         type = types.bool;
-        description = lib.mdDoc ''
+        description = ''
           Enable hardware options and settings specific to my workstations.
         '';
       };
     };
   };
   config = mkIf cfg.enable {
-    config.workstation.hardware.bluetooth.enable = lib.mkDefault true;
-    config.workstation.hardware.printing.enable = lib.mkDefault true;
+    modules.shared.workstation.hardware.bluetooth.enable = lib.mkDefault true;
+    modules.shared.workstation.hardware.printing.enable = lib.mkDefault true;
   };
 }

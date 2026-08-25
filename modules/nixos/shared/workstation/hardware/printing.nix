@@ -4,14 +4,13 @@
   ...
 }:
 with lib; let
-  cfg = config.workstation.hardware.printing;
+  cfg = config.modules.shared.workstation.hardware.printing;
 in {
   options = {
-    workstation.hardware.printing = {
+    modules.shared.workstation.hardware.printing = {
       enable = mkOption {
-        default = false;
         type = types.bool;
-        description = lib.mdDoc ''
+        description = ''
           Enable printing with settings for workstations.
         '';
       };

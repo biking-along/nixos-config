@@ -1,16 +1,23 @@
 {
-  # config,
-  # lib,
-  # pkgs,
+  lib,
+  config,
   ...
-}: {
-  documentation.nixos.enable = false;
-  # environment.systemPackages = [
-  #   # Hide Neovim desktop entry
-  #   (lib.hiPrio (pkgs.runCommand "desktopEntryHide" {} ''
-  #     mkdir -p "$out/share/applications"
-  #     cat "${config.programs.neovim.package}/share/applications/nvim.desktop" > "$out/share/applications/nvim.desktop"
-  #     echo "Hidden=1" >> "$out/share/applications/nvim.desktop"
-  #   ''))
-  # ];
+}:
+with lib; let
+  cfg = config.modules.shared.all.software.hideDesktopEntry;
+in {
+  options = {
+    modules.shared.all.software.hideDesktopEntry = {
+      enable = mkOption {
+        default = true;
+        type = types.bool;
+        description = ''
+          Enable universal settings to hide unnecessary desktop entries.
+        '';
+      };
+    };
+  };
+  config = mkIf cfg.enable {
+    documentation.nixos.enable = false;
+  };
 }

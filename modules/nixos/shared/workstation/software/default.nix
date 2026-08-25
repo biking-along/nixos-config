@@ -4,15 +4,14 @@
   ...
 }:
 with lib; let
-  cfg = config.workstation.software;
+  cfg = config.modules.shared.workstation.software;
 in {
   imports = [
     ./steam.nix
   ];
   options = {
-    workstation.software = {
+    modules.shared.workstation.software = {
       enable = mkOption {
-        default = false;
         type = types.bool;
         description = ''
           Enable systemwide software configs for workstations.
@@ -21,7 +20,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    config.workstation.software.gaming.enable = lib.mkDefault true;
-    config.programs.firefox.enable = lib.mkDefault true;
+    modules.shared.workstation.software.gaming.enable = lib.mkDefault true;
+    programs.firefox.enable = lib.mkDefault true;
   };
 }

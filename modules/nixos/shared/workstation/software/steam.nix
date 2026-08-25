@@ -5,13 +5,12 @@
   ...
 }:
 with lib; let
-  cfg = config.workstation.gaming;
+  cfg = config.modules.shared.workstation.software.gaming;
 in {
   options = {
-    gaming.enable = mkOption {
-      default = false;
+    modules.shared.workstation.software.gaming.enable = mkOption {
       type = types.bool;
-      description = lib.mdDoc ''
+      description = ''
         Enable steam with extras like proton-ge-bin
       '';
     };

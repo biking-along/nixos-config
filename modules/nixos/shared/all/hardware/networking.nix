@@ -1,17 +1,27 @@
-{lib, ...}: {
-  # age.secrets.wirelessSecrets = {
-  #   file = ../../../../../secrets/wirelessSecrets.age;
-  #   mode = "770";
-  # };
-  networking.networkmanager.enable = lib.mkDefault true;
-  networking.wireless = {
-    enable = lib.mkDefault true;
-    enableHardening = false;
-    # secretsFile = "/run/agenix/wirelessSecrets";
-    # networks = {
-    #   RyFi = {
-    #     pskRaw = "ext:ryfiPass";
-    #   };
-    # };
+{
+  lib,
+  config,
+  ...
+}:
+with lib; let
+  cfg = config.modules.shared.all.hardware.networking;
+in {
+  options = {
+    modules.shared.all.hardware.networking = {
+      enable = mkOption {
+        default = true;
+        type = types.bool;
+        description = ''
+          Enable universal networking settings.
+        '';
+      };
+    };
+  };
+  config = mkIf cfg.enable {
+    networking.networkmanager.enable = mkDefault true;
+    networking.wireless = {
+      enable = mkDefault true;
+      enableHardening = false;
+    };
   };
 }

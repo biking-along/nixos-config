@@ -5,14 +5,13 @@
   ...
 }:
 with lib; let
-  cfg = config.workstation.hardware.bluetooth;
+  cfg = config.modules.shared.workstation.hardware.bluetooth;
 in {
   options = {
-    workstation.hardware.bluetooth = {
+    modules.shared.workstation.hardware.bluetooth = {
       enable = mkOption {
-        default = false;
         type = types.bool;
-        description = lib.mdDoc ''
+        description = ''
           Enable bluetooth with settings for workstations
         '';
       };

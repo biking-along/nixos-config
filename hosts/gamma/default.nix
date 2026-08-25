@@ -4,6 +4,6 @@
     ./hardware-configuration.nix
     ../../modules/nixos/${host}
     ../../modules/nixos/shared
-    ../../modules/nixos/shared/workstation
   ];
+  config.modules.shared.workstation.enable = true;
 }
