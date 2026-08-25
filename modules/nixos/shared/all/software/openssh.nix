@@ -21,8 +21,15 @@ in {
     services.openssh = {
       enable = true;
       openFirewall = true;
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        AcceptEnv = [
+          "COLORTERM"
+          "TERM_PROGRAM"
+          "TERM_PROGRAM_VERSION"
+        ];
+      };
     };
   };
 }
