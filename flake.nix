@@ -18,10 +18,6 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    retroarch-nix = {
-      url = "github:StoppingBuck/retroarch-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri = {
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +53,6 @@
     stylix,
     nvf,
     nixos-hardware,
-    retroarch-nix,
     niri,
     dms,
     dank-greeter,
@@ -113,24 +108,6 @@
                 ];
                 programs.home-manager.enable = true;
                 services.niri-autoselect-portal.enable = true;
-                programs.retroarch = {
-                  enable = true;
-                  cores = {
-                    snes9x.enable = true;
-                    mupen64plus.enable = true;
-                    mgba.enable = true;
-                    mesen.enable = true;
-                    sameboy.enable = true;
-                    dolphin.enable = true;
-                    beetle-psx.enable = true;
-                    pcsx2.enable = true;
-                    ppsspp.enable = true;
-                  };
-                  settings = {
-                    config_save_on_exit = "true";
-                    cheevos_enable = "false";
-                  };
-                };
               };
             }
           ];
