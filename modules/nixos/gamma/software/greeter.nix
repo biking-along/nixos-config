@@ -2,7 +2,7 @@
   services.displayManager.dms-greeter = {
     enable = true;
     compositor = {
-      name = "niri"; # Required. Can be also "hyprland" or "sway"
+      name = "niri";
     };
     configHome = "/home/rw";
     configFiles = [
