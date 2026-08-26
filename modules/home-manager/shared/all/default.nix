@@ -7,6 +7,7 @@
     ./fish.nix
     ./git.nix
     ./homePkgs.nix
+    ./home-manager.nix
     ./lazygit.nix
     ./nix-index.nix
     ./nix-search.nix

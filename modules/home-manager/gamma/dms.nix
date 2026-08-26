@@ -311,4 +311,5 @@
     enable = true;
     package = pkgs.valent;
   };
+  services.niri-autoselect-portal.enable = true;
 }

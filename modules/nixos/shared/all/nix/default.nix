@@ -1,5 +1,6 @@
 {
   imports = [
+    ./agenix.nix
     ./home-manager.nix
     ./nh.nix
     ./nix.nix
