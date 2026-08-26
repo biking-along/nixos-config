@@ -86,15 +86,9 @@
             dms.nixosModules.default
             dank-greeter.nixosModules.default
             agenix.nixosModules.default
-            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
-                home = {
-                  username = "${username}";
-                  homeDirectory = "/home/${username}";
-                  stateVersion = "${state}";
-                };
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
@@ -127,7 +121,6 @@
             authentik-nix.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default
-            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             copyparty.nixosModules.default
             ({
               pkgs,
@@ -192,12 +185,6 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
-                programs.home-manager.enable = true;
-                home = {
-                  username = "${username}";
-                  homeDirectory = "/home/${username}";
-                  stateVersion = "${state}";
-                };
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
@@ -221,16 +208,9 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             agenix.nixosModules.default
-            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
-                programs.home-manager.enable = true;
-                home = {
-                  username = "${username}";
-                  homeDirectory = "/home/${username}";
-                  stateVersion = "${state}";
-                };
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
@@ -257,6 +237,7 @@
           modules = [
             ./hosts/kappa/configuration-base.nix
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
+            agenix.nixosModules.default
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
             ({pkgs, ...}: {environment.systemPackages = [pkgs.vim];})
             {
@@ -296,16 +277,9 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             agenix.nixosModules.default
-            {environment.systemPackages = [agenix.packages.x86_64-linux.default];}
             home-manager.nixosModules.home-manager
             {
               home-manager.users.${username} = {
-                programs.home-manager.enable = true;
-                home = {
-                  username = "${username}";
-                  homeDirectory = "/home/${username}";
-                  stateVersion = "${state}";
-                };
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared

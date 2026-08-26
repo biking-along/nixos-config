@@ -1,6 +1,11 @@
 {
   lib,
   config,
+  inputs,
+  username,
+  state,
+  host,
+  system,
   ...
 }:
 with lib; let
@@ -19,6 +24,7 @@ in {
   };
   config = mkIf cfg.enable {
     home-manager = {
+      extraSpecialArgs = {inherit inputs username state host system;};
       useGlobalPkgs = true;
       useUserPackages = true;
       backupFileExtension = "backup";
