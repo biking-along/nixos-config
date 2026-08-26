@@ -9,23 +9,23 @@
   ];
 
   boot.initrd.kernelModules = [
-    "pinctrl-tigerlake"
+    "kvm-intel"
     "surface_aggregator"
     "surface_aggregator_registry"
     "surface_aggregator_hub"
     "surface_hid_core"
     "surface_hid"
+    "hid_multitouch"
+    "8250_dw"
     "intel_lpss"
     "intel_lpss_pci"
-    "8250_dw"
-    "surface_platform_profile"
+    "xhci_pci"
+    "thunderbolt"
+    "nvme"
+    "usb_storage"
+    "sd_mod"
     "surface_kbd"
-    "surface_acpi_notify"
-    "surface_battery"
-    "surface_charger"
-    "surface_aggregator_cdev"
-    "intel_quickspi"
-    "surface_hotplug"
+    "pinctrl_tigerlake"
   ];
 
   # networking.wireless.enable = lib.mkDefault true;

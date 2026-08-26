@@ -1,7 +1,7 @@
 {
-  host,
-  config,
   lib,
+  config,
+  host,
   ...
 }:
 with lib; let
