@@ -10,6 +10,7 @@
     ./lazygit.nix
     ./nix-index.nix
     ./nix-search.nix
+    ./shell.nix
     ./stylix.nix
     ./yazi.nix
   ];
