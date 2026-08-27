@@ -7,7 +7,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation.imv;
 in {
   options.homeModules.shared.workstation.imv.enable = mkOption {
-    types = types.bool;
+    type = types.bool;
     description = ''
       Enable imv.
     '';

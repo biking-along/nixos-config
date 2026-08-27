@@ -8,7 +8,7 @@ with lib; let
 in {
   options.homeModules.shared.workstation.hideHmDe.enable = mkOption {
     type = types.bool;
-    descreiption = ''
+    description = ''
       Enable the hiding of desktop entries for specific programs.
     '';
   };
