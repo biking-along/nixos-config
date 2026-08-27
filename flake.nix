@@ -38,9 +38,12 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-monitor.url = "github:antonjah/nix-monitor";
     copyparty.url = "github:9001/copyparty";
-    agenix.url = "github:ryantm/agenix";
     authentik-nix.url = "github:nix-community/authentik-nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
