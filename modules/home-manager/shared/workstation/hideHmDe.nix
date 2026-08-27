@@ -1,15 +1,27 @@
 {
-  xdg.desktopEntries = {
-    
-    fish = {
-      name = "fish";
-      noDisplay = true;
+  lib,
+  config,
+  ...
+}:
+with lib; let
+  cfg = config.homeModules.shared.workstation.hideHmDe;
+in {
+  options.homeModules.shared.workstation.hideHmDe.enable = mkOption {
+    type = types.bool;
+    descreiption = ''
+      Enable the hiding of desktop entries for specific programs.
+    '';
+  };
+  config = mkIf cfg.enable {
+    xdg.desktopEntries = {
+      fish = {
+        name = "fish";
+        noDisplay = true;
+      };
+      yazi = {
+        name = "yazi";
+        noDisplay = true;
+      };
     };
-
-    yazi = {
-      name = "yazi";
-      noDisplay = true;
-    };
-
   };
 }
