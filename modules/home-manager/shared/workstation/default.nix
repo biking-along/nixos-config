@@ -25,7 +25,7 @@ in {
     '';
   };
   config = mkIf cfg.enable {
-    modules.shared.workstation = {
+    homeModules.shared.workstation = {
       automount.enable = lib.mkDefault true;
       foliate.enable = lib.mkDefault true;
       gtk.enable = lib.mkDefault true;
