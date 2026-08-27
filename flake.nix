@@ -92,7 +92,6 @@
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
-                  ./modules/home-manager/shared/workstation
                   dms.homeModules.dank-material-shell
                   dms.homeModules.niri
                   danksearch.homeModules.dsearch
@@ -100,8 +99,7 @@
                   agenix.homeManagerModules.default
                   niri-autoselect-portal.homeManagerModules.default
                 ];
-                programs.home-manager.enable = true;
-                services.niri-autoselect-portal.enable = true;
+                config.homeModules.shared.workstation.enable = true;
               };
             }
           ];
@@ -214,8 +212,8 @@
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
-                  ./modules/home-manager/shared/workstation
                 ];
+                config.homeModules.shared.workstation.enable = true;
               };
             }
             {
