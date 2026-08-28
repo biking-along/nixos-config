@@ -22,18 +22,18 @@
     #   url = "github:epireyn/niri-flake";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dank-greeter = {
-      url = "github:AvengeMedia/dank-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    danksearch = {
-      url = "github:AvengeMedia/danksearch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # dms = {
+    #   url = "github:AvengeMedia/DankMaterialShell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # dank-greeter = {
+    #   url = "github:AvengeMedia/dank-greeter";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # danksearch = {
+    #   url = "github:AvengeMedia/danksearch";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -74,9 +74,9 @@
     nvf,
     nixos-hardware,
     # niri,
-    dms,
-    dank-greeter,
-    danksearch,
+    # dms,
+    # dank-greeter,
+    # danksearch,
     nix-monitor,
     copyparty,
     agenix,
@@ -103,8 +103,8 @@
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             # niri.nixosModules.niri
-            dms.nixosModules.default
-            dank-greeter.nixosModules.default
+            # dms.nixosModules.default
+            # dank-greeter.nixosModules.default
             agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
@@ -112,9 +112,9 @@
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
-                  dms.homeModules.dank-material-shell
-                  dms.homeModules.niri
-                  danksearch.homeModules.dsearch
+                  # dms.homeModules.dank-material-shell
+                  # dms.homeModules.niri
+                  # danksearch.homeModules.dsearch
                   nix-monitor.homeManagerModules.default
                   agenix.homeManagerModules.default
                   niri-autoselect-portal.homeManagerModules.default
