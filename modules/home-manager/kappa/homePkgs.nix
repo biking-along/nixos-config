@@ -18,7 +18,8 @@
     fd
     microfetch
     bitwarden-desktop
-    jellyfin-media-player
+    jellyfin-desktop
+    jellyfin-mpv-shim
     pear-desktop
     vesktop
     vlc
