@@ -44,7 +44,6 @@
     };
     nix-monitor = {
       url = "github:antonjah/nix-monitor";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     copyparty = {
       url = "github:9001/copyparty";
