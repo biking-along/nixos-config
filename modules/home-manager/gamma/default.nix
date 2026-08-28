@@ -2,7 +2,7 @@
   imports = [
     ./age.nix
     ./calibre.nix
-    ./dms.nix
+    # ./dms.nix
     ./email.nix
     ./homePkgs.nix
     ./kitty.nix

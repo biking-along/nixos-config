@@ -18,10 +18,10 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:epireyn/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri = {
+    #   url = "github:epireyn/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,7 +73,7 @@
     stylix,
     nvf,
     nixos-hardware,
-    niri,
+    # niri,
     dms,
     dank-greeter,
     danksearch,
@@ -102,7 +102,7 @@
             ./hosts/${host}
             stylix.nixosModules.stylix
             nvf.nixosModules.default
-            niri.nixosModules.niri
+            # niri.nixosModules.niri
             dms.nixosModules.default
             dank-greeter.nixosModules.default
             agenix.nixosModules.default

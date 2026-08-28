@@ -3,13 +3,13 @@
   inputs,
   ...
 }: {
-  nixpkgs.overlays = [inputs.niri.overlays.niri];
-  niri-flake.cache.enable = true;
+  # nixpkgs.overlays = [inputs.niri.overlays.niri];
+  # niri-flake.cache.enable = true;
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    # package = pkgs.niri-unstable;
   };
-  systemd.user.services.niri-flake-polkit.enable = false;
+  # systemd.user.services.niri-flake-polkit.enable = false;
   networking.firewall = rec {
     allowedTCPPortRanges = [
       {
