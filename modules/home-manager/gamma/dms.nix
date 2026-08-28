@@ -3,208 +3,208 @@
   # lib,
   ...
 }: {
-  programs.dms-shell = {
-    enable = true;
-    systemd = {
-      enable = true; # Systemd service for auto-start
-      restartIfChanged = true; # Auto-restart dms.service when dank-material-shell changes
-    };
-
-    # Core features
-    enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableVPN = true; # VPN management widget
-    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true; # Audio visualizer (cava)
-    enableCalendarEvents = true; # Calendar integration (khal)
-    enableClipboardPaste = true;
-    settings = {
-      currentThemeName = lib.mkForce "dynamic";
-      currentThemeCategory = lib.mkForce "dynamic";
-      launcherLogoMode = "os";
-      use24HourClock = false;
-      useAutoLocation = true;
-      weatherEnabled = true;
-      useFahrenheit = true;
-      windSpeedUnit = "mph";
-      showBattery = false;
-      hideBrightnessSlider = true;
-      acMonitorTimeout = 900;
-      acLockTimeout = 0;
-      acSuspendTimeout = 1200;
-      acSuspendBehavior = 0;
-
-      displayNameMode = "system";
-      screenPreferences = {};
-      showOnLastDisplay = {};
-      niriOutputSettings = {
-        DP-1 = {
-          focusAtStartup = true;
-          layout = {
-            alwaysCenterSingleColumn = true;
-          };
-          vrrOnDemand = true;
-        };
-        HDMI-A-1 = {
-          focusAtStartup = false;
-          layout = {
-            alwaysCenterSingleColumn = true;
-          };
-          vrrOnDemand = false;
-        };
-        HDMI-A-2 = {
-          vrrOnDemand = true;
-          layout = {
-            alwaysCenterSingleColumn = true;
-          };
-        };
-      };
-      hyprlandOutputSettings = {};
-      displayProfiles = {
-        niri = {
-          profile_1771595064250_gk7xzu = {
-            createdAt = 1771595064250;
-            id = "profile_1771595064250_gk7xzu";
-            name = "Default";
-            outputSet = [
-              "DP-1"
-              "HDMI-A-1"
-              "HDMI-A-2"
-            ];
-            updatedAt = 1771595064250;
-          };
-          profile_1773672447575_jwlfb3 = {
-            createdAt = 1773672447575;
-            id = "profile_1773672447575_jwlfb3";
-            name = "KVM";
-            outputSet = [
-              "HDMI-A-2"
-            ];
-            updatedAt = 1773672447575;
-          };
-        };
-      };
-      activeDisplayProfile = {
-        niri = "profile_1771595064250_gk7xzu";
-      };
-      displayProfileAutoSelect = false;
-      displayShowDisconnected = false;
-      displaySnapToEdge = true;
-
-      barConfigs = [
-        {
-          id = "default";
-          name = "Main Bar";
-          enabled = true;
-          position = 0;
-          screenPreferences = [
-            {
-              name = "DP-1";
-              model = "M27Q P";
-            }
-          ];
-          showOnLastDisplay = false;
-          leftWidgets = [
-            "launcherButton"
-            "workspaceSwitcher"
-            "focusedWindow"
-          ];
-          centerWidgets = [
-            "music"
-            "clock"
-            "weather"
-            {
-              id = "homeAssistantMonitor";
-              enabled = true;
-            }
-          ];
-          rightWidgets = [
-            "systemTray"
-            "clipboard"
-            "cpuUsage"
-            "amdGpuMonitor"
-            "memUsage"
-            "notificationButton"
-            "controlCenterButton"
-          ];
-          spacing = 4;
-          innerPadding = 4;
-          bottomGap = 0;
-          transparency = 1;
-          widgetTransparency = 1;
-          squareCorners = false;
-          noBackground = false;
-          gothCornersEnabled = false;
-          gothCornerRadiusOverride = false;
-          gothCornerRadiusValue = 12;
-          borderEnabled = false;
-          borderColor = "surfaceText";
-          borderOpacity = 1;
-          borderThickness = 1;
-          fontScale = 1;
-          autoHide = false;
-          autoHideDelay = 250;
-          openOnOverview = false;
-          visible = true;
-          popupGapsAuto = true;
-          popupGapsManual = 4;
-        }
-      ];
-
-      controlCenterWidgets = [
-        {
-          id = "volumeSlider";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "brightnessSlider";
-          enabled = true;
-          width = 50;
-          devicename = "ddc:i2c-7";
-        }
-        {
-          id = "wifi";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "bluetooth";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "audioOutput";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "audioInput";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "nightMode";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "darkMode";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "plugin_displayMirror";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "plugin_dankKDEConnect";
-          enabled = true;
-          width = 50;
-        }
-      ];
-    };
-  };
+  # programs.dms-shell = {
+  #   enable = true;
+  #   systemd = {
+  #     enable = true; # Systemd service for auto-start
+  #     restartIfChanged = true; # Auto-restart dms.service when dank-material-shell changes
+  #   };
+  #
+  #   # Core features
+  #   enableSystemMonitoring = true; # System monitoring widgets (dgop)
+  #   enableVPN = true; # VPN management widget
+  #   enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+  #   enableAudioWavelength = true; # Audio visualizer (cava)
+  #   enableCalendarEvents = true; # Calendar integration (khal)
+  #   enableClipboardPaste = true;
+  #   settings = {
+  #     currentThemeName = lib.mkForce "dynamic";
+  #     currentThemeCategory = lib.mkForce "dynamic";
+  #     launcherLogoMode = "os";
+  #     use24HourClock = false;
+  #     useAutoLocation = true;
+  #     weatherEnabled = true;
+  #     useFahrenheit = true;
+  #     windSpeedUnit = "mph";
+  #     showBattery = false;
+  #     hideBrightnessSlider = true;
+  #     acMonitorTimeout = 900;
+  #     acLockTimeout = 0;
+  #     acSuspendTimeout = 1200;
+  #     acSuspendBehavior = 0;
+  #
+  #     displayNameMode = "system";
+  #     screenPreferences = {};
+  #     showOnLastDisplay = {};
+  #     niriOutputSettings = {
+  #       DP-1 = {
+  #         focusAtStartup = true;
+  #         layout = {
+  #           alwaysCenterSingleColumn = true;
+  #         };
+  #         vrrOnDemand = true;
+  #       };
+  #       HDMI-A-1 = {
+  #         focusAtStartup = false;
+  #         layout = {
+  #           alwaysCenterSingleColumn = true;
+  #         };
+  #         vrrOnDemand = false;
+  #       };
+  #       HDMI-A-2 = {
+  #         vrrOnDemand = true;
+  #         layout = {
+  #           alwaysCenterSingleColumn = true;
+  #         };
+  #       };
+  #     };
+  #     hyprlandOutputSettings = {};
+  #     displayProfiles = {
+  #       niri = {
+  #         profile_1771595064250_gk7xzu = {
+  #           createdAt = 1771595064250;
+  #           id = "profile_1771595064250_gk7xzu";
+  #           name = "Default";
+  #           outputSet = [
+  #             "DP-1"
+  #             "HDMI-A-1"
+  #             "HDMI-A-2"
+  #           ];
+  #           updatedAt = 1771595064250;
+  #         };
+  #         profile_1773672447575_jwlfb3 = {
+  #           createdAt = 1773672447575;
+  #           id = "profile_1773672447575_jwlfb3";
+  #           name = "KVM";
+  #           outputSet = [
+  #             "HDMI-A-2"
+  #           ];
+  #           updatedAt = 1773672447575;
+  #         };
+  #       };
+  #     };
+  #     activeDisplayProfile = {
+  #       niri = "profile_1771595064250_gk7xzu";
+  #     };
+  #     displayProfileAutoSelect = false;
+  #     displayShowDisconnected = false;
+  #     displaySnapToEdge = true;
+  #
+  #     barConfigs = [
+  #       {
+  #         id = "default";
+  #         name = "Main Bar";
+  #         enabled = true;
+  #         position = 0;
+  #         screenPreferences = [
+  #           {
+  #             name = "DP-1";
+  #             model = "M27Q P";
+  #           }
+  #         ];
+  #         showOnLastDisplay = false;
+  #         leftWidgets = [
+  #           "launcherButton"
+  #           "workspaceSwitcher"
+  #           "focusedWindow"
+  #         ];
+  #         centerWidgets = [
+  #           "music"
+  #           "clock"
+  #           "weather"
+  #           {
+  #             id = "homeAssistantMonitor";
+  #             enabled = true;
+  #           }
+  #         ];
+  #         rightWidgets = [
+  #           "systemTray"
+  #           "clipboard"
+  #           "cpuUsage"
+  #           "amdGpuMonitor"
+  #           "memUsage"
+  #           "notificationButton"
+  #           "controlCenterButton"
+  #         ];
+  #         spacing = 4;
+  #         innerPadding = 4;
+  #         bottomGap = 0;
+  #         transparency = 1;
+  #         widgetTransparency = 1;
+  #         squareCorners = false;
+  #         noBackground = false;
+  #         gothCornersEnabled = false;
+  #         gothCornerRadiusOverride = false;
+  #         gothCornerRadiusValue = 12;
+  #         borderEnabled = false;
+  #         borderColor = "surfaceText";
+  #         borderOpacity = 1;
+  #         borderThickness = 1;
+  #         fontScale = 1;
+  #         autoHide = false;
+  #         autoHideDelay = 250;
+  #         openOnOverview = false;
+  #         visible = true;
+  #         popupGapsAuto = true;
+  #         popupGapsManual = 4;
+  #       }
+  #     ];
+  #
+  #     controlCenterWidgets = [
+  #       {
+  #         id = "volumeSlider";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "brightnessSlider";
+  #         enabled = true;
+  #         width = 50;
+  #         devicename = "ddc:i2c-7";
+  #       }
+  #       {
+  #         id = "wifi";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "bluetooth";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "audioOutput";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "audioInput";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "nightMode";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "darkMode";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "plugin_displayMirror";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #       {
+  #         id = "plugin_dankKDEConnect";
+  #         enabled = true;
+  #         width = 50;
+  #       }
+  #     ];
+  #   };
+  # };
 
   # programs.niri = {
   #   settings = {
