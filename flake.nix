@@ -42,12 +42,30 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-monitor.url = "github:antonjah/nix-monitor";
-    copyparty.url = "github:9001/copyparty";
-    authentik-nix.url = "github:nix-community/authentik-nix";
-    nix-alien.url = "github:thiagokokada/nix-alien";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    niri-autoselect-portal.url = "git+https://codeberg.org/debugloop/niri-autoselect-portal.git";
+    nix-monitor = {
+      url = "github:antonjah/nix-monitor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    copyparty = {
+      url = "github:9001/copyparty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    authentik-nix = {
+      url = "github:nix-community/authentik-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri-autoselect-portal = {
+      url = "git+https://codeberg.org/debugloop/niri-autoselect-portal.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
