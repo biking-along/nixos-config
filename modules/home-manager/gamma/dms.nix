@@ -6,16 +6,14 @@
   programs.dank-material-shell = {
     enable = true;
     systemd = {
-      enable = true; # Systemd service for auto-start
-      restartIfChanged = true; # Auto-restart dms.service when dank-material-shell changes
+      enable = true;
+      restartIfChanged = true;
     };
-
-    # Core features
-    enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableVPN = true; # VPN management widget
-    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true; # Audio visualizer (cava)
-    enableCalendarEvents = true; # Calendar integration (khal)
+    enableSystemMonitoring = true;
+    enableVPN = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    enableCalendarEvents = true;
     enableClipboardPaste = true;
     settings = {
       currentThemeName = lib.mkForce "dynamic";
@@ -32,7 +30,6 @@
       acLockTimeout = 0;
       acSuspendTimeout = 1200;
       acSuspendBehavior = 0;
-
       displayNameMode = "system";
       screenPreferences = {};
       showOnLastDisplay = {};
@@ -89,7 +86,6 @@
       displayProfileAutoSelect = false;
       displayShowDisconnected = false;
       displaySnapToEdge = true;
-
       barConfigs = [
         {
           id = "default";
@@ -149,7 +145,6 @@
           popupGapsManual = 4;
         }
       ];
-
       controlCenterWidgets = [
         {
           id = "volumeSlider";
@@ -205,7 +200,6 @@
       ];
     };
   };
-
   programs.niri = {
     settings = {
       environment = {
@@ -244,7 +238,7 @@
         "Shift+Space".action.toggle-overview = [];
         "Control+Space".action.spawn = "dms ipc call spotlight toggle";
 
-        #       # Window States
+        # Window States
         "Mod+Shift+F".action.fullscreen-window = [];
         "Mod+Control+F".action.toggle-window-floating = [];
         "Mod+G".action.maximize-column = [];
