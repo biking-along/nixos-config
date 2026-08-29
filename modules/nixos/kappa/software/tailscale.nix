@@ -1,9 +1,10 @@
-{
+{username, ...}: {
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "client";
-    extraUpFlags = [
+    extraSetFlags = [
       "--ssh"
+      "--operator=${username}"
     ];
   };
 }
