@@ -7,6 +7,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation;
 in {
   imports = [
+    ./antigravity-cli.nix
     ./automount.nix
     ./foliate.nix
     ./gtk.nix

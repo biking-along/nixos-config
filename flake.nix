@@ -232,6 +232,7 @@
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
+                  agenix.homeManagerModules.default
                 ];
                 config.homeModules.shared.workstation.enable = true;
               };
