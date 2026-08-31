@@ -27,6 +27,7 @@ in {
   };
   config = mkIf cfg.enable {
     homeModules.shared.workstation = {
+      antigravity-cli.enable = lib.mkDefault true;
       automount.enable = lib.mkDefault true;
       foliate.enable = lib.mkDefault true;
       gtk.enable = lib.mkDefault true;
