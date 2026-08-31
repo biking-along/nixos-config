@@ -6,5 +6,4 @@
     ../../modules/nixos/${host}
     ../../modules/nixos/shared
   ];
-  config.modules.shared.workstation.enable = true;
 }

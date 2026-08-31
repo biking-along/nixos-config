@@ -100,6 +100,7 @@
           system = "${system}";
           modules = [
             ./hosts/${host}
+            {config.modules.shared.workstation.enable = true;}
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             niri.nixosModules.niri
@@ -222,6 +223,7 @@
           system = "${system}";
           modules = [
             ./hosts/${host}
+            {config.modules.shared.workstation.enable = true;}
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
@@ -245,6 +247,48 @@
             }
           ];
         };
+      # nix build .#nixosConfigurations.recoveryImage.config.system.build.isoImage
+      recoveryImage = let
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs system;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            agenix.nixosModules.default
+            {
+              boot.loader.systemd-boot.enable = true;
+              boot.loader.efi.canTouchEfiVariables = true;
+              boot.supportedFilesystems = nixpkgs.lib.mkForce [
+                "btrfs"
+                "ext4"
+                "f2fs"
+                "ntfs"
+                "vfat"
+                "xfs"
+              ];
+              isoImage.squashfsCompression = "zstd";
+            }
+            ({pkgs, ...}: {
+              environment.systemPackages = with pkgs; [
+                vim
+                git
+              ];
+            })
+            ({pkgs, ...}: {
+              services.getty.helpLine = ''
+                Exit the prompt to see this help again.
+                The nixos-config repo can be found at /home/nixos/nixos-config/.
+              '';
+
+              boot.postBootCommands = ''
+                ln -s ${self} /home/nixos/nixos-config
+              '';
+            })
+          ];
+        };
       # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
       surfaceRecovery = let
         system = "x86_64-linux";
@@ -258,9 +302,14 @@
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
             agenix.nixosModules.default
             "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-            ({pkgs, ...}: {environment.systemPackages = [pkgs.vim];})
+            ({pkgs, ...}: {
+              environment.systemPackages = with pkgs; [
+                vim
+                git
+              ];
+            })
             {
-              isoImage.squashfsCompression = "gzip -Xcompression-level 1";
+              isoImage.squashfsCompression = "zstd";
               boot.supportedFilesystems = nixpkgs.lib.mkForce [
                 "btrfs"
                 "ext4"
@@ -317,6 +366,7 @@
                 interop.register = true;
                 useWindowsDriver = true;
               };
+              config.modules.shared.all.software.tailscale.enable = false;
             }
           ];
         };
