@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   age = {
     identityPaths = ["/home/rw/.ssh/id_ed25519"];
     secrets = {
@@ -8,9 +12,12 @@
     };
   };
   home.sessionVariables = {
-    GEMINI_API_KEY = "(cat ${config.age.secrets.geminiApiKey.path})";
+    GEMINI_API_KEY = "$(${pkgs.coreutils}/bin/cat ${config.age.secrets.geminiApiKey.path})";
   };
   programs.antigravity-cli = {
     enable = true;
+    settings = {
+      modelProvider = "gemini";
+    };
   };
 }
