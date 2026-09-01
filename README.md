@@ -1,11 +1,12 @@
 # NixOS
 
-This is a flake for my desktop and laptop/tablet; Gamma and Kappa. Gamma is a
-x86-64 desktop gaming pc with and Intel CPU and an AMD GPU. Lambda is a
-repurposed sff pc acting as part of a homelab. Kappa is a Microsoft Surface
+This is a flake for my various machines; Gamma, Kappa, Lambda, Omicron, and Tau.
+
+Gamma is a x86-64 desktop gaming pc with and Intel CPU and an AMD GPU. Lambda is
+a repurposed sff pc acting as part of a homelab. Kappa is a Microsoft Surface
 Pro 8. The kappa configs are originally forked from
 [IWander's](https://github.com/iwanders/nixos-surface) Surface Pro 9 config.
-Omicron is wsl on a Surface Laptop.
+Omicron is wsl on a Surface Laptop. Tau is my config for nix-on-droid.
 
 ## Useful links;
 
