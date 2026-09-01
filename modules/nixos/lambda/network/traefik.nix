@@ -109,38 +109,38 @@
         };
         dashboard = {
           entryPoints = ["websecure"];
-          rule = "Host(`traefik.rwswilliams.info`)";
+          rule = "Host(`traefik.rswilliams.info`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
           # middlewares = ["authentik"];
         };
-        paperless = {
-          entryPoints = ["websecure"];
-          rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
-          service = "paperless";
-          tls.certResolver = "letsencrypt";
-          middlewares = ["authentik"];
-        };
-        immich = {
-          entryPoints = ["websecure"];
-          rule = "Host(`photos.lambda.hawk-coelacanth.ts.net`)";
-          service = "immich";
-          tls.certResolver = "tailscale";
-        };
-        copyparty = {
-          entryPoints = ["websecure"];
-          rule = "Host(`nas.lambda.hawk-coelacanth.ts.net`)";
-          service = "copyparty";
-          tls.certResolver = "tailscale";
-          middlewares = ["authentik"];
-        };
-        grafana = {
-          entryPoints = ["websecure"];
-          rule = "Host(`graf.lambda.hawk-coelacanth.ts.net`)";
-          service = "grafana";
-          tls.certResolver = "tailscale";
-          middlewares = ["authentik"];
-        };
+        # paperless = {
+        #   entryPoints = ["websecure"];
+        #   rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
+        #   service = "paperless";
+        #   tls.certResolver = "letsencrypt";
+        #   middlewares = ["authentik"];
+        # };
+        # immich = {
+        #   entryPoints = ["websecure"];
+        #   rule = "Host(`photos.lambda.hawk-coelacanth.ts.net`)";
+        #   service = "immich";
+        #   tls.certResolver = "tailscale";
+        # };
+        # copyparty = {
+        #   entryPoints = ["websecure"];
+        #   rule = "Host(`nas.lambda.hawk-coelacanth.ts.net`)";
+        #   service = "copyparty";
+        #   tls.certResolver = "tailscale";
+        #   middlewares = ["authentik"];
+        # };
+        # grafana = {
+        #   entryPoints = ["websecure"];
+        #   rule = "Host(`graf.lambda.hawk-coelacanth.ts.net`)";
+        #   service = "grafana";
+        #   tls.certResolver = "tailscale";
+        #   middlewares = ["authentik"];
+        # };
       };
     };
   };
