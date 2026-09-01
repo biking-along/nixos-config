@@ -93,13 +93,13 @@
       routers = {
         auth = {
           entryPoints = ["websecure"];
-          rule = "Host(`authentik.lambda.hawk-coelacanth.ts.net`) || HostRegexp(`{subdomain:[a-z0-9]+}.lambda.hawk-coelacanth.ts.net`) && PathPrefix(`/outpost.goauthentik.io/`)";
+          rule = "Host(`authentik.lambda.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.lambda.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
           tls.certResolver = "tailscale";
         };
         dashboard = {
           entryPoints = ["websecure"];
-          rule = "Host(`traefik.lambda.hawk-coelacanth.ts.net`)";
+          rule = "Host(`traefik.lambda.com`)";
           service = "api@internal";
           tls.certResolver = "tailscale";
           middlewares = ["authentik"];
