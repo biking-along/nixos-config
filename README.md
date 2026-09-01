@@ -65,6 +65,7 @@ parent module, they can still individually be overriden.
 - `modules.shared.all.hardware.audio.enable`: Enable universal audio settings.
 - `modules.shared.all.hardware.disk.enable`: Enable universal disk settings.
 - `modules.shared.all.hardware.networking.enable`: Enable universal networking
+- `modules.shared.all.nix.agenix.enable`: Add agenix to system packages.
   settings.
 - `modules.shared.all.nix.home-manager.enable`: Enable universal home-manager
   module settings.
@@ -80,6 +81,8 @@ parent module, they can still individually be overriden.
   settings.
 - `modules.shared.all.software.systemPkgs.enable`: Enable universal system
   packages.
+- `modules.shared.all.software.tailscale.enable`: Enable tailscale with
+  universal settings.
 - `modules.shared.all.software.xdg.enable`: Enable universal xdg settings
 - `modules.shared.workstation.enable`: Enable options and settings specific to
   workstations
@@ -93,7 +96,6 @@ parent module, they can still individually be overriden.
   configs for workstations.
 - `modules.shared.workstation.software.gaming.enable`: Enable steam with extras
   like proton-ge-bin
-- `modules.shared.all.nix.agenix.enable`: Add agenix to system packages.
 
 ### Home Manager Modules
 
