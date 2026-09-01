@@ -160,7 +160,7 @@
                   name = "Lambda NAS";
                   site = "https://nas.rwillia.ms/";
                   https-only = false;
-                  ipu = "192.168.1.0/24=rw";
+                  ipu = "192.168.0.0/24=rw";
                   rproxy = 1;
                   stats = true;
                   usernames = true;

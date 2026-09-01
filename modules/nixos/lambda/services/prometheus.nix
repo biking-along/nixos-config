@@ -2,7 +2,7 @@
   services.prometheus = {
     enable = true;
     port = 9001;
-    listenAddress = "192.168.1.192";
+    listenAddress = "192.168.0.192";
     scrapeConfigs = [
       {
         job_name = "copyparty";

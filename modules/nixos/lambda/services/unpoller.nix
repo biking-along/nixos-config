@@ -4,7 +4,7 @@
     prometheus.disable = true;
     unifi = {
       defaults = {
-        url = "https://192.168.1.1";
+        url = "https://192.168.0.1";
         verify_ssl = false;
         user = "rw";
         pass = "/etc/unifiPass";
@@ -25,7 +25,7 @@
     enable = true;
     controllers = [
       {
-        url = "https://192.168.1.1";
+        url = "https://192.168.0.1";
         verify_ssl = false;
         user = "rw";
         pass = "/etc/unifiPass";
