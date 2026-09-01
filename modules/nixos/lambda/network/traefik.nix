@@ -8,12 +8,22 @@
   services.tailscale.permitCertUid = "traefik";
   services.traefik = {
     enable = true;
-    # environmentFiles = ["/run/agenix/traefik.env"];
+    environmentFiles = ["/run/agenix/traefik.env"];
 
     staticConfigOptions = {
-      # environmentFiles = ["/run/agenix/traefik.env"];
+      environmentFiles = ["/run/agenix/traefik.env"];
       api.dashboard = true;
-      certificatesResolvers."tailscale".tailscale = {};
+      certificatesResolvers."letsencrypt".acme = {
+        email = "bikingalong@pm.me";
+        storage = "/var/lib/traefik/acme.json";
+        dnsChallenge = {
+          provider = "cloudflare";
+          resolvers = ["1.1.1.1:53" "9.9.9.9:53"];
+          propagation = {
+            delayBeforeChecks = "10s";
+          };
+        };
+      };
       entryPoints = {
         web = {
           address = ":80";
@@ -26,7 +36,7 @@
         websecure = {
           address = ":443";
           asDefault = true;
-          # http.tls.certResolver = "tailscale";
+          http.tls.certResolver = "letsencrypt";
         };
       };
     };
@@ -93,22 +103,22 @@
       routers = {
         auth = {
           entryPoints = ["websecure"];
-          rule = "Host(`authentik.lambda.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.lambda.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
+          rule = "Host(`authentik.rswilliams.info`) || HostRegexp(`{subdomain:[a-z0-9]+}.rswilliams.info`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
-          # tls.certResolver = "tailscale";
+          tls.certResolver = "letsencrypt";
         };
         dashboard = {
           entryPoints = ["websecure"];
-          rule = "Host(`traefik.lambda.com`)";
+          rule = "Host(`traefik.rwswilliams.info`)";
           service = "api@internal";
-          # tls.certResolver = "tailscale";
+          tls.certResolver = "letsencrypt";
           # middlewares = ["authentik"];
         };
         paperless = {
           entryPoints = ["websecure"];
           rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
           service = "paperless";
-          tls.certResolver = "tailscale";
+          tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
         };
         immich = {
