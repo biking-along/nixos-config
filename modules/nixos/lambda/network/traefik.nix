@@ -26,7 +26,7 @@
         websecure = {
           address = ":443";
           asDefault = true;
-          http.tls.certResolver = "tailscale";
+          # http.tls.certResolver = "tailscale";
         };
       };
     };
@@ -95,13 +95,13 @@
           entryPoints = ["websecure"];
           rule = "Host(`authentik.lambda.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.lambda.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
-          tls.certResolver = "tailscale";
+          # tls.certResolver = "tailscale";
         };
         dashboard = {
           entryPoints = ["websecure"];
           rule = "Host(`traefik.lambda.com`)";
           service = "api@internal";
-          tls.certResolver = "tailscale";
+          # tls.certResolver = "tailscale";
           middlewares = ["authentik"];
         };
         paperless = {
