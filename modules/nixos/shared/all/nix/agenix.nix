@@ -18,5 +18,6 @@ in {
     environment.systemPackages = [
       inputs.agenix.packages.x86_64-linux.default
     ];
+    age.identityPaths = ["/home/rw/.ssh/id_ed25519"];
   };
 }

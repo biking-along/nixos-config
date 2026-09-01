@@ -2,8 +2,8 @@
   age.secrets."traefik.env" = {
     file = ../../../../secrets/traefik.env.age;
     mode = "770";
-    owner = "traefik";
-    group = "traefik";
+    # owner = "traefik";
+    # group = "traefik";
   };
   services.tailscale.permitCertUid = "traefik";
   services.traefik = {
@@ -103,16 +103,16 @@
       routers = {
         auth = {
           entryPoints = ["websecure"];
-          rule = "Host(`authentik.rswilliams.info`) || HostRegexp(`{subdomain:[a-z0-9]+}.rswilliams.info`) && PathPrefix(`/outpost.goauthentik.io/`)";
+          rule = "Host(`authentik.rwilliams.info`) || HostRegexp(`{subdomain:[a-z0-9]+}.rwilliams.info`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
           tls.certResolver = "letsencrypt";
         };
         dashboard = {
           entryPoints = ["websecure"];
-          rule = "Host(`traefik.rswilliams.info`)";
+          rule = "Host(`traefik.rwilliams.info`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
-          # middlewares = ["authentik"];
+          middlewares = ["authentik"];
         };
         # paperless = {
         #   entryPoints = ["websecure"];
