@@ -5,7 +5,7 @@
     owner = "traefik";
     group = "traefik";
   };
-
+  services.tailscale.permitCertUid = "traefik";
   services.traefik = {
     enable = true;
     # environmentFiles = ["/run/agenix/traefik.env"];
@@ -101,32 +101,32 @@
           entryPoints = ["websecure"];
           rule = "Host(`traefik.lambda.hawk-coelacanth.ts.net`)";
           service = "api@internal";
-          tls.certResolver = "letsencrypt";
+          tls.certResolver = "tailscale";
           middlewares = ["authentik"];
         };
         paperless = {
           entryPoints = ["websecure"];
-          rule = "Host(`paperless.rwillia.ms`)";
+          rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
           service = "paperless";
           tls.certResolver = "tailscale";
           middlewares = ["authentik"];
         };
         immich = {
           entryPoints = ["websecure"];
-          rule = "Host(`photos.rwillia.ms`)";
+          rule = "Host(`photos.lambda.hawk-coelacanth.ts.net`)";
           service = "immich";
           tls.certResolver = "tailscale";
         };
         copyparty = {
           entryPoints = ["websecure"];
-          rule = "Host(`nas.rwillia.ms`)";
+          rule = "Host(`nas.lambda.hawk-coelacanth.ts.net`)";
           service = "copyparty";
           tls.certResolver = "tailscale";
           middlewares = ["authentik"];
         };
         grafana = {
           entryPoints = ["websecure"];
-          rule = "Host(`graf.rwillia.ms`)";
+          rule = "Host(`graf.lambda.hawk-coelacanth.ts.net`)";
           service = "grafana";
           tls.certResolver = "tailscale";
           middlewares = ["authentik"];
