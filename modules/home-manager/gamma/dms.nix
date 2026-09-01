@@ -18,6 +18,8 @@
     settings = {
       currentThemeName = lib.mkForce "dynamic";
       currentThemeCategory = lib.mkForce "dynamic";
+      blurredWallpaperLayer = true;
+      systemTrayIconTintMode = "primary";
       launcherLogoMode = "os";
       use24HourClock = false;
       useAutoLocation = true;
@@ -86,6 +88,14 @@
       displayProfileAutoSelect = false;
       displayShowDisconnected = false;
       displaySnapToEdge = true;
+      launcherStyle = "island";
+      dankIslandBarId = true;
+      dankIslandHoverOpenDelay = 50;
+      dankIslandHoverCloseDelay = 50;
+      dankIslandHomeMediaSlot = "hidden";
+      dankIslandSatelliteGap = 27;
+      dankIslandSatelliteBackground = true;
+      dankIslandSatelliteGothCorners = false;
       barConfigs = [
         {
           id = "default";
@@ -108,10 +118,6 @@
             "music"
             "clock"
             "weather"
-            {
-              id = "homeAssistantMonitor";
-              enabled = true;
-            }
           ];
           rightWidgets = [
             "systemTray"
