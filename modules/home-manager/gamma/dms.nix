@@ -89,7 +89,7 @@
       displayShowDisconnected = false;
       displaySnapToEdge = true;
       launcherStyle = "island";
-      dankIslandBarId = true;
+      dankIslandBarId = "default";
       dankIslandHoverOpenDelay = 50;
       dankIslandHoverCloseDelay = 50;
       dankIslandHomeMediaSlot = "hidden";
