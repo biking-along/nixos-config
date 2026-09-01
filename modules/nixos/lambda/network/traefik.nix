@@ -102,7 +102,7 @@
           rule = "Host(`traefik.lambda.com`)";
           service = "api@internal";
           # tls.certResolver = "tailscale";
-          middlewares = ["authentik"];
+          # middlewares = ["authentik"];
         };
         paperless = {
           entryPoints = ["websecure"];
