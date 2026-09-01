@@ -5,7 +5,6 @@
     # owner = "traefik";
     # group = "traefik";
   };
-  services.tailscale.permitCertUid = "traefik";
   services.traefik = {
     enable = true;
     environmentFiles = ["/run/agenix/traefik.env"];
