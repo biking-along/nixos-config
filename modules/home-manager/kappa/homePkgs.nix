@@ -16,10 +16,8 @@
     fzf
     ripgrep
     fd
-    microfetch
     bitwarden-desktop
     jellyfin-desktop
-    jellyfin-mpv-shim
     pear-desktop
     vesktop
     vlc
