@@ -8,6 +8,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation.antigravity-cli;
 in {
   options.homeModules.shared.workstation.antigravity-cli.enable = mkOption {
+    default = false;
     type = types.bool;
     description = ''
       Enable antigravity-cli and export gemini api key to home session variable via agenix.

@@ -8,6 +8,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation.gtk;
 in {
   options.homeModules.shared.workstation.gtk.enable = mkOption {
+    default = false;
     type = types.bool;
     description = ''
       Enable gtk theme settings.

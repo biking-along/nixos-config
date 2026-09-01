@@ -7,6 +7,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation.zathura;
 in {
   options.homeModules.shared.workstation.zathura.enable = mkOption {
+    default = false;
     type = types.bool;
     description = ''
       Enable zathura.

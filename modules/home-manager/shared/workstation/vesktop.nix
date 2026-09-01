@@ -7,6 +7,7 @@ with lib; let
   cfg = config.homeModules.shared.workstation.vesktop;
 in {
   options.homeModules.shared.workstation.vesktop.enable = mkOption {
+    default = false;
     type = types.bool;
     description = ''
       Enable vesktop.
