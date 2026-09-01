@@ -9,6 +9,7 @@ in {
   options = {
     modules.shared.workstation.hardware.printing = {
       enable = mkOption {
+        default = false;
         type = types.bool;
         description = ''
           Enable printing with settings for workstations.

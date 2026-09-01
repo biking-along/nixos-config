@@ -9,6 +9,7 @@ with lib; let
 in {
   options = {
     modules.shared.workstation.software.gaming.enable = mkOption {
+      default = false;
       type = types.bool;
       description = ''
         Enable steam with extras like proton-ge-bin

@@ -10,6 +10,7 @@ in {
   options = {
     modules.shared.workstation.hardware.bluetooth = {
       enable = mkOption {
+        default = false;
         type = types.bool;
         description = ''
           Enable bluetooth with settings for workstations

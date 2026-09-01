@@ -12,6 +12,7 @@ in {
   options = {
     modules.shared.workstation.software = {
       enable = mkOption {
+        default = false;
         type = types.bool;
         description = ''
           Enable systemwide software configs for workstations.
