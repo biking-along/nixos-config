@@ -120,12 +120,12 @@
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
         };
-        # immich = {
-        #   entryPoints = ["websecure"];
-        #   rule = "Host(`photos.lambda.hawk-coelacanth.ts.net`)";
-        #   service = "immich";
-        #   tls.certResolver = "tailscale";
-        # };
+        immich = {
+          entryPoints = ["websecure"];
+          rule = "Host(`photos.rwilliams.info`)";
+          service = "immich";
+          tls.certResolver = "letsencrypt";
+        };
         copyparty = {
           entryPoints = ["websecure"];
           rule = "Host(`nas.rwilliams.info`)";
