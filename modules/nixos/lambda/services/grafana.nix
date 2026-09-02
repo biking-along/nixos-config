@@ -8,11 +8,11 @@
     settings = {
       server = {
         protocol = "http";
-        http_addr = "192.168.1.192";
+        http_addr = "192.168.0.192";
         http_port = 8081;
-        domain = "graf.rwillia.ms";
+        domain = "graf.rwilliams.info";
         enforce_domain = false;
-        root_url = "https://graf.rwillia.ms";
+        root_url = "https://graf.rwilliams.info";
         enable_gzip = false;
       };
       security = {

@@ -6,7 +6,7 @@
   services.paperless = {
     enable = true;
     user = "rw";
-    domain = "paperless.rwillia.ms";
+    domain = "paperless.rwilliams.info";
     address = "192.168.0.192";
     # database.createLocally = true;
     mediaDir = "/mnt/raid0/copyparty/Documents/paperless/Media";

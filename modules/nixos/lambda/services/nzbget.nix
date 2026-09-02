@@ -5,7 +5,7 @@
     group = "nzbget";
     settings = {
       MainDir = "/mnt/raid0/copyparty/Usenet";
-      ControlIP = "192.168.1.192";
+      ControlIP = "192.168.0.192";
       ControlPort = "6789";
     };
   };
