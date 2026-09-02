@@ -73,7 +73,7 @@
         paperless = {
           loadBalancer.servers = [
             {
-              url = "http://192.168.0.192:28981";
+              url = "http://localhost:28981";
             }
           ];
         };
