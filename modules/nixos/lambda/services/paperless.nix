@@ -7,7 +7,8 @@
     enable = true;
     user = "rw";
     domain = "paperless.rwilliams.info";
-    address = "127.0.0.1";
+    address = "192.168.0.192";
+    port = 28981;
     # database.createLocally = true;
     mediaDir = "/mnt/raid0/copyparty/Documents/paperless/Media";
     consumptionDir = "/mnt/raid0/copyparty/Documents/paperless/Import";

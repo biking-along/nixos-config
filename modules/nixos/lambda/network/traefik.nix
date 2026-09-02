@@ -73,7 +73,7 @@
         paperless = {
           loadBalancer.servers = [
             {
-              url = "http://localhost:28981";
+              url = "http://192.168.0.192:28981";
             }
           ];
         };
@@ -115,7 +115,7 @@
         };
         paperless = {
           entryPoints = ["websecure"];
-          rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
+          rule = "Host(`paperless.rwilliams.info`)";
           service = "paperless";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
