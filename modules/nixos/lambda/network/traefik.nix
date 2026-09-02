@@ -126,13 +126,13 @@
         #   service = "immich";
         #   tls.certResolver = "tailscale";
         # };
-        # copyparty = {
-        #   entryPoints = ["websecure"];
-        #   rule = "Host(`nas.lambda.hawk-coelacanth.ts.net`)";
-        #   service = "copyparty";
-        #   tls.certResolver = "tailscale";
-        #   middlewares = ["authentik"];
-        # };
+        copyparty = {
+          entryPoints = ["websecure"];
+          rule = "Host(`nas.rwilliams.info`)";
+          service = "copyparty";
+          tls.certResolver = "tailscale";
+          middlewares = ["authentik"];
+        };
         # grafana = {
         #   entryPoints = ["websecure"];
         #   rule = "Host(`graf.lambda.hawk-coelacanth.ts.net`)";
