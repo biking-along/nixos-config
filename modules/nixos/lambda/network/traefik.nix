@@ -130,7 +130,7 @@
           entryPoints = ["websecure"];
           rule = "Host(`nas.rwilliams.info`)";
           service = "copyparty";
-          tls.certResolver = "tailscale";
+          tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
         };
         # grafana = {
