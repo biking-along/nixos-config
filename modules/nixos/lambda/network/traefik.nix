@@ -113,13 +113,13 @@
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
         };
-        # paperless = {
-        #   entryPoints = ["websecure"];
-        #   rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
-        #   service = "paperless";
-        #   tls.certResolver = "letsencrypt";
-        #   middlewares = ["authentik"];
-        # };
+        paperless = {
+          entryPoints = ["websecure"];
+          rule = "Host(`paperless.lambda.hawk-coelacanth.ts.net`)";
+          service = "paperless";
+          tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
+        };
         # immich = {
         #   entryPoints = ["websecure"];
         #   rule = "Host(`photos.lambda.hawk-coelacanth.ts.net`)";
