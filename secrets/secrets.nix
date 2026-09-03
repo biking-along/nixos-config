@@ -9,6 +9,7 @@ in {
   "authentik.env.age".publicKeys = fleet;
   "grafanaSecret.age".publicKeys = fleet;
   "paperlessPass.age".publicKeys = fleet;
+  "paperless.env.age".publicKeys = fleet;
   "ryan01EmailPass.age".publicKeys = fleet;
   "geminiApiKey.age".publicKeys = fleet;
   "unifiApiKey.age".publicKeys = fleet;

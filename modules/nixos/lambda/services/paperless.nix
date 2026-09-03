@@ -1,7 +1,13 @@
 {
-  age.secrets."paperlessPass" = {
-    file = ../../../../secrets/paperlessPass.age;
-    mode = "770";
+  age.secrets = {
+    "paperlessPass" = {
+      file = ../../../../secrets/paperlessPass.age;
+      mode = "770";
+    };
+    "paperless.env" = {
+      file = ../../../../secrets/paperless.env.age;
+      mode = "770";
+    };
   };
   services.paperless = {
     enable = true;
@@ -13,6 +19,7 @@
     mediaDir = "/mnt/raid0/copyparty/Documents/paperless/Media";
     consumptionDir = "/mnt/raid0/copyparty/Documents/paperless/Import";
     passwordFile = "/run/agenix/paperlessPass";
+    environmentFile = "/run/agenix/paperless.env";
     settings = {
       PAPERLESS_CONSUMER_IGNORE_PATTERN = [
         ".DS_STORE/*"
