@@ -13,6 +13,7 @@ in {
     ./gtk.nix
     ./hideHmDe.nix
     ./imv.nix
+    ./libreoffice.nix
     ./mpv.nix
     ./obsidian.nix
     ./vesktop.nix
@@ -33,6 +34,7 @@ in {
       gtk.enable = lib.mkDefault true;
       hideHmDe.enable = lib.mkDefault true;
       imv.enable = lib.mkDefault true;
+      libreoffice = lib mkDefault true;
       mpv.enable = lib.mkDefault true;
       obsidian.enable = lib.mkDefault true;
       vesktop.enable = lib.mkDefault true;
