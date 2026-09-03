@@ -13,7 +13,6 @@ in {
     ./gtk.nix
     ./hideHmDe.nix
     ./imv.nix
-    ./libreoffice.nix
     ./mpv.nix
     ./obsidian.nix
     ./vesktop.nix
