@@ -11,4 +11,5 @@ in {
   "paperlessPass.age".publicKeys = fleet;
   "ryan01EmailPass.age".publicKeys = fleet;
   "geminiApiKey.age".publicKeys = fleet;
+  "unifiApiKey.age".publicKeys = fleet;
 }

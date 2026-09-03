@@ -10,11 +10,11 @@
         tls_config.insecure_skip_verify = true;
         basic_auth = {
           username = "rw";
-          password = "?Willow21";
+          password = "";
         };
         static_configs = [
           {
-            targets = [''nas.rwillia.ms''];
+            targets = [''nas.rwilliams.info''];
           }
         ];
       }

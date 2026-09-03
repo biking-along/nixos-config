@@ -12,13 +12,13 @@
         save_ids = true;
       };
     };
-    influxdb = {
-      url = "http://192.168.1.205:8086";
-      db = "unifi-poller";
-      user = "unifi-poller";
-      pass = "/etc/unifiPass";
-      verify_ssl = false;
-    };
+    # influxdb = {
+    #   url = "http://192.168.1.205:8086";
+    #   db = "unifi-poller";
+    #   user = "unifi-poller";
+    #   pass = "/etc/unifiPass";
+    #   verify_ssl = false;
+    # };
   };
 
   services.prometheus.exporters.unpoller = {
