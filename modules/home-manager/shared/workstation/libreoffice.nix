@@ -10,7 +10,7 @@ in {
     default = false;
     type = types.bool;
     description = ''
-      Enable libreoffice for workstations
+      Enable libreoffice for workstations.
     '';
   };
   config = mkIf cfg.enable {
