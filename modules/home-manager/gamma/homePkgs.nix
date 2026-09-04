@@ -17,7 +17,7 @@
     hyprpwcenter
     hyprlax
     vial
-    qmk
+    # qmk
     ffmpeg
     file
     unzip
@@ -39,7 +39,7 @@
     gqrx
     glfw
     sdrpp
-    gnuradio
+    # gnuradio
     rpi-imager
     nautilus
     signal-desktop
