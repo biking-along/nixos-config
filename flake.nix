@@ -162,6 +162,7 @@
                   https-only = false;
                   ipu = "192.168.0.0/24=rw";
                   rproxy = 1;
+                  xff-src = "lan";
                   stats = true;
                   usernames = true;
                   chpw = true;
