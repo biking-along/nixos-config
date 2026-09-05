@@ -141,6 +141,7 @@
             agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
+              home-manager.extraSpecialArgs = {inherit specialArgs;};
               home-manager.users.${username} = {
                 imports = [
                   ./modules/home-manager/${host}
