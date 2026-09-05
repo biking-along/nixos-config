@@ -127,7 +127,7 @@
         };
 
       epsilon = let
-        state = 24.11;
+        state = "24.11";
         host = "epsilon";
         specialArgs = {inherit inputs username state host system;};
       in
