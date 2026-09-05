@@ -36,8 +36,6 @@
       };
     };
     dynamicConfigOptions.http = {
-      services = {
-      };
       routers = {
         dashboard = {
           entryPoints = ["websecure"];
