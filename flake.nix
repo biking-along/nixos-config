@@ -126,6 +126,32 @@
           ];
         };
 
+      epsilon = let
+        state = 24.11;
+        host = "epsilon";
+        specialArgs = {inherit inputs username state host system;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/${host}
+            stylix.nixosModules.stylix
+            nvf.nixosModules.default
+            agenix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
+                  agenix.homeManagerModules.default
+                ];
+              };
+            }
+          ];
+        };
+
       lambda = let
         state = "25.11";
         host = "lambda";
