@@ -275,6 +275,7 @@
             }
           ];
         };
+
       # nix build .#nixosConfigurations.recoveryImage.config.system.build.isoImage
       recoveryImage = let
         system = "x86_64-linux";
@@ -317,6 +318,7 @@
             })
           ];
         };
+
       # nix build .#nixosConfigurations.surfaceRecovery.config.system.build.isoImage
       surfaceRecovery = let
         system = "x86_64-linux";
@@ -359,6 +361,7 @@
             })
           ];
         };
+
       omicron = let
         state = "26.05";
         host = "omicron";
