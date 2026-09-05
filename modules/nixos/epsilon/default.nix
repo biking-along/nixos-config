@@ -1,5 +1,6 @@
 {
   imports = [
     ./firmware
+    ./software
   ];
 }
