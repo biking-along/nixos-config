@@ -1,3 +1,12 @@
-{
-  boot.loader.grub.devices = ["/dev/vda"];
+{pkgs, ...}: {
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+  hardware = {
+    enableAllFirmware = true;
+  };
 }
