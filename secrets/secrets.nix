@@ -15,4 +15,5 @@ in {
   "ryan01EmailPass.age".publicKeys = fleet;
   "geminiApiKey.age".publicKeys = fleet;
   "unifiApiKey.age".publicKeys = fleet;
+  "vaultwarden.env.age".publicKeys = fleet;
 }

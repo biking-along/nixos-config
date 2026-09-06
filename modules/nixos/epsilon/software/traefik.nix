@@ -36,11 +36,26 @@
       };
     };
     dynamicConfigOptions.http = {
+      services = {
+        vaultwarden = {
+          loadBalancer.servers = [
+            {
+              url = "http://127.0.0.1:8222";
+            }
+          ];
+        };
+      };
       routers = {
         dashboard = {
           entryPoints = ["websecure"];
           rule = "Host(`traefik.bikingalong.com`)";
           service = "api@internal";
+          tls.certResolver = "letsencrypt";
+        };
+        vaultwarden = {
+          entryPoints = ["websecure"];
+          rule = "Host(`vaultwarden.bikingalong.com`)";
+          service = "vaultwarden";
           tls.certResolver = "letsencrypt";
         };
       };
