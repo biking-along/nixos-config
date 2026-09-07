@@ -118,7 +118,7 @@
           rule = "Host(`paperless.rwilliams.info`)";
           service = "paperless";
           tls.certResolver = "letsencrypt";
-          middlewares = ["authentik"];
+          # middlewares = ["authentik"];
         };
         immich = {
           entryPoints = ["websecure"];
