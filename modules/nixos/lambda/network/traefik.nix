@@ -2,13 +2,10 @@
   age.secrets."traefik.env" = {
     file = ../../../../secrets/traefik.env.age;
     mode = "770";
-    # owner = "traefik";
-    # group = "traefik";
   };
   services.traefik = {
     enable = true;
     environmentFiles = ["/run/agenix/traefik.env"];
-
     staticConfigOptions = {
       environmentFiles = ["/run/agenix/traefik.env"];
       api.dashboard = true;
@@ -91,13 +88,6 @@
             }
           ];
         };
-        grafana = {
-          loadBalancer.servers = [
-            {
-              url = "http://192.168.0.192:8081";
-            }
-          ];
-        };
       };
       routers = {
         auth = {
@@ -118,7 +108,6 @@
           rule = "Host(`paperless.rwilliams.info`)";
           service = "paperless";
           tls.certResolver = "letsencrypt";
-          # middlewares = ["authentik"];
         };
         immich = {
           entryPoints = ["websecure"];
@@ -133,13 +122,6 @@
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
         };
-        # grafana = {
-        #   entryPoints = ["websecure"];
-        #   rule = "Host(`graf.lambda.hawk-coelacanth.ts.net`)";
-        #   service = "grafana";
-        #   tls.certResolver = "tailscale";
-        #   middlewares = ["authentik"];
-        # };
       };
     };
   };
