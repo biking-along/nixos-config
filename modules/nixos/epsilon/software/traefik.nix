@@ -36,6 +36,28 @@
       };
     };
     dynamicConfigOptions.http = {
+      middlewares = {
+        authentik = {
+          forwardAuth = {
+            tls.insecureSkipVerify = true;
+            address = "http://authentik.rwilliams.info/outpost.goauthentik.io/auth/traefik";
+            trustForwardHeader = true;
+            authResponseHeaders = [
+              "X-authentik-username"
+              "X-authentik-groups"
+              "X-authentik-email"
+              "X-authentik-name"
+              "X-authentik-uid"
+              "X-authentik-jwt"
+              "X-authentik-meta-jwks"
+              "X-authentik-meta-outpost"
+              "X-authentik-meta-provider"
+              "X-authentik-meta-app"
+              "X-authentik-meta-version"
+            ];
+          };
+        };
+      };
       services = {
         vaultwarden = {
           loadBalancer.servers = [
@@ -51,6 +73,7 @@
           rule = "Host(`traefik.bikingalong.com`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
         };
         vaultwarden = {
           entryPoints = ["websecure"];
