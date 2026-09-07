@@ -40,7 +40,7 @@
         authentik = {
           forwardAuth = {
             tls.insecureSkipVerify = true;
-            address = "http://authentik.rwilliams.info/outpost.goauthentik.io/auth/traefik";
+            address = "http://192.168.0.192:9000/outpost.goauthentik.io/auth/traefik";
             trustForwardHeader = true;
             authResponseHeaders = [
               "X-authentik-username"
@@ -59,6 +59,13 @@
         };
       };
       services = {
+        authentik = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.0.192:9000";
+            }
+          ];
+        };
         vaultwarden = {
           loadBalancer.servers = [
             {
@@ -74,6 +81,12 @@
           service = "api@internal";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
+        };
+        auth = {
+          entryPoints = ["websecure"];
+          rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
+          service = "auth";
+          tls.certResolver = "letsencrypt";
         };
         vaultwarden = {
           entryPoints = ["websecure"];
