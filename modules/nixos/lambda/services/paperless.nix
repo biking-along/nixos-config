@@ -11,13 +11,11 @@
   };
   services.paperless = {
     enable = true;
-    user = "rw";
     domain = "paperless.rwilliams.info";
     address = "192.168.0.192";
     port = 28981;
-    # database.createLocally = true;
-    mediaDir = "/mnt/raid0/copyparty/Documents/paperless/Media";
-    consumptionDir = "/mnt/raid0/copyparty/Documents/paperless/Import";
+    mediaDir = "/mnt/raid0/paperless/Media";
+    consumptionDir = "/mnt/raid0/paperless/Import";
     passwordFile = "/run/agenix/paperlessPass";
     environmentFile = "/run/agenix/paperless.env";
     settings = {
