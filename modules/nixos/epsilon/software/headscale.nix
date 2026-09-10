@@ -5,13 +5,13 @@
       address = "0.0.0.0";
       port = 8081;
       settings = {
-        server_url = "headscale.bikingalong.com";
+        server_url = "https://headscale.bikingalong.com";
         trusted_proxies = [
           "127.0.0.1/32"
           "::1/128"
         ];
         dns = {
-          base_domain = "bikingalong.com";
+          base_domain = "hs.bikingalong.com";
           magic_dns = true;
           nameservers.global = [
             "1.1.1.1"
