@@ -66,6 +66,13 @@
             }
           ];
         };
+        headscale = {
+          loadBalancer.servers = [
+            {
+              url = "http://127.0.0.1:8081";
+            }
+          ];
+        };
         vaultwarden = {
           loadBalancer.servers = [
             {
@@ -86,6 +93,12 @@
           entryPoints = ["websecure"];
           rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
+          tls.certResolver = "letsencrypt";
+        };
+        headscale = {
+          entryPoints = ["websecure"];
+          rule = "Host(`headscale.bikingalong.com`)";
+          service = "headscale";
           tls.certResolver = "letsencrypt";
         };
         vaultwarden = {
