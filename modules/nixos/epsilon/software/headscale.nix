@@ -10,10 +10,10 @@
           "127.0.0.1/32"
           "::1/128"
         ];
-        dns_config = {
+        dns = {
           base_domain = "bikingalong.com";
           magic_dns = true;
-          nameservers = [
+          nameservers.global = [
             "1.1.1.1"
             "9.9.9.9"
           ];
