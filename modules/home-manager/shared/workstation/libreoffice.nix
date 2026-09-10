@@ -12,10 +12,10 @@ in {
     description = ''
       Enable libreoffice in home manager.
     '';
-    config = mkIf cfg.enable {
-      programs.libreoffice = {
-        enable = true;
-      };
+  };
+  config = mkIf cfg.enable {
+    programs.libreoffice = {
+      enable = true;
     };
   };
 }
