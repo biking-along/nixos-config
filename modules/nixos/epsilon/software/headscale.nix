@@ -1,4 +1,4 @@
-{config, ...}: {
+{pkgs, ...}: {
   services = {
     headscale = {
       enable = true;
@@ -28,8 +28,8 @@
       };
     };
   };
-  environment.systemPackages = [
-    config.services.headscale.package
+  environment.systemPackages = with pkgs; [
+    headscale
   ];
   networking.firewall.allowedUDPPorts = [3478];
   config.modules.shared.all.tailscale.enable = false;
