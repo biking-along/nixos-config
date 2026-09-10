@@ -32,5 +32,4 @@
     headscale
   ];
   networking.firewall.allowedUDPPorts = [3478];
-  config.modules.shared.all.tailscale.enable = false;
 }
