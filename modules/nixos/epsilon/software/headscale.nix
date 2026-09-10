@@ -2,7 +2,7 @@
   services = {
     headscale = {
       enable = true;
-      address = "127.0.0.1";
+      address = "0.0.0.0";
       port = 8081;
       settings = {
         server_url = "headscale.bikingalong.com";
@@ -23,7 +23,7 @@
           region_id = 999;
           region_code = "headscale";
           region_name = "Headscale Embedded DERP";
-          stun_listen_addr = "127.0.0.1:3478";
+          stun_listen_addr = "0.0.0.0:3478";
         };
       };
     };
