@@ -1,11 +1,11 @@
 {
   imports = [
     ./docker.nix
-    ./grafana.nix
+    # ./grafana.nix
     ./immich.nix
     ./nzbget.nix
     ./paperless.nix
-    ./prometheus.nix
-    ./unpoller.nix
+    # ./prometheus.nix
+    # ./unpoller.nix
   ];
 }
