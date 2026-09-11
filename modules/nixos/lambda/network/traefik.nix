@@ -67,13 +67,6 @@
             }
           ];
         };
-        nzbget = {
-          loadBalancer.servers = [
-            {
-              url = "http://127.0.0.1:6789";
-            }
-          ];
-        };
         paperless = {
           loadBalancer.servers = [
             {
@@ -120,12 +113,6 @@
           entryPoints = ["websecure"];
           rule = "Host(`photos.rwilliams.info`)";
           service = "immich";
-          tls.certResolver = "letsencrypt";
-        };
-        nzbget = {
-          entryPoints = ["websecure"];
-          rule = "Host(`nzbget.rwilliams.info`)";
-          service = "paperless";
           tls.certResolver = "letsencrypt";
         };
         copyparty = {
