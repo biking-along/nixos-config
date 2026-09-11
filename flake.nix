@@ -140,7 +140,6 @@
           system = "${system}";
           modules = [
             ./hosts/${host}
-            {config.modules.shared.all.software.tailscale.enable = false;}
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             agenix.nixosModules.default
