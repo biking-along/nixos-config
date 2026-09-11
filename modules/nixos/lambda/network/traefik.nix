@@ -70,7 +70,7 @@
         nzbget = {
           loadBalancer.servers = [
             {
-              url = "http://192.168.0.192:6789";
+              url = "http://127.0.0.1:6789";
             }
           ];
         };
