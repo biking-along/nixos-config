@@ -40,7 +40,7 @@
         authentik = {
           forwardAuth = {
             tls.insecureSkipVerify = true;
-            address = "http://192.168.0.192:9000/outpost.goauthentik.io/auth/traefik";
+            address = "http://100.64.0.1:9000/outpost.goauthentik.io/auth/traefik";
             trustForwardHeader = true;
             authResponseHeaders = [
               "X-authentik-username"
@@ -62,7 +62,7 @@
         auth = {
           loadBalancer.servers = [
             {
-              url = "http://192.168.0.192:9000";
+              url = "http://100.64.0.1:9000";
             }
           ];
         };
