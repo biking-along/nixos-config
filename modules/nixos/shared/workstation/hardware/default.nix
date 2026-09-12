@@ -8,7 +8,7 @@ with lib; let
 in {
   imports = [
     ./cpu.nix
-    ./${config.modules.shared.workstation.hardware.cpuSettings.make}.nix
+    ./intel.nix
     ./bluetooth.nix
     ./printing.nix
   ];

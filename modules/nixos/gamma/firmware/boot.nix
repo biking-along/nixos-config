@@ -23,7 +23,7 @@
     hardwareScan = true;
   };
   systemd.tpm2.enable = true;
-  services.tcsd.enable = true;
+  # services.tcsd.enable = true;
   security = {
     tpm2 = {
       enable = true;
