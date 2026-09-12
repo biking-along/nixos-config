@@ -8,7 +8,6 @@
         rocmPackages.clr
       ];
     };
-
     amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
@@ -18,7 +17,6 @@
       };
     };
   };
-
   systemd = {
     packages = with pkgs; [lact];
     services.lactd.wantedBy = ["multi-user.target"];
@@ -26,7 +24,6 @@
       "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
     ];
   };
-
   services.xserver.videoDrivers = ["amdgpu"];
   environment.systemPackages = with pkgs; [
     lact

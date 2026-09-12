@@ -8,9 +8,5 @@
     configFiles = [
       "/home/rw/.config/DankMaterialShell/settings.json"
     ];
-    # logs = {
-    #   save = true;
-    #   path = "/tmp/dms-greeter.log";
-    # };
   };
 }

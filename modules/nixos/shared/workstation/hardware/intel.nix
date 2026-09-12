@@ -1,5 +1,4 @@
 {
-  powerManagement.cpuFreqGovernor = "performance";
   hardware.cpu = {
     intel = {
       updateMicrocode = true;
@@ -7,10 +6,6 @@
         enableDcapCompat = true;
         provision.enable = true;
       };
-    };
-    x86.msr = {
-      enable = true;
-      settings.allow-writes = "on";
     };
   };
 }

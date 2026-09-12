@@ -1,7 +1,8 @@
 {
   imports = [
     ./automount.nix
-    ./cpu.nix
+    # ./cpu.nix
+    ./firmware.nix
     ./gpu.nix
     ./networking.nix
   ];

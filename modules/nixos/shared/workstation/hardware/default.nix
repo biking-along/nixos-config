@@ -7,6 +7,7 @@ with lib; let
   cfg = config.modules.shared.workstation.hardware;
 in {
   imports = [
+    ./cpu.nix
     ./bluetooth.nix
     ./printing.nix
   ];
@@ -22,6 +23,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    modules.shared.workstation.hardware.cpuSettings.enable = lib.mkDefault true;
     modules.shared.workstation.hardware.bluetooth.enable = lib.mkDefault true;
     modules.shared.workstation.hardware.printing.enable = lib.mkDefault true;
   };

@@ -18,6 +18,5 @@
     };
   };
   services.acpid.enable = true;
-  services.udev.enable = true;
   services.ntp.enable = true;
 }
