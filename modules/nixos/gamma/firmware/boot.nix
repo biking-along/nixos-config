@@ -1,40 +1,29 @@
-{
+{pkgs, ...}: {
   boot = {
-    # lanzaboote = {
-    # enable = true;
-    # pkiBundle = "/var/lib/sbctl";
-    # };
-
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
       systemd-boot.consoleMode = "max";
       efi.canTouchEfiVariables = true;
     };
-
     plymouth.enable = true;
-
     consoleLogLevel = 0;
-
     initrd = {
       systemd.tpm2.enable = true;
       systemd.enable = true;
       verbose = false;
     };
-
     kernelParams = [
       "quiet"
       "splash"
       "boot.shell_on_fail"
       "udev.log_level=3"
       "rd.systemd.show_status=auto"
-      #"iommu=force"
-      "iomem=relaxed"
     ];
-
     hardwareScan = true;
   };
   systemd.tpm2.enable = true;
-  # services.tcsd.enable = true;
+  services.tcsd.enable = true;
   security = {
     tpm2 = {
       enable = true;
