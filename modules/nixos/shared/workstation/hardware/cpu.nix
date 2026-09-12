@@ -7,7 +7,7 @@ with lib; let
   cfg = config.modules.shared.workstation.hardware.cpuSettings;
   allowedMakes = ["intel" "amd"];
 in {
-  options.modules.shared.workstation.cpuSettings = {
+  options.modules.shared.workstation.hardware.cpuSettings = {
     enable = mkOption {
       default = false;
       type = types.bool;
@@ -25,7 +25,6 @@ in {
   };
   config = mkIf cfg.enable {
     assertions = builtins.elem cfg.make allowedMakes;
-    import = ./${cfg.make}.nix;
     powerManagement.cpuFreqGovernor = "performance";
     hardware.cpu.x86.msr = {
       enable = true;

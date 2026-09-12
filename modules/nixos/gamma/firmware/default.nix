@@ -1,7 +1,7 @@
 {
   imports = [
     ./boot.nix
-    ./firmware.nix
+    ./fwupd.nix
     ./power-profile.nix
     ./vial.nix
   ];
