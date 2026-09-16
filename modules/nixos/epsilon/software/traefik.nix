@@ -76,7 +76,7 @@
         headplane = {
           loadBalancer.servers = [
             {
-              url = "http://0.0.0.0:8082";
+              url = "http://0.0.0.0:8082/admin";
             }
           ];
         };
@@ -110,7 +110,7 @@
         };
         headplane = {
           entryPoints = ["websecure"];
-          rule = "Host(`headplane.bikingalong.com`)";
+          rule = "Host(`headscale.bikingalong.com`) && PathPrefix(`/admin`)";
           service = "headplane";
           tls.certResolver = "letsencrypt";
         };
