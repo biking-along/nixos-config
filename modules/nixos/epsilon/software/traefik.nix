@@ -73,6 +73,13 @@
             }
           ];
         };
+        headplane = {
+          loadBalancer.servers = [
+            {
+              url = "http://0.0.0.0:8082";
+            }
+          ];
+        };
         vaultwarden = {
           loadBalancer.servers = [
             {
@@ -99,6 +106,12 @@
           entryPoints = ["websecure"];
           rule = "Host(`headscale.bikingalong.com`)";
           service = "headscale";
+          tls.certResolver = "letsencrypt";
+        };
+        headplane = {
+          entryPoints = ["websecure"];
+          rule = "Host(`headplane.bikingalong.com`)";
+          service = "headplane";
           tls.certResolver = "letsencrypt";
         };
         vaultwarden = {
