@@ -17,4 +17,7 @@ in {
   "unifiApiKey.age".publicKeys = fleet;
   "vaultwarden.env.age".publicKeys = fleet;
   "headplaneCookieSecret.age".publicKeys = fleet;
+  "hsOidcClientSecret.age".publicKeys = fleet;
+  "hpOidcClientSecret.age".publicKeys = fleet;
+  "hsApiKey.age".publicKeys = fleet;
 }
