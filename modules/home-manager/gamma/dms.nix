@@ -110,8 +110,8 @@
           ];
           showOnLastDisplay = false;
           leftWidgets = [
-            "launcherButton"
             "workspaceSwitcher"
+            "systemTray"
             "focusedWindow"
           ];
           centerWidgets = [
@@ -120,11 +120,10 @@
             "weather"
           ];
           rightWidgets = [
-            "systemTray"
             "clipboard"
             "cpuUsage"
-            "amdGpuMonitor"
             "memUsage"
+            "amdGpuMonitor"
             "notificationButton"
             "controlCenterButton"
           ];
