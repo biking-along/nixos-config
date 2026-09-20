@@ -277,7 +277,6 @@
 
         # Open Apps
         "Mod+Return".action.spawn = "kitty";
-        "Mod+D".action.spawn = "fuzzel";
         "Mod+F".action.spawn = "nautilus";
         "Mod+W".action.spawn = "firefox";
 
@@ -285,10 +284,6 @@
         "XF86AudioRaiseVolume".action.spawn = "dms ipc call audio increment 3";
         "XF86AudioLowerVolume".action.spawn = "dms ipc call audio decrement 3";
         "XF86AudioMute".action.spawn = "dms ipc call audio mute";
-
-        # Disable Sleep
-        "Mod+Control+T".action.spawn = "dms ipc call inhibit toggle";
-        "Mod+Control+Y".action.spawn-sh = "wl-present mirror DP-1 --fullscreen-output HDMI-A-2 --title PiKVM --backend screencopy-dmabuf --show-cursor";
 
         # Focus Specific Workspace
         "Alt+1".action.focus-workspace = 1;
