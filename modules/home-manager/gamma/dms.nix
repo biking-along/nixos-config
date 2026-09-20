@@ -148,6 +148,13 @@
           visible = true;
           popupGapsAuto = true;
           popupGapsManual = 4;
+          island = true;
+          islandHoverOpenDelay = 50;
+          islandHoverCloseDelay = 50;
+          islandSatelliteGap = 13;
+          islandSatelliteBackground = true;
+          islandSatelliteGothCorners = true;
+          islandSatellitePosition = "island";
         }
       ];
       controlCenterWidgets = [
