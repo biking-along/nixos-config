@@ -11,4 +11,5 @@
     modesetting.enable = true;
     nvidiaSettings = true;
   };
+  boot.blacklistedKernelModules = ["nouveau"];
 }
