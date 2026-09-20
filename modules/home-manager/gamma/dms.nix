@@ -90,12 +90,7 @@
       displaySnapToEdge = true;
       launcherStyle = "island";
       dankIslandBarId = "default";
-      dankIslandHoverOpenDelay = 50;
-      dankIslandHoverCloseDelay = 50;
       dankIslandHomeMediaSlot = "hidden";
-      dankIslandSatelliteGap = 27;
-      dankIslandSatelliteBackground = true;
-      dankIslandSatelliteGothCorners = false;
       barConfigs = [
         {
           id = "default";
@@ -151,10 +146,11 @@
           island = true;
           islandHoverOpenDelay = 50;
           islandHoverCloseDelay = 50;
-          islandSatelliteGap = 13;
+          islandSatelliteGap = 12;
           islandSatelliteBackground = true;
           islandSatelliteGothCorners = true;
           islandSatellitePosition = "island";
+          islandSatelliteSwoopRadius = 30;
         }
       ];
       controlCenterWidgets = [
