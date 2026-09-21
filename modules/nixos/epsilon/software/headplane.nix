@@ -21,6 +21,11 @@
         public_url = "https://headscale.bikingalong.com";
         api_key_path = config.age.secrets."hsApiKey".path;
       };
+      integration = {
+        agent = {
+          enabled = true;
+        };
+      };
       server = {
         base_url = "https://headscale.bikingalong.com";
         host = "0.0.0.0";
