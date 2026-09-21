@@ -22,7 +22,7 @@
         api_key_path = config.age.secrets."hsApiKey".path;
       };
       server = {
-        base_url = "https://headscale.bikingalong.com/admin";
+        base_url = "https://headscale.bikingalong.com";
         host = "0.0.0.0";
         port = 8082;
         cookie_secret_path = config.age.secrets."headplaneCookieSecret".path;
