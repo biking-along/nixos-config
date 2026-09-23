@@ -401,7 +401,6 @@
                 interop.register = true;
                 useWindowsDriver = true;
               };
-              config.modules.shared.all.software.tailscale.enable = false;
             }
           ];
         };
