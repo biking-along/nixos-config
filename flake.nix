@@ -386,6 +386,7 @@
                 imports = [
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
+                  agenix.homeManagerModules.default
                 ];
               };
             }
