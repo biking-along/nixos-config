@@ -3,8 +3,8 @@
   pkgs,
   ...
 }: {
-  age.secrets."hsOidcClientSecret" = {
-    file = ../../../../secrets/hsOidcClientSecret.age;
+  age.secrets."headscalePolicy.hujson" = {
+    file = ../../../../secrets/headscalePolicy.age;
     mode = "644";
   };
   services = {
@@ -18,6 +18,10 @@
           "127.0.0.1/32"
           "::1/128"
         ];
+        policy = {
+          mode = "file";
+          path = config.age.secrets."headscalePolicy.hujson".path;
+        };
         dns = {
           base_domain = "hs.bikingalong.com";
           magic_dns = true;
@@ -33,11 +37,6 @@
           region_name = "Headscale Embedded DERP";
           stun_listen_addr = "0.0.0.0:3478";
         };
-        # oidc = {
-        #   issuer = "https://authentik.bikingalong.com/application/o/headscale/";
-        #   client_id = "YdKG3SC1KfjFw90A8gynDoqZcYE3kbO4BuIydP7d";
-        #   client_secret_path = config.age.secrets."hsOidcClientSecret".path;
-        # };
       };
     };
   };
