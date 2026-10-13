@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.modules.shared.all.nix.compose2nix;
 in {
-  options.shared.all.nix.compose2nix = {
+  options.modules.shared.all.nix.compose2nix = {
     enable = mkOption {
       default = true;
       type = types.bool;
