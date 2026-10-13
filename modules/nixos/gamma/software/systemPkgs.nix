@@ -29,6 +29,7 @@
     slurp
     grim
     clonehero
+    faugus-launcher
     protonmail-bridge
   ];
 }
