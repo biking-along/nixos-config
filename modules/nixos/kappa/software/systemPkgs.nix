@@ -4,5 +4,7 @@
     iptsd
     binutils
     libwacom-surface
+    uhd
+    volk
   ];
 }

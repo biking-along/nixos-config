@@ -1,4 +1,8 @@
-{host, ...}: {
+{
+  host,
+  state,
+  ...
+}: {
   networking.hostName = "${host}";
-  system.stateVersion = "24.11";
+  system.stateVersion = "${state}";
 }
