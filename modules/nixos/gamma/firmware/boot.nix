@@ -8,11 +8,11 @@
     };
     plymouth.enable = true;
     consoleLogLevel = 0;
-    initrd = {
-      systemd.tpm2.enable = true;
-      systemd.enable = true;
-      verbose = false;
-    };
+    # initrd = {
+    #   systemd.tpm2.enable = true;
+    #   systemd.enable = true;
+    #   verbose = false;
+    # };
     kernelParams = [
       "quiet"
       "splash"
