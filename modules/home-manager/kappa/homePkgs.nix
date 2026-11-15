@@ -22,5 +22,10 @@
     vesktop
     vlc
     thunderbird
+    sdrpp
+    gqrx
+    sdrangel
+    soapyuhd
+    soapysdr
   ];
 }
