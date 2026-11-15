@@ -69,6 +69,10 @@
       url = "git+https://codeberg.org/debugloop/niri-autoselect-portal.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcord = {
+      url = "github:4evy/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
