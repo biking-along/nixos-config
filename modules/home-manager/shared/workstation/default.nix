@@ -15,8 +15,9 @@ in {
     ./imv.nix
     ./libreoffice.nix
     ./mpv.nix
+    ./nixcord.nix
     ./obsidian.nix
-    ./vesktop.nix
+    # ./vesktop.nix
     ./zathura.nix
   ];
   options.homeModules.shared.workstation.enable = mkOption {
@@ -36,8 +37,9 @@ in {
       imv.enable = lib.mkDefault true;
       libreoffice.enable = lib.mkDefault true;
       mpv.enable = lib.mkDefault true;
+      nixcord.enable = lib.mkDefault true;
       obsidian.enable = lib.mkDefault true;
-      vesktop.enable = lib.mkDefault true;
+      # vesktop.enable = lib.mkDefault true;
       zathura.enable = lib.mkDefault true;
     };
   };
