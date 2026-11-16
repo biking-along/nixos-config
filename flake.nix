@@ -282,6 +282,7 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
               };
             }
