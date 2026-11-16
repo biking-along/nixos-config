@@ -255,6 +255,7 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
               };
             }
@@ -308,6 +309,7 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
               };
             }
