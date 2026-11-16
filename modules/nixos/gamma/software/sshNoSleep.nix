@@ -1,7 +1,7 @@
 {
   environment.etc."10-sshNoSleep.sh" = {
     enable = true;
-    target = "/etc/pm/sleep.d/10-sshNoSleep.sh";
+    target = "/pm/sleep.d/10-sshNoSleep.sh";
     text = ''
       #!/bin/bash
 
