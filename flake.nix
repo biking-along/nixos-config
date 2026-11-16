@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware = {
-      url = "github:8bitbuddhist/nixos-hardware/surface-kernel-7.0";
+      url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -136,9 +136,9 @@
           ];
         };
 
-      epsilon = let
-        state = "24.11";
-        host = "epsilon";
+      kappa = let
+        state = "25.11";
+        host = "kappa";
         specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
@@ -146,6 +146,8 @@
           system = "${system}";
           modules = [
             ./hosts/${host}
+            {config.modules.shared.workstation.enable = true;}
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             agenix.nixosModules.default
@@ -156,8 +158,16 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
+                config.homeModules.shared.workstation.enable = true;
               };
+            }
+            {
+              system.systemBuilderCommands = ''
+                ln -s ${self} $out/flake
+                ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
+              '';
             }
           ];
         };
@@ -251,9 +261,9 @@
           ];
         };
 
-      kappa = let
-        state = "25.11";
-        host = "kappa";
+      epsilon = let
+        state = "24.11";
+        host = "epsilon";
         specialArgs = {inherit inputs username state host system;};
       in
         nixpkgs.lib.nixosSystem {
@@ -261,8 +271,6 @@
           system = "${system}";
           modules = [
             ./hosts/${host}
-            {config.modules.shared.workstation.enable = true;}
-            nixos-hardware.nixosModules.microsoft-surface-pro-intel
             stylix.nixosModules.stylix
             nvf.nixosModules.default
             agenix.nixosModules.default
@@ -273,16 +281,48 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
-                  nixcord.homeModules.nixcord
                 ];
-                config.homeModules.shared.workstation.enable = true;
+              };
+            }
+          ];
+        };
+
+      omicron = let
+        state = "26.05";
+        host = "omicron";
+        specialArgs = {inherit inputs username state host system;};
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "${system}";
+          modules = [
+            ./hosts/${host}
+            nixos-wsl.nixosModules.default
+            stylix.nixosModules.stylix
+            nvf.nixosModules.default
+            agenix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home-manager/${host}
+                  ./modules/home-manager/shared
+                  agenix.homeManagerModules.default
+                ];
               };
             }
             {
-              system.systemBuilderCommands = ''
-                ln -s ${self} $out/flake
-                ln -s ${self.nixosConfigurations.kappa.config.boot.kernelPackages.kernel.dev} $out/kernel-dev
-              '';
+              system.stateVersion = "${state}";
+              wsl = {
+                enable = true;
+                defaultUser = "${username}";
+                ssh-agent = {
+                  enable = true;
+                  users = ["rw"];
+                };
+                interop.register = true;
+                useWindowsDriver = true;
+              };
             }
           ];
         };
@@ -370,46 +410,6 @@
                 ln -s ${self} /home/nixos/nixos-config
               '';
             })
-          ];
-        };
-
-      omicron = let
-        state = "26.05";
-        host = "omicron";
-        specialArgs = {inherit inputs username state host system;};
-      in
-        nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "${system}";
-          modules = [
-            ./hosts/${host}
-            nixos-wsl.nixosModules.default
-            stylix.nixosModules.stylix
-            nvf.nixosModules.default
-            agenix.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home-manager/${host}
-                  ./modules/home-manager/shared
-                  agenix.homeManagerModules.default
-                ];
-              };
-            }
-            {
-              system.stateVersion = "${state}";
-              wsl = {
-                enable = true;
-                defaultUser = "${username}";
-                ssh-agent = {
-                  enable = true;
-                  users = ["rw"];
-                };
-                interop.register = true;
-                useWindowsDriver = true;
-              };
-            }
           ];
         };
     };
