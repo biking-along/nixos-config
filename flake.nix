@@ -92,6 +92,7 @@
     nix-alien,
     nixos-wsl,
     niri-autoselect-portal,
+    nixcord,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -127,6 +128,7 @@
                   nix-monitor.homeManagerModules.default
                   agenix.homeManagerModules.default
                   niri-autoselect-portal.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
                 config.homeModules.shared.workstation.enable = true;
               };
@@ -271,6 +273,7 @@
                   ./modules/home-manager/${host}
                   ./modules/home-manager/shared
                   agenix.homeManagerModules.default
+                  nixcord.homeModules.nixcord
                 ];
                 config.homeModules.shared.workstation.enable = true;
               };

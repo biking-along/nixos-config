@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  inputs,
   ...
 }:
 with lib; let
@@ -15,12 +14,16 @@ in {
     '';
   };
   config = mkIf cfg.enable {
-    inputs = [inputs.nixcord.homeModules.nixcord];
     programs.nixcord = {
       enable = true;
       discord.enable = false;
-      vesktop.enable = true;
-      config.plugins.hideMedia.enable = true;
+      equibop.enable = true;
+      config.plugins = {
+        hideMedia.enable = true;
+        equibopStreamFixes.enable = true;
+        noNitroUpsell.enable = true;
+        fakeNitro.enable = true;
+      };
     };
   };
 }

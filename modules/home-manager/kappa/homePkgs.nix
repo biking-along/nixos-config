@@ -19,12 +19,8 @@
     bitwarden-desktop
     jellyfin-desktop
     pear-desktop
-    vesktop
     vlc
     thunderbird
-    sdrpp
-    gqrx
-    sdrangel
     soapyuhd
     soapysdr
   ];
