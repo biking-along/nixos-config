@@ -204,7 +204,7 @@
                   ftp-pr = "12000-12099";
                   z = true;
                   name = "Lambda NAS";
-                  site = "https://nas.rwilliams.info/";
+                  site = "https://nas.bikingalong.com/";
                   https-only = false;
                   ipu = "192.168.0.0/24=rw";
                   rproxy = 1;
@@ -215,7 +215,7 @@
                   ah-alg = "argon2";
                   shr = "/share";
                   shr-adm = ["rw"];
-                  shr-site = "nas.rwilliams.info";
+                  shr-site = "nas.bikingalong.com";
                   no-crt = true;
                 };
                 accounts = {
