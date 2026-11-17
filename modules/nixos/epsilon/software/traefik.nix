@@ -33,103 +33,119 @@
           asDefault = true;
           http.tls = {
             certResolver = "letsencrypt";
-            domains = [
-              {
-                main = "bikingalong.com";
-                sans = ["*.bikingalong.com"];
-              }
-            ];
+            # domains = [
+            #   {
+            #     main = "bikingalong.com";
+            #     sans = ["*.bikingalong.com"];
+            #   }
+            # ];
           };
         };
       };
     };
-    dynamicConfigOptions.http = {
-      middlewares = {
-        authentik = {
-          forwardAuth = {
-            tls.insecureSkipVerify = true;
-            address = "http://100.64.0.1:9000/outpost.goauthentik.io/auth/traefik";
-            trustForwardHeader = true;
-            authResponseHeaders = [
-              "X-authentik-username"
-              "X-authentik-groups"
-              "X-authentik-email"
-              "X-authentik-name"
-              "X-authentik-uid"
-              "X-authentik-jwt"
-              "X-authentik-meta-jwks"
-              "X-authentik-meta-outpost"
-              "X-authentik-meta-provider"
-              "X-authentik-meta-app"
-              "X-authentik-meta-version"
-            ];
-          };
+    dynamicConfigOptions = {
+      tls.stores.default.defaultGeneratedCert = {
+        resolver = "letsencrypt";
+        domain = {
+          main = "bikingalong.com";
+          sans = ["*.bikingalong.com"];
         };
       };
-      services = {
-        auth = {
-          loadBalancer = {
-            passHostHeader = true;
-            servers = [
+      http = {
+        middlewares = {
+          authentik = {
+            forwardAuth = {
+              tls.insecureSkipVerify = true;
+              address = "http://100.64.0.1:9000/outpost.goauthentik.io/auth/traefik";
+              trustForwardHeader = true;
+              authResponseHeaders = [
+                "X-authentik-username"
+                "X-authentik-groups"
+                "X-authentik-email"
+                "X-authentik-name"
+                "X-authentik-uid"
+                "X-authentik-jwt"
+                "X-authentik-meta-jwks"
+                "X-authentik-meta-outpost"
+                "X-authentik-meta-provider"
+                "X-authentik-meta-app"
+                "X-authentik-meta-version"
+              ];
+            };
+          };
+        };
+        services = {
+          auth = {
+            loadBalancer = {
+              passHostHeader = true;
+              servers = [
+                {
+                  url = "http://100.64.0.1:9000";
+                }
+              ];
+            };
+          };
+          headscale = {
+            loadBalancer.servers = [
               {
-                url = "http://100.64.0.1:9000";
+                url = "http://0.0.0.0:8081";
+              }
+            ];
+          };
+          headplane = {
+            loadBalancer.servers = [
+              {
+                url = "http://0.0.0.0:8082/admin";
+              }
+            ];
+          };
+          vaultwarden = {
+            loadBalancer.servers = [
+              {
+                url = "http://127.0.0.1:8222";
               }
             ];
           };
         };
-        headscale = {
-          loadBalancer.servers = [
-            {
-              url = "http://0.0.0.0:8081";
-            }
-          ];
-        };
-        headplane = {
-          loadBalancer.servers = [
-            {
-              url = "http://0.0.0.0:8082/admin";
-            }
-          ];
-        };
-        vaultwarden = {
-          loadBalancer.servers = [
-            {
-              url = "http://127.0.0.1:8222";
-            }
-          ];
-        };
-      };
-      routers = {
-        dashboard = {
-          entryPoints = ["websecure"];
-          rule = "Host(`traefik.bikingalong.com`)";
-          service = "api@internal";
-          tls.certResolver = "letsencrypt";
-          middlewares = ["authentik"];
-        };
-        auth = {
-          entryPoints = ["websecure"];
-          rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
-          service = "auth";
-          tls.certResolver = "letsencrypt";
-        };
-        headscale = {
-          entryPoints = ["websecure"];
-          rule = "Host(`headscale.bikingalong.com`)";
-          service = "headscale";
-          tls.certResolver = "letsencrypt";
-        };
-        headplane = {
-          entryPoints = ["websecure"];
-          rule = "Host(`headscale.bikingalong.com`) && PathPrefix(`/admin`)";
-          service = "headplane";
-          tls.certResolver = "letsencrypt";
-        };
-        vaultwarden = {
-          entryPoints = ["websecure"];
-          rule = "Host(`vaultwarden.bikingalong.com`)";
-          service = "vaultwarden";
-          tls.certResolver = "letsencrypt";
+        routers = {
+          catchall-404 = {
+            entryPoints = ["websecure"];
+            rule = "PathPrefix(`/`)";
+            priority = 1;
+            tls = {};
+            service = "noop@internal";
+          };
+          dashboard = {
+            entryPoints = ["websecure"];
+            rule = "Host(`traefik.bikingalong.com`)";
+            service = "api@internal";
+            tls.certResolver = "letsencrypt";
+            middlewares = ["authentik"];
+          };
+          auth = {
+            entryPoints = ["websecure"];
+            rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
+            service = "auth";
+            tls.certResolver = "letsencrypt";
+          };
+          headscale = {
+            entryPoints = ["websecure"];
+            rule = "Host(`headscale.bikingalong.com`)";
+            service = "headscale";
+            tls.certResolver = "letsencrypt";
+          };
+          headplane = {
+            entryPoints = ["websecure"];
+            rule = "Host(`headscale.bikingalong.com`) && PathPrefix(`/admin`)";
+            service = "headplane";
+            tls.certResolver = "letsencrypt";
+          };
+          vaultwarden = {
+            entryPoints = ["websecure"];
+            rule = "Host(`vaultwarden.bikingalong.com`)";
+            service = "vaultwarden";
+            tls.certResolver = "letsencrypt";
+          };
         };
       };
     };
