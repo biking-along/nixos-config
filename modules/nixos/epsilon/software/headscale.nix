@@ -25,6 +25,7 @@
         dns = {
           base_domain = "hs.bikingalong.com";
           magic_dns = true;
+          override_local_dns = false;
           nameservers.global = [
             "1.1.1.1"
             "9.9.9.9"
