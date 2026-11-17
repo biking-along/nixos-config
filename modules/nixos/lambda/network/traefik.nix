@@ -92,13 +92,13 @@
       routers = {
         auth = {
           entryPoints = ["websecure"];
-          rule = "Host(`authentik.rwilliams.info`) || HostRegexp(`{subdomain:[a-z0-9]+}.rwilliams.info`) && PathPrefix(`/outpost.goauthentik.io/`)";
+          rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
           tls.certResolver = "letsencrypt";
         };
         dashboard = {
           entryPoints = ["websecure"];
-          rule = "Host(`traefik.rwilliams.info`)";
+          rule = "Host(`traefik-lambda.bikingalong.com`)";
           service = "api@internal";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
@@ -111,13 +111,13 @@
         };
         immich = {
           entryPoints = ["websecure"];
-          rule = "Host(`photos.rwilliams.info`)";
+          rule = "Host(`photos.bikingalong.com`)";
           service = "immich";
           tls.certResolver = "letsencrypt";
         };
         copyparty = {
           entryPoints = ["websecure"];
-          rule = "Host(`nas.rwilliams.info`)";
+          rule = "Host(`nas.bikingalong.com`)";
           service = "copyparty";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];

@@ -1,7 +1,7 @@
 {
   networking = {
-    fqdn = "lambda.hs.bikingalong.com";
-    fqdnOrHostName = "lambda.hs.bikingalong.com";
+    fqdn = "lambda.bikingalong.com";
+    fqdnOrHostName = "lambda.bikingalong.com";
     networkmanager.enable = true;
     hosts = {
       "127.0.0.1" = ["localhost"];
@@ -25,6 +25,7 @@
     3923
     6789
     9000
+    28981
   ];
   networking.firewall.allowedUDPPorts = [
     22
@@ -35,5 +36,6 @@
     3923
     6789
     9000
+    28981
   ];
 }
