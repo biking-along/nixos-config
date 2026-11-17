@@ -105,7 +105,7 @@
         };
         paperless = {
           entryPoints = ["websecure"];
-          rule = "Host(`paperless.rwilliams.info`)";
+          rule = "Host(`paperless.bikingalong.com`)";
           service = "paperless";
           tls.certResolver = "letsencrypt";
         };
