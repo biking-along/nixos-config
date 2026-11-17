@@ -11,7 +11,7 @@
   };
   services.paperless = {
     enable = true;
-    domain = "paperless.rwilliams.info";
+    domain = "paperless.bikingalong.com";
     address = "192.168.0.192";
     port = 28981;
     mediaDir = "/mnt/raid0/paperless/Media";

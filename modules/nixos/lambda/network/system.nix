@@ -1,7 +1,7 @@
 {
   networking = {
-    fqdn = "rwilliams.info";
-    fqdnOrHostName = "rwilliams.info";
+    fqdn = "bikingalong.com";
+    fqdnOrHostName = "bikingalong.com";
     networkmanager.enable = true;
     hosts = {
       "127.0.0.1" = ["localhost"];
