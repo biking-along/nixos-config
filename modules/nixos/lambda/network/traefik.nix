@@ -34,12 +34,6 @@
           asDefault = true;
           http.tls = {
             certResolver = "letsencrypt";
-            domains = [
-              {
-                main = "bikingalong.com";
-                sans = ["*.bikingalong.com"];
-              }
-            ];
           };
         };
       };

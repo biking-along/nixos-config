@@ -26,6 +26,7 @@
           http.redirections.entrypoint = {
             to = "websecure";
             scheme = "https";
+            permanent = true;
           };
         };
         websecure = {
@@ -33,12 +34,12 @@
           asDefault = true;
           http.tls = {
             certResolver = "letsencrypt";
-            # domains = [
-            #   {
-            #     main = "bikingalong.com";
-            #     sans = ["*.bikingalong.com"];
-            #   }
-            # ];
+            domains = [
+              {
+                main = "bikingalong.com";
+                sans = ["*.bikingalong.com"];
+              }
+            ];
           };
         };
       };
@@ -112,7 +113,15 @@
             entryPoints = ["websecure"];
             rule = "PathPrefix(`/`)";
             priority = 1;
-            tls = {};
+            tls = {
+              certResolver = "letsencrypt";
+              domains = [
+                {
+                  main = "bikingalong.com";
+                  sans = ["*.bikingalong.com"];
+                }
+              ];
+            };
             service = "noop@internal";
           };
           dashboard = {
