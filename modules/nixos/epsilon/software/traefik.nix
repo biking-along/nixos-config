@@ -60,12 +60,14 @@
       };
       services = {
         auth = {
-          passHostHeader = true;
-          loadBalancer.servers = [
-            {
-              url = "http://100.64.0.1:9000";
-            }
-          ];
+          loadBalancer = {
+            passHostHeader = true;
+            servers = [
+              {
+                url = "http://100.64.0.1:9000";
+              }
+            ];
+          };
         };
         headscale = {
           loadBalancer.servers = [
