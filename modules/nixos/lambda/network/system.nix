@@ -1,7 +1,7 @@
 {
   networking = {
-    fqdn = "bikingalong.com";
-    fqdnOrHostName = "bikingalong.com";
+    fqdn = "lambda.hs.bikingalong.com";
+    fqdnOrHostName = "lambda.hs.bikingalong.com";
     networkmanager.enable = true;
     hosts = {
       "127.0.0.1" = ["localhost"];

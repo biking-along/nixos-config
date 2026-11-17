@@ -12,7 +12,7 @@
           "127.0.0.0/8"
           "::1/128"
           "100.64.0.0/10"
-          "192.168.0.0/16"
+          "192.168.0.0/24"
         ];
         disable_startup_analytics = true;
         avatars = "gravatar";
