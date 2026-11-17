@@ -32,7 +32,15 @@
         websecure = {
           address = ":443";
           asDefault = true;
-          http.tls.certResolver = "letsencrypt";
+          http.tls = {
+            certResolver = "letsencrypt";
+            domains = [
+              {
+                main = "bikingalong.com";
+                sans = ["*.bikingalong.com"];
+              }
+            ];
+          };
         };
       };
     };
