@@ -42,7 +42,6 @@
             tls.insecureSkipVerify = true;
             address = "http://100.64.0.1:9000/outpost.goauthentik.io/auth/traefik";
             trustForwardHeader = true;
-            passHostHeader = true;
             authResponseHeaders = [
               "X-authentik-username"
               "X-authentik-groups"
@@ -61,6 +60,7 @@
       };
       services = {
         auth = {
+          passHostHeader = true;
           loadBalancer.servers = [
             {
               url = "http://100.64.0.1:9000";
