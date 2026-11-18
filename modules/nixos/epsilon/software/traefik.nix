@@ -107,13 +107,16 @@
               }
             ];
           };
-        };
-        pikvm = {
-          loadBalancer.servers = [
-            {
-              url = "http://100.64.0.1:80";
-            }
-          ];
+          pikvm = {
+            loadBalancer = {
+              passHostHeader = true;
+              servers = [
+                {
+                  url = "https://100.64.0.1:443";
+                }
+              ];
+            };
+          };
         };
         routers = {
           catchall-404 = {
