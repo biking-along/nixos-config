@@ -111,7 +111,7 @@
         pikvm = {
           loadBalancer.servers = [
             {
-              url = "http://100.64.0.1:443";
+              url = "http://100.64.0.1:80";
             }
           ];
         };
