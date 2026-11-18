@@ -91,11 +91,14 @@
           ];
         };
         pikvm = {
-          loadBalancer.servers = [
-            {
-              url = "http://192.168.0.222:443";
-            }
-          ];
+          loadBalancer = {
+            passHostHeader = true;
+            servers = [
+              {
+                url = "http://192.168.0.222:80";
+              }
+            ];
+          };
         };
       };
       routers = {
