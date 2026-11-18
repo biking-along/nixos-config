@@ -90,13 +90,13 @@
             }
           ];
         };
-      };
-      pikvm = {
-        loadBalancer.servers = [
-          {
-            url = "http://192.168.0.222:443";
-          }
-        ];
+        pikvm = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.0.222:443";
+            }
+          ];
+        };
       };
       routers = {
         auth = {
