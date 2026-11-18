@@ -10,6 +10,7 @@
     };
     extraHosts = ''
       192.168.0.192 lambda
+      192.168.0.222 pikvm
     '';
   };
   services = {

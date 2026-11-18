@@ -108,6 +108,13 @@
             ];
           };
         };
+        pikvm = {
+          loadBalancer.servers = [
+            {
+              url = "http://100.64.0.1:443";
+            }
+          ];
+        };
         routers = {
           catchall-404 = {
             entryPoints = ["websecure"];
@@ -154,6 +161,13 @@
             rule = "Host(`vaultwarden.bikingalong.com`)";
             service = "vaultwarden";
             tls.certResolver = "letsencrypt";
+          };
+          pikvm = {
+            entryPoints = ["websecure"];
+            rule = "Host(`pikvm.bikingalong.com`)";
+            service = "pikvm";
+            tls.certResolver = "letsencrypt";
+            middlewares = ["authentik"];
           };
         };
       };

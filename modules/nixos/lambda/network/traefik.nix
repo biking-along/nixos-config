@@ -91,6 +91,13 @@
           ];
         };
       };
+      pikvm = {
+        loadBalancer.servers = [
+          {
+            url = "http://192.168.0.222:443";
+          }
+        ];
+      };
       routers = {
         auth = {
           entryPoints = ["websecure"];
@@ -123,6 +130,12 @@
           service = "copyparty";
           tls.certResolver = "letsencrypt";
           middlewares = ["authentik"];
+        };
+        pikvm = {
+          entryPoints = ["websecure"];
+          rule = "Host(`pikvm.bikingalong.com`)";
+          service = "pikvm";
+          tls.certResolver = "letsencrypt";
         };
       };
     };
