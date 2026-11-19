@@ -92,7 +92,7 @@
         };
         pikvm = {
           loadBalancer = {
-            passHostHeader = true;
+            # passHostHeader = true;
             servers = [
               {
                 url = "http://192.168.0.222:80";
