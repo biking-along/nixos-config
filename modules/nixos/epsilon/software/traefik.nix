@@ -45,13 +45,6 @@
       };
     };
     dynamicConfigOptions = {
-      tls.stores.default.defaultGeneratedCert = {
-        resolver = "letsencrypt";
-        domain = {
-          main = "bikingalong.com";
-          sans = ["*.bikingalong.com"];
-        };
-      };
       http = {
         middlewares = {
           authentik = {
@@ -73,6 +66,14 @@
                 "X-authentik-meta-version"
               ];
             };
+          };
+          local-only.ipAllowList = {
+            sourceRange = [
+              "127.0.0.1/32"
+              "192.168.0.0/24"
+              "100.64.0.0/10"
+            ];
+            rejectStatusCode = 404;
           };
         };
         services = {
@@ -108,14 +109,11 @@
             ];
           };
           pikvm = {
-            loadBalancer = {
-              passHostHeader = true;
-              servers = [
-                {
-                  url = "https://100.64.0.1:443";
-                }
-              ];
-            };
+            loadBalancer.servers = [
+              {
+                url = "http://100.64.0.8:80";
+              }
+            ];
           };
         };
         routers = {
@@ -169,8 +167,8 @@
             entryPoints = ["websecure"];
             rule = "Host(`pikvm.bikingalong.com`)";
             service = "pikvm";
-            tls.certResolver = "letsencrypt";
-            middlewares = ["authentik"];
+            # tls.certResolver = "letsencrypt";
+            # middlewares = ["local-only"];
           };
         };
       };
