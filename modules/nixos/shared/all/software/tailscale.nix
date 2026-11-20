@@ -40,7 +40,7 @@ in {
       };
     };
     fileSystems."/home/rw/Taildrive" = {
-      device = "http://100.100.100.100:8080/";
+      device = "http://100.100.100.100:8080/headscale.bikingalong.com/lambda/nas/";
       fsType = "davfs";
       options = [
         "user"
