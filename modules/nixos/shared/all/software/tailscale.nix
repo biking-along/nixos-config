@@ -22,5 +22,8 @@ in {
         "--operator=${username}"
       ];
     };
+    services.davfs2 = {
+      enable = true;
+    };
   };
 }
