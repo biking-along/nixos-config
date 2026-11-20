@@ -22,7 +22,7 @@ in {
         "--operator=${username}"
       ];
     };
-    age.secrets."davfs2" = {
+    age.secrets.davfs2 = {
       file = ../../../../../secrets/davfs2.age;
       mode = "0600";
       owner = "root";
@@ -31,8 +31,10 @@ in {
     services.davfs2 = {
       enable = true;
       settings = {
-        use_locks = false;
-        secrets = config.age.secrets.davfs2.path;
+        globalSection = {
+          use_locks = false;
+          secrets = config.age.secrets.davfs2.path;
+        };
       };
     };
     fileSystems."/home/rw/Taildrive" = {
