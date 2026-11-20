@@ -19,7 +19,6 @@ in {
       enable = true;
       useRoutingFeatures = "client";
       extraSetFlags = [
-        "--ssh"
         "--operator=${username}"
       ];
     };
