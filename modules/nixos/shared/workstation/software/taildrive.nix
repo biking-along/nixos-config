@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.workstation.software.taildrive.enable;
+  cfg = config.modules.shared.workstation.software.taildrive;
 in {
-  options.modules.workstation.software.taildrive.enable = mkOption {
+  options.modules.shared.workstation.software.taildrive.enable = mkOption {
     default = false;
     type = types.bool;
     description = ''
