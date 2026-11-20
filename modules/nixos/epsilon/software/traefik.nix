@@ -167,8 +167,8 @@
             entryPoints = ["websecure"];
             rule = "Host(`pikvm.bikingalong.com`)";
             service = "pikvm";
-            # tls.certResolver = "letsencrypt";
-            # middlewares = ["local-only"];
+            tls.certResolver = "letsencrypt";
+            middlewares = ["authentik"];
           };
         };
       };
