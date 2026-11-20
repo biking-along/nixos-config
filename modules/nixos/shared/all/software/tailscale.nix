@@ -24,6 +24,7 @@ in {
     };
     age.secrets.davfs2 = {
       file = ../../../../../secrets/davfs2.age;
+      path = "/etc/davfs2/secrets";
       mode = "0600";
       owner = "root";
       group = "root";
@@ -33,7 +34,7 @@ in {
       settings = {
         globalSection = {
           use_locks = false;
-          secrets = config.age.secrets.davfs2.path;
+          buf_size = 64;
         };
       };
     };
