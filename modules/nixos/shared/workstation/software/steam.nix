@@ -5,10 +5,10 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.shared.workstation.software.gaming;
+  cfg = config.modules.shared.workstation.software.steam;
 in {
   options = {
-    modules.shared.workstation.software.gaming.enable = mkOption {
+    modules.shared.workstation.software.steam.enable = mkOption {
       default = false;
       type = types.bool;
       description = ''

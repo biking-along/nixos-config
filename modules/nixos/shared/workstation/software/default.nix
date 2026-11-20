@@ -8,6 +8,7 @@ with lib; let
 in {
   imports = [
     ./steam.nix
+    ./taildrive.nix
   ];
   options = {
     modules.shared.workstation.software = {
@@ -21,7 +22,12 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    modules.shared.workstation.software.gaming.enable = lib.mkDefault true;
+    modules.shared.workstation = {
+      software = {
+        steam.enable = lib.mkDefault true;
+        taildrive.enable = lib.mkDefault true;
+      };
+    };
     programs.firefox.enable = lib.mkDefault true;
   };
 }
