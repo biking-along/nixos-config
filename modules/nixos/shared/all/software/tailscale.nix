@@ -35,7 +35,7 @@ in {
         secrets = config.age.secrets.davfs2.path;
       };
     };
-    filesystems."/home/rw/Taildrive" = {
+    fileSystems."/home/rw/Taildrive" = {
       device = "http://100.100.100.100:8080/headscale.bikingalong.com/lambda/nas/";
       fsType = "davfs";
       options = [
