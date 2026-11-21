@@ -9,6 +9,7 @@ in {
   imports = [
     ./steam.nix
     ./taildrive.nix
+    ./tofinoDAV.nix
   ];
   options = {
     modules.shared.workstation.software = {
@@ -26,6 +27,7 @@ in {
       software = {
         steam.enable = lib.mkDefault true;
         taildrive.enable = lib.mkDefault true;
+        tofinoDAV.enable = lib.mkDefault true;
       };
     };
     programs.firefox.enable = lib.mkDefault true;
