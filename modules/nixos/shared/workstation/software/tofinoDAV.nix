@@ -23,6 +23,7 @@ in {
         "_netdev"
         "x-systemd.automount"
         "uid=1000"
+        "gid=31"
       ];
     };
   };
