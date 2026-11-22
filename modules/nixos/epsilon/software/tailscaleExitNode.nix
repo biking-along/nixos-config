@@ -4,14 +4,14 @@
   pkgs,
   ...
 }: {
-  environment.etc."99-tailscale.conf" = {
-    enable = true;
-    target = "/etc/sysctl.d/99-tailscale.conf";
-    text = ''
-      net.ipv4.ip_forward = 1
-      net.ipv6.conf.all.forwarding = 1
-    '';
-  };
+  # environment.etc."99-tailscale.conf" = {
+  #   enable = true;
+  #   target = "/etc/sysctl.d/99-tailscale.conf";
+  #   text = ''
+  #     net.ipv4.ip_forward = 1
+  #     net.ipv6.conf.all.forwarding = 1
+  #   '';
+  # };
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = 1;
     "net.ipv6.conf.all.forwarding" = 1;
@@ -40,9 +40,7 @@
     nftables.enable = true;
     firewall = {
       enable = true;
-      # Always allow traffic from your Tailscale network
       trustedInterfaces = [config.services.tailscale.interfaceName];
-      # Allow the Tailscale UDP port through the firewall
       allowedUDPPorts = [config.services.tailscale.port];
     };
   };

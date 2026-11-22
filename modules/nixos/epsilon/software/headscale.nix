@@ -16,9 +16,11 @@
   services = {
     headscale = {
       enable = true;
-      listen_addr = "0.0.0.0:8081";
-      metrics_listen_addr = "0.0.0.0:9090";
-
+      address = "127.0.0.1:8081";
+      port = 8081;
+      metrics_listen_addr = "127.0.0.1:9090";
+      grpc_listen_addr = "127.0.0.1:50443";
+      grpc_allow_insecure = false;
       settings = {
         server_url = "https://headscale.bikingalong.com";
         trusted_proxies = [
@@ -67,5 +69,5 @@
   environment.systemPackages = with pkgs; [
     headscale
   ];
-  networking.firewall.allowedUDPPorts = [3478];
+  networking.firewall.allowedUDPPorts = [9090 3478];
 }
