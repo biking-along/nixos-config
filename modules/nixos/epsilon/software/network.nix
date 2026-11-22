@@ -9,7 +9,6 @@
       allowedTCPPorts = [
         80
         443
-        9090
       ];
     };
   };

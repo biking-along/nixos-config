@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   ...
@@ -16,37 +17,33 @@
   services = {
     headscale = {
       enable = true;
-      address = "127.0.0.1:8081";
-      port = 8081;
-      metrics_listen_addr = "127.0.0.1:9090";
-      grpc_listen_addr = "127.0.0.1:50443";
-      grpc_allow_insecure = false;
+      package = inputs.headscale.packages.${pkgs.stdenv.hostPlatform.system}.default;
       settings = {
         server_url = "https://headscale.bikingalong.com";
+        listen_addr = "127.0.0.1:8081";
+        metrics_listen_addr = "127.0.0.1:9090";
         trusted_proxies = [
           "127.0.0.1/32"
           "::1/128"
         ];
-        tls_cert_path = "";
-        tls_key_path = "";
         policy = {
           mode = "database";
         };
         dns = {
-          base_domain = "bikingalong.com";
+          base_domain = "hs.bikingalong.com";
           certificates = {
             enabled = true;
             zone = "bikingalong.com";
           };
           challenge = {
-            resolvers = [
-              "1.1.1.1"
-              "9.9.9.9"
-            ];
             provider = {
               name = "cloudflare";
               api_token = "file:${config.age.secrets.hsCloudflareAPI.path}";
             };
+            resolvers = [
+              "1.1.1.1"
+              "9.9.9.9"
+            ];
           };
           magic_dns = true;
           override_local_dns = false;
@@ -69,5 +66,5 @@
   environment.systemPackages = with pkgs; [
     headscale
   ];
-  networking.firewall.allowedUDPPorts = [9090 3478];
+  networking.firewall.allowedUDPPorts = [3478];
 }

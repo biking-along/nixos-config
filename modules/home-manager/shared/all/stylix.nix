@@ -17,6 +17,7 @@ in {
     home.pointerCursor.enable = true;
     stylix = {
       enableReleaseChecks = false;
+      targets.wayprompt.enable = false;
     };
   };
 }

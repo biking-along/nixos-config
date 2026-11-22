@@ -18,6 +18,7 @@
     enable = true;
     settings = {
       headscale = {
+        url = "http://127.0.0.1:8081";
         public_url = "https://headscale.bikingalong.com";
         api_key_path = config.age.secrets."hsApiKey".path;
         config_path = "/etc/headscale/config.yaml";
@@ -31,7 +32,7 @@
       };
       server = {
         base_url = "https://headscale.bikingalong.com";
-        host = "0.0.0.0";
+        host = "127.0.0.1";
         port = 8082;
         cookie_secret_path = config.age.secrets."headplaneCookieSecret".path;
       };

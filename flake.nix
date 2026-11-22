@@ -73,6 +73,10 @@
       url = "github:4evy/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    headscale = {
+      url = "github:juanfont/headscale";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
@@ -93,6 +97,7 @@
     nixos-wsl,
     niri-autoselect-portal,
     nixcord,
+    headscale,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -276,6 +281,7 @@
             nvf.nixosModules.default
             agenix.nixosModules.default
             home-manager.nixosModules.home-manager
+            headscale.nixosModules.default
             {
               home-manager.users.${username} = {
                 imports = [
