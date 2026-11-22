@@ -20,11 +20,14 @@
       headscale = {
         public_url = "https://headscale.bikingalong.com";
         api_key_path = config.age.secrets."hsApiKey".path;
+        config_path = "/etc/headscale/config.yaml";
+        config_strict = true;
       };
       integration = {
         agent = {
           enabled = true;
         };
+        proc.enabled = true;
       };
       server = {
         base_url = "https://headscale.bikingalong.com";

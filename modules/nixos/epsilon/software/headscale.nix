@@ -19,8 +19,8 @@
           "::1/128"
         ];
         policy = {
-          mode = "file";
-          path = config.age.secrets."headscalePolicy.hujson".path;
+          mode = "database";
+          # path = config.age.secrets."headscalePolicy.hujson".path;
         };
         dns = {
           base_domain = "hs.bikingalong.com";
