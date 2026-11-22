@@ -11,6 +11,6 @@
     extraSetFlags = [
       "--advertise-routes=192.168.0.0/24"
     ];
-    useRoutingFeatures = lib.mkForce "server";
+    useRoutingFeatures = lib.mkForce "both";
   };
 }
