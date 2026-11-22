@@ -21,5 +21,6 @@ in {
   "hpOidcClientSecret.age".publicKeys = fleet;
   "hsApiKey.age".publicKeys = fleet;
   "headscalePolicy.age".publicKeys = fleet;
+  "hsCloudflareAPI.age".publicKeys = fleet;
   "davfs2.age".publicKeys = fleet;
 }
