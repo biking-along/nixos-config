@@ -31,6 +31,7 @@
     useRoutingFeatures = lib.mkForce "both";
   };
   networking = {
+    useNetworkd = true;
     firewall.checkReversePath = "loose";
     nftables.enable = true;
     firewall = {
