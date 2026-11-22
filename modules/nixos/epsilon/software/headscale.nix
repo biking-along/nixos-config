@@ -22,12 +22,17 @@
         server_url = "https://headscale.bikingalong.com";
         listen_addr = "127.0.0.1:8081";
         metrics_listen_addr = "127.0.0.1:9090";
+        noise.private_key_path = "/var/lib/headscale/noise_private.key";
         trusted_proxies = [
           "127.0.0.1/32"
           "::1/128"
         ];
         policy = {
           mode = "database";
+        };
+        database = {
+          type = "sqlite";
+          sqlite.path = "/var/lib/headscale/db.sqlite";
         };
         dns = {
           base_domain = "hs.bikingalong.com";
@@ -40,10 +45,6 @@
               name = "cloudflare";
               api_token = "file:${config.age.secrets.hsCloudflareAPI.path}";
             };
-            resolvers = [
-              "1.1.1.1"
-              "9.9.9.9"
-            ];
           };
           magic_dns = true;
           override_local_dns = false;
@@ -60,6 +61,8 @@
           stun_listen_addr = "0.0.0.0:3478";
           ipv4 = "66.23.198.149";
         };
+        taildrop.enabled = true;
+        auto_update.enabled = true;
       };
     };
   };
