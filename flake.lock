@@ -665,6 +665,7 @@
       },
       "original": {
         "owner": "juanfont",
+        "ref": "main",
         "repo": "headscale",
         "type": "github"
       }

@@ -74,7 +74,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     headscale = {
-      url = "github:juanfont/headscale";
+      url = "github:juanfont/headscale/main";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
