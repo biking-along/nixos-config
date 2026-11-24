@@ -66,8 +66,8 @@
       };
     };
   };
-  environment.systemPackages = with pkgs; [
-    headscale
+  environment.systemPackages = [
+    inputs.headscale.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   networking.firewall.allowedUDPPorts = [3478];
 }
