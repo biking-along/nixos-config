@@ -1,8 +1,11 @@
 {pkgs, ...}: {
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+	device = "/dev/sda";
+        useOSProber = true;
+      };
     };
     kernelPackages = pkgs.linuxPackages_latest;
   };

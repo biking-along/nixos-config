@@ -4,14 +4,6 @@
   pkgs,
   ...
 }: {
-  # environment.etc."99-tailscale.conf" = {
-  #   enable = true;
-  #   target = "/etc/sysctl.d/99-tailscale.conf";
-  #   text = ''
-  #     net.ipv4.ip_forward = 1
-  #     net.ipv6.conf.all.forwarding = 1
-  #   '';
-  # };
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = 1;
     "net.ipv6.conf.all.forwarding" = 1;
@@ -24,7 +16,7 @@
     rules."50-tailscale-optimizations" = {
       onState = ["routable"];
       script = ''
-        ${pkgs.ethtool}/bin/ethtool -K enp3s0 rx-udp-gro-forwarding on rx-gro-list off
+        ${pkgs.ethtool}/bin/ethtool -K ens18 rx-udp-gro-forwarding on rx-gro-list off
       '';
     };
   };
@@ -35,7 +27,6 @@
     useRoutingFeatures = lib.mkForce "both";
   };
   networking = {
-    useNetworkd = true;
     firewall.checkReversePath = "loose";
     nftables.enable = true;
     firewall = {
