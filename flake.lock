@@ -1277,7 +1277,8 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
         "nvf": "nvf",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "tabula-osk-source": "tabula-osk-source"
       }
     },
     "stylix": {
@@ -1372,6 +1373,18 @@
         "ref": "future-26.11",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tabula-osk-source": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-PBT6qU6xvp9C+lh8OFzhM8OLU6r3uA7WGx/rcY8q5JY=",
+        "type": "file",
+        "url": "https://github.com/BeShO-ShO/tabula-osk"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/BeShO-ShO/tabula-osk"
       }
     },
     "tinted-kitty": {

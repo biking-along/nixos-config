@@ -77,6 +77,10 @@
       url = "github:juanfont/headscale/main";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+    tabula-osk-source = {
+      url = "https://github.com/BeShO-ShO/tabula-osk";
+      flake = false;
+    };
   };
   outputs = {
     self,
