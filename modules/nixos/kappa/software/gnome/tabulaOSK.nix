@@ -5,7 +5,6 @@
 }: let
   tabula-osk = pkgs.stdenv.mkDerivation {
     pname = "gnome-shell-extension-tabula-osk";
-    # Automatically versions the derivation using the Git commit date/rev
     version = inputs.tabula-osk-src.shortRev or "dirty";
 
     src = inputs.tabula-osk-src;
@@ -13,6 +12,24 @@
     nativeBuildInputs = [pkgs.glib];
 
     passthru.extensionUuid = "tabula-osk@besho-sho";
+
+    unpackPhase = ''
+      runHook preUnpack
+      if [ -d "$src" ]; then
+        cp -r "$src"/. .
+        chmod -R u+w .
+      else
+        unpackFile "$src"
+        # If unpackFile extracted into a single subdirectory, enter it
+        for d in */; do
+          if [ -f "$d/metadata.json" ]; then
+            cd "$d"
+            break
+          fi
+        done
+      fi
+      runHook postUnpack
+    '';
 
     buildPhase = ''
       runHook preBuild
