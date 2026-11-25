@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Configure keymap in X11
   services.xserver = {
     enable = true;
@@ -54,7 +50,6 @@
     xwininfo
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.gjs-osk
   ];
 
   services.udev.packages = [pkgs.gnome-settings-daemon];
