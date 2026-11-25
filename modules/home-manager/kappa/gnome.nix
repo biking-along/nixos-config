@@ -9,7 +9,7 @@
           pkgs.gnomeExtensions.appindicator.extensionUuid
           pkgs.gnomeExtensions.gjs-osk.extensionUuid
           pkgs.gnomeExtensions.tailscale.extensionUuid
-          pkgs.gnomeExtensions.touchup.extensionUuid
+          pkgs.gnomeExtensions.touchshell.extensionUuid
           "tabula-osk@besho-sho"
         ];
       };
