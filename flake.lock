@@ -1277,7 +1277,24 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_3",
         "nvf": "nvf",
+        "smart-splits-backend-tmux": "smart-splits-backend-tmux",
         "stylix": "stylix"
+      }
+    },
+    "smart-splits-backend-tmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790943526,
+        "narHash": "sha256-RcJdM6wFHZOEOK+cXVIT10anktqGgIilPmojFpdY+4g=",
+        "owner": "smart-splits-nvim",
+        "repo": "backend-tmux",
+        "rev": "9e9e6aa9b3eb7a8d3896a993611622ac97abff52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "smart-splits-nvim",
+        "repo": "backend-tmux",
+        "type": "github"
       }
     },
     "stylix": {

@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  inputs,
+  pkgs,
   ...
 }:
 with lib; let
@@ -24,6 +26,14 @@ in {
       settings = {
         mnw.desktopEntry = false;
         vim = {
+          extraPlugins = {
+            smart-splits-backend-tmux = {
+              package = pkgs.vimUtils.buildVimPlugin {
+                name = "smart-splits-backend-tmux";
+                src = inputs.smart-splits-backend-tmux;
+              };
+            };
+          };
           enableLuaLoader = true;
           viAlias = true;
           vimAlias = true;
@@ -85,13 +95,25 @@ in {
             };
           };
           utility = {
-            smart-splits.enable = true;
+            smart-splits = {
+              enable = true;
+              setupOpts = {
+                mux = {
+                  backend = lib.generators.mkLuaInline ''
+                    function()
+                      return require('smart-splits-backend-tmux')
+                    end
+                  '';
+                  move = {at_edge = "split";};
+                };
+              };
+            };
             yazi-nvim = {
               enable = true;
               setupOpts.open_for_directories = true;
             };
           };
-          clipboard.providers.wl-copy.enable = true;
+          # clipboard.providers.wl-copy.enable = true;
           visuals = {
             cinnamon-nvim = {
               enable = true;
