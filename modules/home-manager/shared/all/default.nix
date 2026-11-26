@@ -13,6 +13,7 @@
     ./nix-search.nix
     ./shell.nix
     ./stylix.nix
+    ./tmux.nix
     ./yazi.nix
   ];
 }

@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  inputs,
+  pkgs,
   ...
 }:
 with lib; let
@@ -24,6 +26,22 @@ in {
       settings = {
         mnw.desktopEntry = false;
         vim = {
+          extraPlugins = {
+            smart-splits-backend-tmux = {
+              package = pkgs.vimUtils.buildVimPlugin {
+                name = "smart-splits-backend-tmux";
+                src = inputs.smart-splits-backend-tmux;
+                setup = ''
+                  require('smart-splits-backend-tmux').setup({
+                    enable = true,
+                    disable_nav_when_zoomed = true,
+                    resize_amount = 3,
+                    timeout = 300,
+                  })
+                '';
+              };
+            };
+          };
           enableLuaLoader = true;
           viAlias = true;
           vimAlias = true;
@@ -44,6 +62,9 @@ in {
             }
           ];
           luaConfigPost = ''
+            vim.opt.clipboard = "unnamedplus"
+            vim.opt.autoread = true
+            vim.opt.termguicolors = true
             vim.opt.tabstop = 2
             vim.optsofttabstop = 2
             vim.opt.shiftwidth = 2
@@ -61,6 +82,14 @@ in {
               return MiniPairs.cr()
             end
             vim.keymap.set('i', '<CR>', 'v:lua.cr_action()', { expr = true })
+            vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+            vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+            vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+            vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
+            vim.keymap.set('n', '<M-h>', require('smart-splits').resize_left)
+            vim.keymap.set('n', '<M-j>', require('smart-splits').resize_down)
+            vim.keymap.set('n', '<M-k>', require('smart-splits').resize_up)
+            vim.keymap.set('n', '<M-l>', require('smart-splits').resize_right)
           '';
           lineNumberMode = "relNumber";
           lsp = {
@@ -85,13 +114,36 @@ in {
             };
           };
           utility = {
-            smart-splits.enable = true;
+            smart-paste-nvim = {
+              enable = true;
+              setupOpts = {
+                keys = [
+                  {
+                    lhs = "p";
+                    like = "p";
+                    charwise_newline = "multiline";
+                  }
+                  {
+                    lhs = "P";
+                    like = "P";
+                    charwise_newline = "multiline";
+                  }
+                ];
+              };
+            };
+            smart-splits = {
+              enable = true;
+              setupOpts = {
+                mux = {backend = "smart-splits-backend-tmux";};
+                move = {at_edge = "split";};
+              };
+            };
             yazi-nvim = {
               enable = true;
               setupOpts.open_for_directories = true;
             };
           };
-          clipboard.providers.wl-copy.enable = true;
+          # clipboard.providers.wl-copy.enable = true;
           visuals = {
             cinnamon-nvim = {
               enable = true;

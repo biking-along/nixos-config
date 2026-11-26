@@ -2,6 +2,9 @@
   networking = {
     fqdn = "bikingalong.com";
     fqdnOrHostName = "bikingalong.com";
+    useDHCP = false;
+    dhcpcd.enable = false;
+    networkmanager.enable = false;
     firewall = {
       allowedTCPPorts = [
         80
@@ -16,25 +19,29 @@
   systemd.network = {
     enable = true;
     networks."10-wan" = {
-      matchConfig.Name = "enp3s0";
+      matchConfig.Name = "ens18";
       networkConfig = {
-        DHCP = false;
+        DHCP = "no";
         IPv6AcceptRA = false;
       };
       address = [
-        "66.23.198.149/24"
-        "2606:a8c0:100::3/128"
+        "104.204.64.67/23"
+        "104.204.64.68/23"
+        "2606:a8c0:1800:1::40/64"
       ];
-
       routes = [
-        {Gateway = "66.23.198.1";}
-        {
-          Gateway = "2606:a8c0:100::1";
-          # GatewayOnLink = true;
-          # PreferredSource = "2606:a8c0:101:2::a";
-        }
+        {Gateway = "104.204.64.1";}
+        {Gateway = "2606:a8c0:1800::1";}
       ];
+      dns = [
+        "1.1.1.1"
+        "9.9.9.9"
+        "2606:4700:4700::1111"
+        "2620:fe::fe"
+      ];
+      linkConfig.RequiredForOnline = "routable";
     };
   };
+  services.resolved.enable = true;
   programs.ssh.startAgent = true;
 }

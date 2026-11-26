@@ -18,6 +18,10 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    smart-splits-backend-tmux = {
+      url = "github:smart-splits-nvim/backend-tmux";
+      flake = false;
+    };
     niri = {
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
