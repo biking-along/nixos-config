@@ -1278,7 +1278,8 @@
         "nixpkgs": "nixpkgs_3",
         "nvf": "nvf",
         "smart-splits-backend-tmux": "smart-splits-backend-tmux",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "tabula-osk-src": "tabula-osk-src"
       }
     },
     "smart-splits-backend-tmux": {
@@ -1388,6 +1389,22 @@
         "owner": "nix-systems",
         "ref": "future-26.11",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tabula-osk-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795056484,
+        "narHash": "sha256-6adR+q78tuS0mRPXkZIefuqmS2niibzc2JQAfYxI19g=",
+        "owner": "BeShO-ShO",
+        "repo": "tabula-osk",
+        "rev": "9439173750753f9b9ae60ff160a853aebd65579b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BeShO-ShO",
+        "repo": "tabula-osk",
         "type": "github"
       }
     },

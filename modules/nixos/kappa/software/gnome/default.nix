@@ -1,6 +1,7 @@
 {
   imports = [
     ./gnome.nix
-    ./gnome-osk.nix
+    # ./gnome-osk.nix
+    ./tabulaOSK.nix
   ];
 }
