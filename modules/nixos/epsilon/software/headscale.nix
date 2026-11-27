@@ -60,6 +60,7 @@
           region_name = "Headscale Embedded DERP";
           stun_listen_addr = "0.0.0.0:3478";
           ipv4 = "104.204.64.67";
+          ipv6 = "2606:a8c0:1800:1::40";
         };
         taildrop.enabled = true;
         auto_update.enabled = true;

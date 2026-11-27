@@ -69,6 +69,13 @@
             }
           ];
         };
+        technitium-dns = {
+          loadBalancer.servers = [
+            {
+              url = "http://192.168.0.192:53443";
+            }
+          ];
+        };
         paperless = {
           loadBalancer.servers = [
             {
@@ -107,6 +114,13 @@
           rule = "Host(`authentik.bikingalong.com`) || HostRegexp(`{subdomain:[a-z0-9]+}.bikingalong.com`) && PathPrefix(`/outpost.goauthentik.io/`)";
           service = "auth";
           tls.certResolver = "letsencrypt";
+        };
+        technitium-dns = {
+          entryPoints = ["websecure"];
+          rule = "Host(`dns.bikingalong.com`)";
+          service = "technitium-dns";
+          tls.certResolver = "letsencrypt";
+          middlewares = ["authentik"];
         };
         dashboard = {
           entryPoints = ["websecure"];
