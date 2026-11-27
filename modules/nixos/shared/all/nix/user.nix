@@ -38,6 +38,7 @@ in {
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDoN0lsT2cyxUgcx/mKe/WZM9BGTxd50azlFLsB08Iw1"
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFX3+SiHJ3PBe8BK54+utXlAKr3bAhTonf35+aui6+ze"
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAcrO5Lbl9o7pNNZexPHIfFp69/BnwuhigmXUEjeLvtj "
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBXmaMfXJ63narrgK0ji8xQCtgt7vTfnBtpqPMZYl8Rm"
           ];
         };
       };
