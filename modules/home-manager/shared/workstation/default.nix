@@ -16,6 +16,7 @@ in {
     ./libreoffice.nix
     ./mpv.nix
     ./nixcord.nix
+    ./npm.nix
     ./obsidian.nix
     # ./vesktop.nix
     ./zathura.nix
@@ -38,6 +39,7 @@ in {
       libreoffice.enable = lib.mkDefault true;
       mpv.enable = lib.mkDefault true;
       nixcord.enable = lib.mkDefault true;
+      npm.enable = lib.mkDefault true;
       obsidian.enable = lib.mkDefault true;
       # vesktop.enable = lib.mkDefault true;
       zathura.enable = lib.mkDefault true;
