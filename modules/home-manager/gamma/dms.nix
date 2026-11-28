@@ -1,10 +1,12 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
 }: {
   programs.dank-material-shell = {
     enable = true;
+    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {doCheck = false;});
     systemd = {
       enable = true;
       restartIfChanged = true;
